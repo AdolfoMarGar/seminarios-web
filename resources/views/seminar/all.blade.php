@@ -10,6 +10,8 @@
     <table border='1'>
     @foreach ($seminarList as $seminar)
         <tr>
+            <td>{{$seminar->id}}</td>
+
             <td>{{$seminar->year}}</td>
             <td>{{$seminar->location}}</td>
             <td>{{$seminar->hosts}}</td>

@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('speaker');
+        Schema::dropIfExists('speakers');
     }
 };

@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->integer('year');
             $table->integer('type');
-            $table->string('dir',100);
+            $table->string('dir');
             $table->timestamps();
+            $table->foreignId('seminars_id')->constrained('seminars');
+               
         });
     }
 

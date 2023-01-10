@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('presentations', function (Blueprint $table) {
             $table->id();
-            $table->string('subject',100);
-            $table->string('dir',100);
+            $table->string('subject');
+            $table->string('dir');
             $table->timestamps();
+
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('presentation');
+        Schema::dropIfExists('presentations');
     }
 };

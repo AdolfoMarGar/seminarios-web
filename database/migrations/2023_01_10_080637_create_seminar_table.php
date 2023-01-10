@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('seminars', function (Blueprint $table) {
             $table->id();
             $table->integer('year');
-            $table->string('location',100);
-            $table->string('hosts',1000);
+            $table->string('location');
+            $table->string('hosts');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seminar');
+        Schema::dropIfExists('seminars');
     }
 };

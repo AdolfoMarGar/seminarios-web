@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Seminar extends Model
+class Document extends Model
 {
-    public function documents(){
-        return $this->hasMany(Document::class);
+    public function Seminar(){
+        return $this->belongsTo(Seminar::class);
     }
     use HasFactory;
 }

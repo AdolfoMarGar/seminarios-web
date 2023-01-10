@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('request_has_user', function (Blueprint $table) {
+        Schema::create('requests_has_users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_has_user');
+        Schema::dropIfExists('requests_has_users');
     }
 };

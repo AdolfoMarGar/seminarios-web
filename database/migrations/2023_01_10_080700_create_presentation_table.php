@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('presentation', function (Blueprint $table) {
+        Schema::create('presentations', function (Blueprint $table) {
             $table->id();
             $table->string('subject',100);
             $table->string('dir',100);

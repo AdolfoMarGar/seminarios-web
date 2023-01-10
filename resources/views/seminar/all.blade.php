@@ -6,17 +6,17 @@
 @section("header", "Administración de seminario")
 
 @section("content")
-    <a href="{{ route('seminario.create') }}">Nuevo</a>
+    <a href="{{ route('seminar.create') }}">Nuevo</a>
     <table border='1'>
-    @foreach ($seminarioList as $seminario)
+    @foreach ($seminarList as $seminar)
         <tr>
-            <td>{{$seminario->name}}</td>
-            <td>{{$seminario->description}}</td>
-            <td>{{$seminario->anio}}</td>
+            <td>{{$seminar->year}}</td>
+            <td>{{$seminar->location}}</td>
+            <td>{{$seminar->hosts}}</td>
             <td>
-                <a href="{{route('seminario.edit', $seminario->id)}}">Modificar</a></td>
+                <a href="{{route('seminar.edit', $seminar->id)}}">Modificar</a></td>
             <td>
-                <form action = "{{route('seminario.destroy', $seminario->id)}}" method="POST">
+                <form action = "{{route('seminar.destroy', $seminar->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <input type="submit" value="Borrar">

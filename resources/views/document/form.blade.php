@@ -8,10 +8,10 @@
 @section("content")
     @isset($document)
         <form action="{{ route('documents.update', ['document' => $document->id]) }}" method="POST">
-            {{'updateemos perra' }}<br>
+            {{'updateemos ' }}<br>
         @method("PUT")
     @else
-        <form action="{{ route('documents.storeaaa') }}" method="POST">
+        <form action="{{ route('documents.store') }}" method="POST">
             {{'ni del palo' }}<br>
 
     @endisset

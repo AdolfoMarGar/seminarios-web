@@ -27,7 +27,6 @@ class SeminarioController extends Controller
         $s = new Seminario();
         $s->name = $r->name;
         $s->description = $r->description;
-        $s->price = $r->price;
         $s->anio = $r->anio;
         $s->save();
         return redirect()->route('seminario.index');
@@ -42,7 +41,6 @@ class SeminarioController extends Controller
         $s = Seminario::find($id);
         $s->name = $r->name;
         $s->description = $r->description;
-        $s->price = $r->price;
         $s->anio = $r->anio;
         $s->save();
         return redirect()->route('seminario.index');

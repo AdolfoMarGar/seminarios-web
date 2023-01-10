@@ -12,7 +12,6 @@
         <tr>
             <td>{{$seminario->name}}</td>
             <td>{{$seminario->description}}</td>
-            <td>{{$seminario->price}}</td>
             <td>{{$seminario->anio}}</td>
             <td>
                 <a href="{{route('seminario.edit', $seminario->id)}}">Modificar</a></td>

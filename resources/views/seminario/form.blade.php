@@ -15,7 +15,6 @@
         @csrf
         Nombre del seminario:<input type="text" name="name" value="{{$seminario->name ?? '' }}"><br>
         Descripción:<input type="text" name="description" value="{{$seminario->description ?? '' }}"><br>
-        Precio:<input type="text" name="price" value="{{$seminario->price ?? '' }}"><br>
         Año:<input type="text" name="anio" value="{{$seminario->anio ?? '' }}"><br>
         <input type="submit">
         </form>

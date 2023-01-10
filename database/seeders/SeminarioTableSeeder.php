@@ -19,7 +19,6 @@ class SeminarioTableSeeder extends Seeder
         DB::table('seminarios')->insert([
             'name' => 'Papel higiénico',
             'description' => 'Papel higiénico extrasuave para glúteos sensibles',
-            'price' => '1.35',
             'anio' => '2022',
         ]);
     }

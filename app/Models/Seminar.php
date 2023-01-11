@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seminar extends Model
 {
+    protected $fillable = array('id','year','location', 'hosts');  
     public function documents(){
         return $this->hasMany(Document::class);
     }

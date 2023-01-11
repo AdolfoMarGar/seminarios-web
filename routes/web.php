@@ -20,3 +20,6 @@ Route::get('seminar/delete/{seminar}', 'SeminarController@destroy')->name('semin
 
 Route::resource('documents', 'DocumentsController');
 Route::get('documents/delete/{documents}', 'DocumentsController@destroy')->name('documents.myDestroy');
+
+Route::resource('admin', 'AdminController');
+Route::get('admin/delete/{admin}', 'AdminController@destroy')->name('admin.myDestroy');

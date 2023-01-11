@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Seminar;
 
-
 class SeminarController extends Controller
 {
     public function index() {
@@ -24,11 +23,8 @@ class SeminarController extends Controller
     }
 
     public function store(Request $r) {
-        $s = new Seminar();
-        $s->year = $r->year;
-        $s->location = $r->location;
-        $s->hosts = $r->hosts;
-        $s->save();
+        Seminar::create($r->all());
+
         return redirect()->route('seminar.index');
     }
 
@@ -38,11 +34,10 @@ class SeminarController extends Controller
     }
 
     public function update($id, Request $r) {
-        $s = Seminar::find($id);
-        $s->year = $r->year;
-        $s->location = $r->location;
-        $s->hosts = $r->hosts;
-        $s->save();
+        $a = Seminar::find($id);
+        $a->fill($r->all()); 
+        $a->save();
+
         return redirect()->route('seminar.index');
     }
 

@@ -23,7 +23,8 @@ class DocumentsController extends Controller
 
     public function show($id) {
         $s = Document::find($id);
-        $year = new Seminar();
+        $s->seminar->year;//Tambien se puede acceder desde blade de esta manera. (seminar es el nombre que se le pone a la relacion en el modelo)
+        //$year = new Seminar();
 
         return view('document.show', $data);
     }

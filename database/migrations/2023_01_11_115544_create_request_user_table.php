@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('requests_has_users', function (Blueprint $table) {
+        Schema::create('request_user', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('requests_id');
+            $table->unsignedBigInteger('users_id');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requests_has_users');
+        Schema::dropIfExists('request_user');
     }
 };

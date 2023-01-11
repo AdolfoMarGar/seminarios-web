@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('type');
             $table->string('dir');
             $table->timestamps();
-            $table->foreignId('seminars_id')->constrained('seminars');
+            $table->integer('seminars_id');
                
         });
     }

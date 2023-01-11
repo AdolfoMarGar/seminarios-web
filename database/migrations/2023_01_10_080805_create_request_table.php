@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->string('text',100);
+            $table->string('text');
             $table->integer('year');
             $table->integer('type');
-            $table->string('dir',100);
+            $table->string('dir');
 
             $table->timestamps();
             

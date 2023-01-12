@@ -14,9 +14,6 @@
 
             <td>{{$admin->username}}</td>
             <td>{{$admin->password}}</td>
-            <td>{{$admin->realname}}</td>
-            <td>{{$admin->lastname}}</td>
-            <td>{{$admin->email}}</td>
             <td>
                 <a href="{{route('admin.edit', $admin->id)}}">Modificar</a></td>
             <td>

@@ -13,11 +13,8 @@
         <form action="{{ route('admin.store') }}" method="POST">
     @endisset
         @csrf
-        Username:<input type="text" name="username" value="a"><br>
-        Password:<input type="text" name="password" value="{{$admin->password ?? '' }}"><br>
-        Realname:<input type="text" name="realname" value="{{$admin->realname ?? '' }}"><br>
-        Lastname:<input type="text" name="lastname" value="{{$admin->lastname ?? '' }}"><br>
-        email:<input type="text" name="email" value="{{$admin->email ?? '' }}"><br>
+        Username:<input type="text" name="username" value="{{$admin->username ?? '' }}"><br>
+        Password:<input type="password" name="password" value="{{$admin->password ?? '' }}"><br>
         <input type="submit">
         </form>
 @endsection

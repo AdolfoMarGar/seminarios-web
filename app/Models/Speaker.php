@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Speaker extends Model
 {
     public function presentation(){
-        return $this->belongsToMany(Presentation::class);
+        return $this->hasMany(Presentation::class);
     }
     use HasFactory;
 }

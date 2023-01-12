@@ -26,3 +26,6 @@ Route::get('admin/delete/{admin}', 'AdminController@destroy')->name('admin.myDes
 
 Route::resource('speaker', 'SpeakerController');
 Route::get('speaker/delete/{speaker}', 'SpeakerController@destroy')->name('speaker.myDestroy');
+
+Route::resource('presentation', 'PresentationController');
+Route::get('presentation/delete/{presentation}', 'PresentationController@destroy')->name('presentation.myDestroy');

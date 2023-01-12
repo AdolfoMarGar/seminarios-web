@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Speaker extends Model
 {
+    protected $fillable = array('id','name','lastname','region');  
+
     public function presentation(){
         return $this->hasMany(Presentation::class);
     }

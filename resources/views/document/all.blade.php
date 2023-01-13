@@ -8,22 +8,22 @@
 @section("content")
     <a href="{{ route('documents.create') }}">Nuevo</a>
     <table border='1'> 
-    @for ($i = 0; $i < count($documentList); $i++)
+    @foreach ($documentList as $d)
         <tr>
-            <td>{{$yearList[$i]->year}}</td>
-            <td>{{$documentList[$i]->type}}</td>
-            <td>{{$documentList[$i]->dir}}</td>
+            <td>{{$d->seminar->year}}, {{$d->seminar->location}}</td>
+            <td>{{$d->type}}</td>
+            <td>{{$d->dir}}</td>
             
             <td>
-                <a href="{{route('documents.edit', $documentList[$i]->id)}}">Modificar</a></td>
+                <a href="{{route('documents.edit', $d->id)}}">Modificar</a></td>
             <td>
-                <form action = "{{route('documents.destroy', $documentList[$i]->id)}}" method="POST">
+                <form action = "{{route('documents.destroy', $d->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <input type="submit" value="Borrar">
                 </form>
             </td>
         <br>
-    @endfor
+    @endforeach
     </table>
 @endsection

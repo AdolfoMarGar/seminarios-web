@@ -19,7 +19,7 @@ class DocumentsTableSeeder extends Seeder
         DB::table('documents')->insert([
             'type' => '1',
             'dir' => '/usr/bin/perras',
-            'seminars_id'=> '1'
+            'seminar_id'=> '1'
         ]);
     }
 }

@@ -4,21 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Presentation;
+use App\Models\Seminar;
+use App\Models\Speaker;
 
 class PresentationController extends Controller
 {
     
     public function index() {
         $presentationList = Presentation::all();
-        foreach($presentationList as $l){
-            $seminarList[]= $l->seminar;
-            $speakerList[]=$l->speaker;
-        }
-        $data["presentationList"] =$presentationList;
-        $data["seminarList"] =$seminarList;
-        $data["speakerList"] =$speakerList;
-        
-        return view('presentation.all', $data);
+
+        return view('presentation.all', ['presentationList'=>$presentationList]);
     }
 
     public function show($id) {
@@ -28,7 +23,14 @@ class PresentationController extends Controller
     }
 
     public function create() {
-        return view('presentation.form');
+        $seminarList = Seminar::all();
+        $speakerList = Speaker::all();
+        $data["seminarList"] = $seminarList;
+        $data["speakerList"] = $speakerList;
+        $data["presentation"] = null;
+
+
+        return view('presentation.form', $data);
     }
 
     public function store(Request $r) {
@@ -39,7 +41,13 @@ class PresentationController extends Controller
 
     public function edit($id) {
         $presentation = Presentation::find($id);
-        return view('presentation.form', array('presentation' => $presentation));
+        $seminarList = Seminar::all();
+        $speakerList = Speaker::all();
+        $data["seminarList"] = $seminarList;
+        $data["speakerList"] = $speakerList;
+        $data["presentation"] = $presentation;
+
+        return view('presentation.form', $data);
     }
 
     public function update($id, Request $r) {

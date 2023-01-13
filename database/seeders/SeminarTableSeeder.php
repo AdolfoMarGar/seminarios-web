@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SeminarioTableSeeder extends Seeder
+class SeminarTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,7 +19,20 @@ class SeminarioTableSeeder extends Seeder
         DB::table('seminars')->insert([
             'year' => '2005',
             'location' => 'Almería',
-            'hosts' => 'Carmen García',
+            'hosts' => 'Cajamar',
         ]);
+
+        DB::table('seminars')->insert([
+            'year' => '2006',
+            'location' => 'Jaen',
+            'hosts' => 'Publifiestas Conde',
+        ]);
+
+        DB::table('seminars')->insert([
+            'year' => '2012',
+            'location' => 'Malaga',
+            'hosts' => 'Unicaja',
+        ]);
+
     }
 }

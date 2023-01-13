@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('request_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('requests_id');
-            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('request_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

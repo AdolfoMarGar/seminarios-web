@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('subject');
             $table->string('dir');
             $table->integer('seminar_id');
-            $table->integer('speaker_id');
 
             $table->timestamps();
 

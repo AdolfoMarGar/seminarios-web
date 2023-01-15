@@ -10,7 +10,7 @@ class Speaker extends Model
     protected $fillable = array('id','name','lastname','region');  
 
     public function presentation(){
-        return $this->hasMany(Presentation::class);
+        return $this->belongsToMany(Presentation::class);
     }
     use HasFactory;
 }

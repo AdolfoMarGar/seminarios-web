@@ -13,11 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('request_user', function (Blueprint $table) {
+        Schema::create('myrequests', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('request_id');
-            $table->unsignedBigInteger('user_id');
+            $table->string('text');
+            $table->integer('year');
+            $table->integer('type');
+            $table->string('dir');
+            $table->integer('user_id');
+
+
             $table->timestamps();
+            
         });
     }
 
@@ -28,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_user');
+        Schema::dropIfExists('myrequests');
     }
 };

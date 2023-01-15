@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Request extends Model
+class Myrequest extends Model
 {
+    protected $fillable = array('id','text','year', 'type', 'dir', 'user_id');  
+
     public function user(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
     use HasFactory;
 }

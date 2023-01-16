@@ -4,7 +4,8 @@
      </head>
      <body>
         @section('sidebar')
-            Este es mi master sidebar.
+        {{view('welcome')}}</br></br>
+
         @show
 
         <div class="container">

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->integer('presentation_id');
             $table->integer('speaker_id');
-            $table->integer('type');
 
             $table->timestamps();
         });

@@ -49,16 +49,16 @@ class MyrequestController extends Controller
 
     public function update($id, Request $r) {
         $a = Myrequest::find($id);
-        $myrequest->fill($r->all()); 
+        $a->fill($r->all()); 
         #$myrequest->roles()->sync($r->user); 
-        $myrequest->save(); 
+        $a->save(); 
 
         return redirect()->route('request.index');
     }
 
     public function destroy($id) {
         $s = Myrequest::find($id);
-        $s->user()->detach();
+        #$s->user()->detach();
         $s->delete();
         return redirect()->route('request.index');
     }

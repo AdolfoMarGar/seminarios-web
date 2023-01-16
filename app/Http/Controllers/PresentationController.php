@@ -34,7 +34,9 @@ class PresentationController extends Controller
     }
 
     public function store(Request $r) {
-        Presentation::create($r->all());
+        $presentation = new Presentation($r->all());
+        $presentation->speaker()->attach($r->speaker);
+        $presentation->save();
         
         return redirect()->route('presentation.index');
     }
@@ -53,6 +55,7 @@ class PresentationController extends Controller
     public function update($id, Request $r) {
         $a = Presentation::find($id);
         $a->fill($r->all()); 
+        $a->speaker()->sync($r->speaker); 
         $a->save();
 
         return redirect()->route('presentation.index');
@@ -61,6 +64,7 @@ class PresentationController extends Controller
     public function destroy($id) {
         $s = Presentation::find($id);
         $s->delete();
+        $s->speaker()->detach();
         return redirect()->route('presentation.index');
     }
 }

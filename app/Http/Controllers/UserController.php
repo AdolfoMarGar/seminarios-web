@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\User;
+use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -22,9 +24,8 @@ class UserController extends Controller
         return view('user.form');
     }
 
-    public function store(User $r) {
+    public function store(Request $r) {
         $user = new User($r->all());
-        $user->myrequest()->attach($r->myrequest);
         $user->save();
 
         return redirect()->route('user.index');
@@ -36,10 +37,9 @@ class UserController extends Controller
         return view('user.form', array('user' => $user));
     }
 
-    public function update($id, User $r) {
-        $a = User::find($id);
+    public function update($id, Request $r) {
+        $user = User::find($id);
         $user->fill($r->all()); 
-        $user->roles()->sync($r->myrequest); 
         $user->save(); 
 
         return redirect()->route('user.index');
@@ -47,7 +47,6 @@ class UserController extends Controller
 
     public function destroy($id) {
         $s = User::find($id);
-        $s->myrequest()->detach();
         $s->delete();
         return redirect()->route('user.index');
     }

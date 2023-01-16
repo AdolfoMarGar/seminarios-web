@@ -23,8 +23,10 @@ class SpeakerController extends Controller
     }
 
     public function store(Request $r) {
-        Speaker::create($r->all());
-        
+        $speaker = new Speaker($r->all());
+        $speaker->presentation()->attach($r->presentation);
+        $speaker->save();
+
         return redirect()->route('speaker.index');
     }
 
@@ -36,6 +38,7 @@ class SpeakerController extends Controller
     public function update($id, Request $r) {
         $a = Speaker::find($id);
         $a->fill($r->all()); 
+        $a->presentation()->sync($r->presentation); 
         $a->save();
 
         return redirect()->route('speaker.index');
@@ -44,6 +47,7 @@ class SpeakerController extends Controller
     public function destroy($id) {
         $s = Speaker::find($id);
         $s->delete();
+        $s->presentation()->detach();
         return redirect()->route('speaker.index');
     }
 }

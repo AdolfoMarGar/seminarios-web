@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PresentationSeeder::class);
         $this->call(MyrequestSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(AdminSeeder::class);
+        $this->call(PresentationSpeakerSeeder::class);
 
         
     }

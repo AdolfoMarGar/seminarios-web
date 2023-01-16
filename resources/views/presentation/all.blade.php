@@ -15,7 +15,12 @@
             <td>subject:{{$p->subject}}</td>
             <td>dir:{{$p->dir}}</td>
             <td>year:{{$p->seminar->year}}</td>
-            <td>name speaker:{{$p->speaker->name}} {{$p->speaker->lastname}}</td>
+            <td>name speaker:</br>
+            @foreach ($p->speaker as $s)
+                {{$s->name}} {{$s->lastname}}</br>
+            @endforeach
+            </td>
+            
             <td>
                 <a href="{{route('presentation.edit', $p->id)}}">Modificar</a></td>
             <td>

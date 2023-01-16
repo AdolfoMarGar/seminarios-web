@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     {
         //
         DB::table('users')->insert([
+            'type' => '2',
             'username' => 'user1',
             'password' => '2005',
             'email' => 'asdfol@gmail.com',
@@ -25,12 +26,22 @@ class UserSeeder extends Seeder
             'region' => 'Badajoz',
         ]);
         DB::table('users')->insert([
+            'type' => '2',
             'username' => 'user2',
             'password' => '215641',
             'email' => 'yguasdop@gmail.com',
             'realname' => 'Maria',
             'lastname' => 'Fuet',
             'region' => 'Toledo',
+        ]);
+        DB::table('users')->insert([
+            'type' => '1',
+            'username' => 'root',
+            'password' => 'root',
+            'email' => 'null',
+            'realname' => 'null',
+            'lastname' => 'null',
+            'region' => 'null',
         ]);
 
     }

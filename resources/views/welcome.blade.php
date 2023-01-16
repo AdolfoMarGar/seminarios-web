@@ -28,7 +28,6 @@
                     <td><a href="{{route('presentation.index')}}">presentation</a></td>
                     <td><a href="{{route('speaker.index')}}">Speaker</a></td>
                     <td><a href="{{route('documents.index')}}">documents</a></td>
-                    <td><a href="{{route('admin.index')}}">admin</a></td>
                     <td><a href="{{route('request.index')}}">request</a></td>
                     <td><a href="{{route('user.index')}}">user</a></td>
                 </tr>

@@ -13,6 +13,7 @@
         <form action="{{ route('user.store') }}" method="POST">
     @endisset
         @csrf
+        type(1/2):<input type="text" name="type" value="{{$user->type ?? '' }}"><br>
         username:<input type="text" name="username" value="{{$user->username ?? '' }}"><br>
         password:<input type="text" name="password" value="{{$user->password ?? '' }}"><br>
         email:<input type="text" name="email" value="{{$user->email ?? '' }}"><br>

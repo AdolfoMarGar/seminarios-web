@@ -12,6 +12,7 @@
         <tr>
             <td>{{$user->id}}</td>
 
+            <td>{{$user->type}}</td>
             <td>{{$user->username}}</td>
             <td>{{$user->password}}</td>
             <td>{{$user->email}}</td>

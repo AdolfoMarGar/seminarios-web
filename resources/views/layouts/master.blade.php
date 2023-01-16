@@ -4,7 +4,7 @@
      </head>
      <body>
         @section('sidebar')
-        {{view('welcome')}}</br></br>
+        <a href="{{route('welcome')}}">Inicio</a></td>
 
         @show
 

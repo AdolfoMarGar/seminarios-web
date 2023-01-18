@@ -15,10 +15,10 @@
             <td>{{$user->username}}</td>
             <td>{{$user->password}}</td>
             @if ($user->type==2)
-                <td>{{$user->userData->email}}</td>
-                <td>{{$user->userData->realname}}</td>
-                <td>{{$user->userData->lastname}}</td>
-                <td>{{$user->userData->region}}</td>
+                <td>{{$user->userdata->email}}</td>
+                <td>{{$user->userdata->realname}}</td>
+                <td>{{$user->userdata->lastname}}</td>
+                <td>{{$user->userdata->region}}</td>
             @else
                 <td></td>
                 <td></td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Userdata;
 
 
 class UserController extends Controller
@@ -26,7 +27,11 @@ class UserController extends Controller
 
     public function store(Request $r) {
         $user = new User($r->all());
+        if($user->type==2){
+            $userdata = new Userdata($r->all());
+        }
         $user->save();
+        $userdata->save();
 
         return redirect()->route('user.index');
     }

@@ -9,6 +9,32 @@ use App\Models\Seminar;
 
 class DocumentsController extends Controller
 {
+    public function file() {
+       
+        return view('document.file');
+    }
+
+    public function fileUpload(Request $r){
+        
+
+        
+        $document = new Document();
+        $r->validate([
+            'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048'
+        ]);
+        if($r->file()) {
+            $fileName = time().'_'.$r->file->getClientOriginalName();
+            $filePath = 'prueba';
+            $r->file('file')->move($filePath, $fileName);
+            $document->dir = '/storage/' . $filePath;
+            $document->type = '1';
+            $document->seminar_id = '1';
+            $document->save();
+        }
+        return redirect()->route('documents.index');
+
+   }
+
     public function index() {
         $documentList = Document::all();
 

@@ -11,15 +11,21 @@
     @foreach ($userList as $user)
         <tr>
             <td>{{$user->id}}</td>
-
             <td>{{$user->type}}</td>
             <td>{{$user->username}}</td>
             <td>{{$user->password}}</td>
-            <td>{{$user->email}}</td>
-            <td>{{$user->realname}}</td>
-            <td>{{$user->lastname}}</td>
-            <td>{{$user->region}}</td>
-
+            @if ($user->type==2)
+                <td>{{$user->userData->email}}</td>
+                <td>{{$user->userData->realname}}</td>
+                <td>{{$user->userData->lastname}}</td>
+                <td>{{$user->userData->region}}</td>
+            @else
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            @endif
+            
             <td>
                 <a href="{{route('user.edit', $user->id)}}">Modificar</a></td>
             <td>
@@ -29,7 +35,7 @@
                     <input type="submit" value="Borrar">
                 </form>
             </td>
-        <br>
+        </tr>
     @endforeach
     </table>
 @endsection

@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Document;
 
 class FileController extends Controller
 {
     public function fileUpload(Request $r){
-        $req->validate([
-        'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048'
+        $r->validate([
+            'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048'
         ]);
-        $fileModel = new File;
-        if($req->file()) {
-            $fileName = time().'_'.$req->file->getClientOriginalName();
-            $filePath = $req->file('file')->storeAs('uploads', $fileName, 'public');
-            $fileModel->name = time().'_'.$req->file->getClientOriginalName();
+        $document = new Document;
+        if($r->file()) {
+            $fileName = time().'_'.$r->document->getClientOriginalName();
+            $filePath = $r->file('file')->storeAs('prueba', $fileName, 'public');
+            $fileModel->name = time().'_'.$r->document->getClientOriginalName();
             $fileModel->file_path = '/storage/' . $filePath;
             $fileModel->save();
             return back()

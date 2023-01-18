@@ -32,3 +32,7 @@ Route::get('request/delete/{request}', 'MyrequestController@destroy')->name('req
 
 Route::resource('user', 'UserController');
 Route::get('user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');
+
+Route::get('file', 'DocumentsController@file')->name('document.file');
+Route::post('fileUpload', 'DocumentsController@fileUpload')->name('document.fileUpload');
+

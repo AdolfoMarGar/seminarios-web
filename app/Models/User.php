@@ -14,7 +14,10 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     public function request(){
-        return $this->belongsTo(Myrequest::class);
+        return $this->hasMany(Myrequest::class);
+    }
+    public function userdata(){
+        return $this->belongsTo(Userdata::class);
     }
 
     /**
@@ -22,7 +25,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = array('type','username', 'password', 'email', 'realname', 'lastname', 'region');
+    protected $fillable = array('type','username', 'password', 'userData_id');
 
     /**
      * The attributes that should be hidden for serialization.

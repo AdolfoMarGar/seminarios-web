@@ -20,28 +20,20 @@ class UserSeeder extends Seeder
             'type' => '2',
             'username' => 'user1',
             'password' => '2005',
-            'email' => 'asdfol@gmail.com',
-            'realname' => 'Juan',
-            'lastname' => 'Gomiz',
-            'region' => 'Badajoz',
+            'userdata_id' => '1',
         ]);
         DB::table('users')->insert([
             'type' => '2',
             'username' => 'user2',
             'password' => '215641',
-            'email' => 'yguasdop@gmail.com',
-            'realname' => 'Maria',
-            'lastname' => 'Fuet',
-            'region' => 'Toledo',
+            'userdata_id' => '2',
         ]);
         DB::table('users')->insert([
             'type' => '1',
             'username' => 'root',
             'password' => 'root',
-            'email' => 'null',
-            'realname' => 'null',
-            'lastname' => 'null',
-            'region' => 'null',
+            'userdata_id' => '-1',
+
         ]);
 
     }

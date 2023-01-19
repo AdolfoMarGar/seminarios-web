@@ -86,24 +86,34 @@ class DocumentsController extends Controller
         $a = Document::find($id);
         $a->fill($r->all()); 
         if(isset($r->file)){
+            $this->fileDelete($a->dir);
             $dir=$this->fileUpload($r);
             $a->dir=$dir;
         }
-    
         $a->save();
-        //$r no almacena el archivo si se quiere subir otro. no se si por put o que
-        //Comprobado con dd. Si no se envia archivo no entra en if y furula
-        //return redirect()->route('documents.index');
+     
+        return redirect()->route('documents.index');
     }
 
     public function destroy($id) {
         $s = Document::find($id);
         $path = $s->dir;
+
+        if($this->fileDelete($path)){
+            redirect()->route('documents.index');
+            $s->delete();
+        }else{
+            echo("ERRORRRRRR");
+        }
+    }
+
+    public function fileDelete($path){
         if (File::exists($path)) {
             File::delete($path);
-            $s->delete();
-            return redirect()->route('documents.index');
+            return true;
+        }else{
+            return false;
         }
-        echo("ERRORRRRRR");
+
     }
 }

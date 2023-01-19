@@ -7,7 +7,7 @@
 
 @section("content")
     @isset($document)
-        <form action="{{ route('documents.update', ['document' => $document->id]) }}" method="POST">
+        <form action="{{ route('documents.update', ['document' => $document->id]) }}" method="POST"enctype="multipart/form-data" >
         @method("PUT")
     @else        
         <form action="{{ route('documents.store') }}" method="POST" enctype="multipart/form-data">
@@ -50,7 +50,6 @@
 
         </select>
     </br>
-        Dir:<input type="text" name="dir" value="{{$document->dir ?? '' }}"><br>
         <select name="seminar_id">
             @foreach($seminarList as $s)
                 <option  

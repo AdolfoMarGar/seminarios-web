@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Models\Document;
 use App\Models\Seminar;
@@ -15,24 +16,30 @@ class DocumentsController extends Controller
     }
 
     public function fileUpload(Request $r){
-        
-
-        
         $document = new Document();
         $r->validate([
             'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048'
         ]);
         if($r->file()) {
             $fileName = time().'_'.$r->file->getClientOriginalName();
-            $filePath = 'prueba';
-            $r->file('file')->move($filePath, $fileName);
-            $document->dir = '/storage/' . $filePath;
-            $document->type = '1';
-            $document->seminar_id = '1';
-            $document->save();
-        }
-        return redirect()->route('documents.index');
 
+            switch ($r->type) {
+                case -1:
+                    $filePath = 'temp';
+                    break;
+                case 1:
+                    $filePath = 'pdf';
+                    break;
+                case 2:
+                    $filePath = 'ppt';
+                    break;
+                case 3:
+                    $filePath = 'photo';
+                    break;
+            }
+            $r->file('file')->move($filePath, $fileName);
+            return $filePath."/".$fileName;
+        }
    }
 
     public function index() {
@@ -57,8 +64,13 @@ class DocumentsController extends Controller
     }
 
     public function store(Request $r) {
-        Document::create($r->all());
-
+        $dir = $this->fileUpload($r);
+        $doc = new Document();
+        $doc->type = $r->type;
+        $doc->dir = $dir;
+        $doc->seminar_id = $r->seminar_id;
+        $doc->save();
+        
         return redirect()->route('documents.index');
     }
 
@@ -73,14 +85,25 @@ class DocumentsController extends Controller
     public function update($id, Request $r) {
         $a = Document::find($id);
         $a->fill($r->all()); 
+        if(isset($r->file)){
+            $dir=$this->fileUpload($r);
+            $a->dir=$dir;
+        }
+    
         $a->save();
-
-        return redirect()->route('documents.index');
+        //$r no almacena el archivo si se quiere subir otro. no se si por put o que
+        //Comprobado con dd. Si no se envia archivo no entra en if y furula
+        //return redirect()->route('documents.index');
     }
 
     public function destroy($id) {
         $s = Document::find($id);
-        $s->delete();
-        return redirect()->route('documents.index');
+        $path = $s->dir;
+        if (File::exists($path)) {
+            File::delete($path);
+            $s->delete();
+            return redirect()->route('documents.index');
+        }
+        echo("ERRORRRRRR");
     }
 }

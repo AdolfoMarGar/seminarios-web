@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('presentations', function (Blueprint $table) {
             $table->id();
             $table->string('subject');
-            $table->string('dir');
             $table->integer('seminar_id');
 
             $table->timestamps();

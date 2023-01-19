@@ -19,13 +19,11 @@ class PresentationSeeder extends Seeder
 
         DB::table('presentations')->insert([
             'subject' => 'Proximos fitosanitarios para invernadero',
-            'dir' => 'null',
             'seminar_id' => '1',
         ]);
 
         DB::table('presentations')->insert([
             'subject' => 'Tratamientos fertilizantes para suelos insalubres',
-            'dir' => 'null',
             'seminar_id' => '2',
         ]);
 

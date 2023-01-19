@@ -100,11 +100,14 @@ class DocumentsController extends Controller
         $path = $s->dir;
 
         if($this->fileDelete($path)){
-            redirect()->route('documents.index');
             $s->delete();
+            return redirect()->route('documents.index');
+
         }else{
             echo("ERRORRRRRR");
         }
+        
+
     }
 
     public function fileDelete($path){

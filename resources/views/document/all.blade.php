@@ -11,6 +11,11 @@
     @foreach ($documentList as $d)
         <tr>
             <td>{{$d->seminar->year}}, {{$d->seminar->location}}</td>
+            @if (isset($d->presentation))
+                <td>{{$d->presentation->subject}}</td>
+            @else
+                <td></td>
+            @endif
             <td>{{$d->type}}</td>
             <td>{{$d->dir}}</td>
             

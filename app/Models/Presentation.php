@@ -9,6 +9,9 @@ class Presentation extends Model
 {
     protected $fillable = array('id','subject','dir', 'seminar_id');  
 
+    public function documents(){
+        return $this->hasMany(Document::class);
+    }
     public function seminar(){
         return $this->belongsTo(Seminar::class,);
     }

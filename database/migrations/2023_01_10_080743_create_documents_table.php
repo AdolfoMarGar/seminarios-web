@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('dir');
             $table->timestamps();
             $table->integer('seminar_id');
+            $table->integer('presentation_id')->nullable();
                
         });
     }

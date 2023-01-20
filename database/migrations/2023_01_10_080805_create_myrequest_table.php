@@ -16,14 +16,10 @@ return new class extends Migration
         Schema::create('myrequests', function (Blueprint $table) {
             $table->id();
             $table->string('text');
-            $table->integer('year');
-            $table->integer('type');
-            $table->string('dir');
             $table->integer('user_id');
-
+            $table->integer('document_id');
 
             $table->timestamps();
-            
         });
     }
 

@@ -15,5 +15,9 @@ class Document extends Model
     public function presentation(){
         return $this->belongsTo(Presentation::class);
     }
+    public function myrequest() {
+        return $this->hasOne(Myrequest::class); 
+    }
+    
     use HasFactory;
 }

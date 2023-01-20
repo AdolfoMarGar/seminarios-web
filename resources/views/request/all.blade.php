@@ -13,11 +13,14 @@
             <td>{{$myrequest->id}}</td>
 
             <td>{{$myrequest->text}}</td>
-            <td>{{$myrequest->year}}</td>
-            <td>{{$myrequest->type}}</td>
-            <td>{{$myrequest->dir}}</td>
+            <td>{{$myrequest->document->seminar->year}}</td>
+            @if (isset($myrequest->document->presentation))
+                <td>{{$myrequest->document->presentation->subject}}</td> 
+            @else
+                <td></td>
+            @endif
+            <td>{{$myrequest->document->type}}</td>
             <td>{{$myrequest->user->username}}</td>
-
 
             <td>
                 <a href="{{route('request.edit', $myrequest->id)}}">Modificar</a></td>

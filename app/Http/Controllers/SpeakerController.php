@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Speaker;
-class SpeakerController extends Controller
-{
+class SpeakerController extends Controller{
     
     public function index() {
         $speakerList = Speaker::all();
+
         return view('speaker.all', ['speakerList'=>$speakerList]);
     }
 
@@ -32,6 +32,7 @@ class SpeakerController extends Controller
 
     public function edit($id) {
         $speaker = Speaker::find($id);
+
         return view('speaker.form', array('speaker' => $speaker));
     }
 
@@ -48,6 +49,7 @@ class SpeakerController extends Controller
         $s = Speaker::find($id);
         $s->delete();
         $s->presentation()->detach();
+        
         return redirect()->route('speaker.index');
     }
 }

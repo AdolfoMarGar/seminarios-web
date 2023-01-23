@@ -16,9 +16,24 @@
             @else
                 <td></td>
             @endif
-            <td>{{$d->type}}</td>
+            <td>
+                @switch($d->type)
+                    @case(-1)
+                        TEMPORAL
+                        @break 
+                    @case(1)
+                        PDF
+                        @break
+                    @case(2)
+                        PPT
+                        @break
+                    @case(3)
+                        Photo
+                        @break
+                    @default
+                @endswitch
+            </td>
             <td>{{$d->dir}}</td>
-            
             <td>
                 <a href="{{route('documents.edit', $d->id)}}">Modificar</a></td>
             <td>
@@ -28,7 +43,7 @@
                     <input type="submit" value="Borrar">
                 </form>
             </td>
-        <br>
+        </br>
     @endforeach
     </table>
 @endsection

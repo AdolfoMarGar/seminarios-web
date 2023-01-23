@@ -4,23 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration{
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->integer('type');
             $table->string('dir');
-            $table->timestamps();
             $table->integer('seminar_id');
             $table->integer('presentation_id')->nullable();
-               
+
+            $table->timestamps();
         });
     }
 
@@ -29,8 +27,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down(){
         Schema::dropIfExists('documents');
     }
 };

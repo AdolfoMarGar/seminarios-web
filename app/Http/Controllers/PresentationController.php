@@ -18,7 +18,7 @@ class PresentationController extends Controller
 
     public function show($id) {
         $s = Presentation::find($id);
-        $data['presentation'] = $s;
+        
         return view('presentation.show', $data);
     }
 
@@ -28,7 +28,6 @@ class PresentationController extends Controller
         $data["seminarList"] = $seminarList;
         $data["speakerList"] = $speakerList;
         $data["presentation"] = null;
-
 
         return view('presentation.form', $data);
     }
@@ -45,9 +44,10 @@ class PresentationController extends Controller
         $presentation = Presentation::find($id);
         $seminarList = Seminar::all();
         $speakerList = Speaker::all();
+
+        $data["presentation"] = $presentation;
         $data["seminarList"] = $seminarList;
         $data["speakerList"] = $speakerList;
-        $data["presentation"] = $presentation;
 
         return view('presentation.form', $data);
     }
@@ -65,6 +65,7 @@ class PresentationController extends Controller
         $s = Presentation::find($id);
         $s->delete();
         $s->speaker()->detach();
+        
         return redirect()->route('presentation.index');
     }
 }

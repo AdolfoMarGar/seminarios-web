@@ -6,16 +6,13 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SeminarTableSeeder extends Seeder
-{
+class SeminarTableSeeder extends Seeder{
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
-        //
+    public function run(){
         DB::table('seminars')->insert([
             'year' => '2005',
             'location' => 'Almería',

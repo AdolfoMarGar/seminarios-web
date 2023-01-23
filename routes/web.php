@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome')->name('welcome');
+
 Route::resource('seminar', 'SeminarController');
-// Añadimos una ruta NO ESTÁNDAR para borrar productos mediante GET
 Route::get('seminar/delete/{seminar}', 'SeminarController@destroy')->name('seminar.myDestroy');
+// Añadimos una ruta NO ESTÁNDAR para borrar productos mediante GET
 
 Route::resource('documents', 'DocumentsController');
 Route::get('documents/delete/{documents}', 'DocumentsController@destroy')->name('documents.myDestroy');

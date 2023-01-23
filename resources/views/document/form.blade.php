@@ -53,13 +53,27 @@
         <select name="seminar_id">
             @foreach($seminarList as $s)
                 <option  
-                @isset($presentation)
-                    @if ($presentation->seminar_id==$s->id)
+                @isset($document)
+                    @if ($document->seminar_id==$s->id)
                         selected 
                     @endif 
                 @endisset
                 
                  value="{{$s->id}}">{{$s->year}}, {{$s->location}}</option>
+            @endforeach
+        </select>
+    </br>
+        <select name="presentation_id">
+            <option value="{{null}}">Ninguno</option>
+            @foreach($presentationList as $s)
+                <option  
+                @isset($document)
+                    @if ($document->presentation_id==$s->id)
+                        selected 
+                    @endif 
+                @endisset
+                
+                value="{{$s->id}}">{{$s->subject}}</option>
             @endforeach
         </select>
     </br>

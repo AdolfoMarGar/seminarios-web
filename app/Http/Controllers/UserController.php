@@ -7,17 +7,18 @@ use App\Models\User;
 use App\Models\Userdata;
 
 
-class UserController extends Controller
-{
+class UserController extends Controller{
     
     public function index() {
         $userList = User::all();
+        
         return view('user.all', ['userList'=>$userList]);
     }
 
     public function show($id) {
         $s = User::find($id);
         $data['user'] = $s;
+        
         return view('user.show', $data);
     }
 
@@ -45,7 +46,7 @@ class UserController extends Controller
 
     public function update($id, Request $r) {
         $user = User::find($id);
-        if($user->userdata_id!=-1){
+        if($user->userdata_id!=null){
             $userdata = Userdata::find($user->userdata_id);
             $userdata->fill($r->all()); 
             $userdata->save(); 
@@ -58,12 +59,12 @@ class UserController extends Controller
 
     public function destroy($id) {
         $s = User::find($id);
-        if($s->userdata_id!=-1){
+        if($s->userdata_id!=null){
             $userdata = Userdata::find($s->userdata_id);
             $userdata->delete();
         }
         $s->delete();
-        $s->delete();
+
         return redirect()->route('user.index');
     }
 }

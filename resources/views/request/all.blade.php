@@ -19,7 +19,21 @@
             @else
                 <td></td>
             @endif
-            <td>{{$myrequest->document->type}}</td>
+            <td>
+                @switch($myrequest->type)
+                    @case(1)
+                        PDF
+                        @break
+                    @case(2)
+                        PPT
+                        @break
+                    @case(3)
+                        Photo
+                        @break
+                    @default
+                        
+                @endswitch
+            </td>
             <td>{{$myrequest->user->username}}</td>
 
             <td>

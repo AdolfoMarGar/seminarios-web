@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Seminar;
 
-class SeminarController extends Controller
-{
+class SeminarController extends Controller{
+
     public function index() {
         $seminarList = Seminar::all();
+
         return view('seminar.all', ['seminarList'=>$seminarList]);
     }
 
     public function show($id) {
         $s = Seminar::find($id);
-        $data['seminar'] = $s;
+
         return view('seminar.show', $data);
     }
 
@@ -30,6 +31,7 @@ class SeminarController extends Controller
 
     public function edit($id) {
         $seminar = Seminar::find($id);
+
         return view('seminar.form', array('seminar' => $seminar));
     }
 
@@ -44,6 +46,7 @@ class SeminarController extends Controller
     public function destroy($id) {
         $s = Seminar::find($id);
         $s->delete();
+        
         return redirect()->route('seminar.index');
     }
 }

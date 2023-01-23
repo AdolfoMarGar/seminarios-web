@@ -12,5 +12,6 @@ class Speaker extends Model
     public function presentation(){
         return $this->belongsToMany(Presentation::class);
     }
+    
     use HasFactory;
 }

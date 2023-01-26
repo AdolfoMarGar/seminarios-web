@@ -38,10 +38,9 @@ class MyrequestController extends Controller
 
     public function store(Request $r) {
         $myrequest = new Myrequest($r->all());
-        $doc = new Document();
-        $myrequest->document_id=$doc->storeRequest($r);
+        $myrequest->document_id = $this->storeDocument($r);
         $myrequest->save();
-
+ 
         return redirect()->route('request.index');
     }
 
@@ -60,6 +59,7 @@ class MyrequestController extends Controller
 
     public function update($id, Request $r) {
         $a = Myrequest::find($id);
+        $this->updateDocument($r, $a->document_id);
         $a->fill($r->all()); 
         $a->save(); 
 
@@ -68,8 +68,49 @@ class MyrequestController extends Controller
 
     public function destroy($id) {
         $s = Myrequest::find($id);
+        $this->destroyDocument($s->document_id);
         $s->delete();
         return redirect()->route('request.index');
+    }
+
+    public function storeDocument(Request $r) {
+        $r->type=-1;
+        $dir = Document::fileUpload($r);
+        if(!$dir){
+            echo"error";
+            return null;
+        }else{
+            $doc = new Document($r->all());
+            $doc->dir = $dir;
+            $doc->save();
+            return $doc->id;
+        }
+    }
+
+    public function destroyDocument($id){
+        $s = Document::find($id);
+        $path = $s->dir;
+
+        if(Document::fileDelete($path)){
+            $s->delete();
+            return true;
+        }else{
+            echo("ERRORRRRRR");
+            return false;
+        }
+    }
+
+    public function updateDocument(Request $r, $id){
+        $a = Document::find($id);
+        $a->fill($r->all()); 
+        $r->type = -1;
+        if(isset($r->file)){
+            Document::fileDelete($a->dir);
+            $dir=Document::fileUpload($r);
+            $a->dir=$dir;
+        }
+        
+        $a->save();
     }
     
 }

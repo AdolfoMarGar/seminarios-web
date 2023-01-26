@@ -61,7 +61,7 @@
         @foreach($presentationList as $p)
             <option  
             @isset($myrequest)
-                @if ($myrequest->presentation_id==$s->id)
+                @if ($myrequest->document->presentation_id==$p->id)
                     selected 
                 @endif 
             @endisset

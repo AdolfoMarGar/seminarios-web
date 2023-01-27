@@ -35,7 +35,8 @@
                 @endswitch
             </td>
             <td>{{$myrequest->user->username}}</td>
-
+            <td>
+                <a href="{{route('request.show', $myrequest->id)}}">Gestionar</a></td>
             <td>
                 <a href="{{route('request.edit', $myrequest->id)}}">Modificar</a></td>
             <td>

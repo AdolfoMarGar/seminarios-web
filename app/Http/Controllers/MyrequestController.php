@@ -10,9 +10,7 @@ use App\Models\Presentation;
 use App\Models\User;
 
 
-class MyrequestController extends Controller
-{
-    
+class MyrequestController extends Controller{
     public function index() {
         $myrequestList = Myrequest::all();
         return view('request.all', ['myrequestList'=>$myrequestList]);
@@ -74,7 +72,6 @@ class MyrequestController extends Controller
     }
 
     public function storeDocument(Request $r) {
-        $r->type=-1;
         $dir = Document::fileUpload($r);
         if(!$dir){
             echo"error";
@@ -82,6 +79,7 @@ class MyrequestController extends Controller
         }else{
             $doc = new Document($r->all());
             $doc->dir = $dir;
+            $doc->type=-1;
             $doc->save();
             return $doc->id;
         }
@@ -113,4 +111,17 @@ class MyrequestController extends Controller
         $a->save();
     }
     
+    public function acept($id){
+        $myr = Myrequest::find($id);
+        $doc = Document::find($myr->document_id);
+
+        $dir =  Document::fileMove($doc->dir, $doc->type, $myr->type);
+        $doc->dir = $dir;
+        $doc->type = $myr->type;
+
+        $doc->save();
+        $myr->delete();
+
+        return redirect()->route('request.index');
+    }
 }

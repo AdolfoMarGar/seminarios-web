@@ -80,6 +80,7 @@ class Document extends Model{
                     break;
             }
 
+
             switch ($typeBefore) {
                 case -1:
                     $pathFinal= str_replace("TEMP", $dir, $path);

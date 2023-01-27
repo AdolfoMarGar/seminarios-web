@@ -30,6 +30,7 @@ Route::get('presentation/delete/{presentation}', 'PresentationController@destroy
 
 Route::resource('request', 'MyrequestController');
 Route::get('request/delete/{request}', 'MyrequestController@destroy')->name('request.myDestroy');
+Route::get('request/acept/{request}', 'MyrequestController@acept')->name('request.acept');
 
 Route::resource('user', 'UserController');
 Route::get('user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');

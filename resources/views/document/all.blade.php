@@ -3,7 +3,10 @@
 
 
 @section("content")
-    <a class="btn btn-primary" href="{{ route('documents.create') }}">Nuevo</a>
+<div class="mx-4">
+    <a class="btn btn-primary" href="{{ route('documents.create') }}">Insertar documento</a>
+</br> </br>
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -56,11 +59,11 @@
                             <input class="btn btn-primary" type="submit" value="Borrar">
                         </form>
                     </td>
-                </br>
                 @php
                     $cont = $cont+1;
                 @endphp
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

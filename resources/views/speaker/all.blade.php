@@ -6,7 +6,9 @@
 @section("header", "Administración de speaker")
 
 @section("content")
-    <a class="btn btn-primary"href="{{ route('speaker.create') }}">Nuevo</a>
+<div class="mx-4">
+
+    <a class="btn btn-primary"href="{{ route('speaker.create') }}">Insertar ponente</a></br></br>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -43,4 +45,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

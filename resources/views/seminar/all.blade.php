@@ -2,6 +2,11 @@
 @extends("layouts.mainlayout")
 
 @section("content")
+<div class="mx-4">
+    <a class="btn btn-primary" href="{{ route('seminar.create') }}">Insertar seminario</a>
+    </br> </br>
+
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -37,8 +42,6 @@
             @endforeach
         </tbody>
     </table>
-    <div class="row align-items-end">
-        <a class="col btn btn-primary" href="{{ route('seminar.create') }}">Insertar nuevo seminario</a>
-    </div>
+</div>
 
 @endsection

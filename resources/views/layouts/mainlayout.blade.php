@@ -5,7 +5,6 @@
  </head>
  <body>
 @include('layouts.nav')
-@include('layouts.header')
 @yield('content')
 @include('layouts.footer')
  </body>

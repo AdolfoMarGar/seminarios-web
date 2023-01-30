@@ -6,7 +6,9 @@
 @section("header", "Administración de presentation")
 
 @section("content")
-    <a class="btn btn-primary" href="{{ route('presentation.create') }}">Nuevo</a>
+<div class="mx-4">
+    <a class="btn btn-primary" href="{{ route('presentation.create') }}">Insertar ponencia</a>
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -28,7 +30,7 @@
                     <td>{{$p->seminar->year}}, {{$p->seminar->location}}</td>
                     <td>
                         @foreach ($p->speaker as $s)
-                            {{$s->name}} {{$s->lastname}}</br>
+                            {{$s->name}} {{$s->lastname}}.</br>
                         @endforeach
                     </td>
                     
@@ -48,4 +50,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

@@ -7,7 +7,8 @@
 
 @section("content")
 <div class="mx-5">
-    <a class="btn btn-primary"  href="{{ route('user.create') }}">Nuevo</a>
+    
+    <a class="btn btn-primary"  href="{{ route('user.create') }}">Insertar usuario</a></br></br>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>

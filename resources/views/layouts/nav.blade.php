@@ -5,13 +5,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="navbar-collapse collapse" id="navbarsExample03" style="">
+    <div class="navbar-collapse collapse" id="" style="">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a  class="nav-link" href="{{route('seminar.index')}}">Seminarios</a>
         </li>
         <li class="nav-item">
-            <a  class="nav-link" href="{{route('presentation.index')}}">Presentaciones</a>
+            <a  class="nav-link" href="{{route('presentation.index')}}">Ponencia</a>
         </li>
         <li class="nav-item">
             <a  class="nav-link" href="{{route('speaker.index')}}">Ponentes</a>
@@ -29,3 +29,4 @@
       
     </div>
   </nav>
+</br>

@@ -1,5 +1,5 @@
 
-@extends("layouts.master")
+@extends("layouts.mainlayout")
 
 @section("title", "Inserción de seminarios")
 

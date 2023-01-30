@@ -1,37 +1,51 @@
 
-@extends("layouts.master")
+@extends("layouts.mainlayout")
 
 @section("title", "Administración de presentation")
 
 @section("header", "Administración de presentation")
 
 @section("content")
-    <a href="{{ route('presentation.create') }}">Nuevo</a>
-    <table border='1'>
-    @foreach($presentationList as $p)
-        <tr>
-            <td>{{$p->id}}</td>
-
-            <td>subject:{{$p->subject}}</td>
-            <td>dir:{{$p->dir}}</td>
-            <td>year:{{$p->seminar->year}}</td>
-            <td>name speaker:</br>
-            @foreach ($p->speaker as $s)
-                {{$s->name}} {{$s->lastname}}</br>
+    <a class="btn btn-primary" href="{{ route('presentation.create') }}">Nuevo</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tema</th>
+              <th scope="col">Seminario</th>
+              <th scope="col">Ponentes</th>
+              <th scope="col" colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @php
+                $cont = 1;
+            @endphp
+            @foreach($presentationList as $p)
+                <tr>
+                    <th scope="row">{{$cont}}</td>
+                    <td>{{$p->subject}}</td>
+                    <td>{{$p->seminar->year}}, {{$p->seminar->location}}</td>
+                    <td>
+                        @foreach ($p->speaker as $s)
+                            {{$s->name}} {{$s->lastname}}</br>
+                        @endforeach
+                    </td>
+                    
+                    <td>
+                        <a class="btn btn-primary" href="{{route('presentation.edit', $p->id)}}">Modificar</a></td>
+                    <td>
+                        <form action = "{{route('presentation.destroy', $p->id)}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <input class="btn btn-primary" type="submit" value="Borrar">
+                        </form>
+                    </td>
+                <br>
+                @php
+                    $cont = $cont+1;
+                @endphp
             @endforeach
-            </td>
-            
-            <td>
-                <a href="{{route('presentation.edit', $p->id)}}">Modificar</a></td>
-            <td>
-                <form action = "{{route('presentation.destroy', $p->id)}}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                    <input type="submit" value="Borrar">
-                </form>
-            </td>
-        <br>
-
-    @endforeach
+        </tbody>
     </table>
 @endsection

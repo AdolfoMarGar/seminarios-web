@@ -1,30 +1,46 @@
 
-@extends("layouts.master")
+@extends("layouts.mainlayout")
 
 @section("title", "Administración de speaker")
 
 @section("header", "Administración de speaker")
 
 @section("content")
-    <a href="{{ route('speaker.create') }}">Nuevo</a>
-    <table border='1'>
-    @foreach ($speakerList as $speaker)
-        <tr>
-            <td>{{$speaker->id}}</td>
+    <a class="btn btn-primary"href="{{ route('speaker.create') }}">Nuevo</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Localizacion</th>
+              <th scope="col" colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @php
+                $cont = 1;
+            @endphp    
+            @foreach ($speakerList as $speaker)
+                <tr>
+                    <th scope="row">{{$cont}}</td>
 
-            <td>{{$speaker->name}}</td>
-            <td>{{$speaker->lastname}}</td>
-            <td>{{$speaker->region}}</td>
-            <td>
-                <a href="{{route('speaker.edit', $speaker->id)}}">Modificar</a></td>
-            <td>
-                <form action = "{{route('speaker.destroy', $speaker->id)}}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                    <input type="submit" value="Borrar">
-                </form>
-            </td>
-        <br>
-    @endforeach
+                    <td>{{$speaker->name}}</td>
+                    <td>{{$speaker->lastname}}</td>
+                    <td>{{$speaker->region}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{{route('speaker.edit', $speaker->id)}}">Modificar</a></td>
+                    <td>
+                        <form action = "{{route('speaker.destroy', $speaker->id)}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <input class="btn btn-primary" type="submit" value="Borrar">
+                        </form>
+                    </td>
+                @php
+                    $cont = $cont+1;
+                @endphp
+            @endforeach
+        </tbody>
     </table>
 @endsection

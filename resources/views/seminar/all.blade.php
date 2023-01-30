@@ -1,30 +1,44 @@
 
-@extends("layouts.master")
-
-@section("title", "Administración de seminario")
-
-@section("header", "Administración de seminario")
+@extends("layouts.mainlayout")
 
 @section("content")
-    <a href="{{ route('seminar.create') }}">Nuevo</a>
-    <table border='1'>
-    @foreach ($seminarList as $seminar)
-        <tr>
-            <td>{{$seminar->id}}</td>
-
-            <td>{{$seminar->year}}</td>
-            <td>{{$seminar->location}}</td>
-            <td>{{$seminar->hosts}}</td>
-            <td>
-                <a href="{{route('seminar.edit', $seminar->id)}}">Modificar</a></td>
-            <td>
-                <form action = "{{route('seminar.destroy', $seminar->id)}}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                    <input type="submit" value="Borrar">
-                </form>
-            </td>
-        <br>
-    @endforeach
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Año</th>
+              <th scope="col">Lugar</th>
+              <th scope="col">Hosts</th>
+              <th scope="col" colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @php
+                $cont = 1;
+            @endphp
+            @foreach ($seminarList as $seminar)
+                <tr>
+                    <th scope="row">{{$cont}}</td>
+                    <td>{{$seminar->year}}</td>
+                    <td>{{$seminar->location}}</td>
+                    <td>{{$seminar->hosts}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{{route('seminar.edit', $seminar->id)}}">Modificar</a></td>
+                    <td>
+                        <form action = "{{route('seminar.destroy', $seminar->id)}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <input class="btn btn-primary" type="submit" value="Borrar">
+                        </form>
+                    </td>
+                @php
+                    $cont = $cont+1;
+                @endphp
+            @endforeach
+        </tbody>
     </table>
+    <div class="row align-items-end">
+        <a class="col btn btn-primary" href="{{ route('seminar.create') }}">Insertar nuevo seminario</a>
+    </div>
+
 @endsection

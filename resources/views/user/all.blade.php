@@ -1,41 +1,67 @@
 
-@extends("layouts.master")
+@extends("layouts.mainlayout")
 
 @section("title", "Administración de userio")
 
 @section("header", "Administración de userio")
 
 @section("content")
-    <a href="{{ route('user.create') }}">Nuevo</a>
-    <table border='1'>
-    @foreach ($userList as $user)
-        <tr>
-            <td>{{$user->id}}</td>
-            <td>{{$user->type}}</td>
-            <td>{{$user->username}}</td>
-            <td>{{$user->password}}</td>
-            @if ($user->type==2)
-                <td>{{$user->userdata->email}}</td>
-                <td>{{$user->userdata->realname}}</td>
-                <td>{{$user->userdata->lastname}}</td>
-                <td>{{$user->userdata->region}}</td>
-            @else
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            @endif
-            
-            <td>
-                <a href="{{route('user.edit', $user->id)}}">Modificar</a></td>
-            <td>
-                <form action = "{{route('user.destroy', $user->id)}}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                    <input type="submit" value="Borrar">
-                </form>
-            </td>
-        </tr>
-    @endforeach
+<div class="mx-5">
+    <a class="btn btn-primary"  href="{{ route('user.create') }}">Nuevo</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Contraseña</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Localidad</th>
+              <th scope="col" colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @php
+                $cont = 1;
+            @endphp    
+            @foreach ($userList as $user)
+                <tr>
+                    <th scope="row">{{$cont}}</td>
+                    <td>
+                        @if ($user->type==1)
+                            Admin
+                        @else
+                            Normal    
+                        @endif
+                    </td>
+                    <td>{{$user->username}}</td>
+                    <td>{{$user->password}}</td>
+                    @if ($user->type==2)
+                        <td>{{$user->userdata->email}}</td>
+                        <td>{{$user->userdata->lastname}}, {{$user->userdata->realname}}</td>
+                        <td>{{$user->userdata->region}}</td>
+                    @else
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    @endif
+                    
+                    <td>
+                        <a class="btn btn-primary" href="{{route('user.edit', $user->id)}}">Modificar</a></td>
+                    <td>
+                        <form action = "{{route('user.destroy', $user->id)}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <input class="btn btn-primary" type="submit" value="Borrar">
+                        </form>
+                    </td>
+                </tr>
+                @php
+                        $cont = $cont+1;
+                @endphp 
+            @endforeach
+        </tbody>
     </table>
+<div>
 @endsection

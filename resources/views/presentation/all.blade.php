@@ -7,7 +7,6 @@
 
 @section("content")
 <div class="mx-4">
-    <a class="btn btn-primary" href="{{ route('presentation.create') }}">Insertar ponencia</a>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -30,7 +29,7 @@
                     <td>{{$p->seminar->year}}, {{$p->seminar->location}}</td>
                     <td>
                         @foreach ($p->speaker as $s)
-                            {{$s->name}} {{$s->lastname}}.</br>
+                            {{$s->name}} {{$s->lastname}}.
                         @endforeach
                     </td>
                     
@@ -43,11 +42,15 @@
                             <input class="btn btn-primary" type="submit" value="Borrar">
                         </form>
                     </td>
-                <br>
                 @php
                     $cont = $cont+1;
                 @endphp
             @endforeach
+            <tr>
+                <th scope="col" colspan="6">
+                    <a class="btn btn-primary" href="{{ route('presentation.create') }}">Insertar ponencia</a>
+                </th>
+            </tr>
         </tbody>
     </table>
 </div>

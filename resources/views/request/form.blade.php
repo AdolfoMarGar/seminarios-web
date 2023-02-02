@@ -6,85 +6,121 @@
 @section("header", "Inserción de seminarios")
 
 @section("content")
-    @isset($myrequest)
-        <form action="{{ route('request.update', ['request' => $myrequest->id]) }}" method="POST" enctype="multipart/form-data">
-        @method("PUT")
-    @else
-        <form action="{{ route('request.store') }}" method="POST" enctype="multipart/form-data">
-    @endisset
-        @csrf
-        Text:<input type="text" name="text" value="{{$myrequest->text ?? '' }}"><br>
-        Type:
-        <select name="type">
-            @isset($myrequest)
-                <option  
-                    @if($myrequest->type==1)
-                            selected 
-                    @endif 
-                value="1">pdf</option>
-                <option  
-                    @if($myrequest->type==2)
-                            selected 
-                    @endif 
-                value="2">ppt</option>
-                <option  
-                    @if($myrequest->type==3)
-                            selected 
-                    @endif 
-                value="3">photo</option>
+<div class="mx-4">
+    <table class="table table-bordered table-striped">
+        @isset($myrequest)
+            <form action="{{ route('request.update', ['request' => $myrequest->id]) }}" method="POST" enctype="multipart/form-data">
+            @method("PUT")
+        @else
+            <form action="{{ route('request.store') }}" method="POST" enctype="multipart/form-data">
+        @endisset
+            @csrf
+            <tr>
+                <th scope="col">Información sobre la petición:</th>
+                <td>
+                    <div class="form-group">
+                        <textarea class="form-control" name="text" rows="3" >{{$myrequest->text ?? '' }}</textarea>
+                    </div>
+                </td>
+            </tr>
 
-            @else        
-                <option value="1">pdf</option>
-                <option value="2">ppt</option>
-                <option value="3">photo</option>
+            <tr>
+                <th scope="col">Tipo de archivo:</th>
+                <td>
+                    <select class="form-select" aria-label="Default select example" name="type">
+                        @isset($myrequest)
 
-            @endisset
-        </select>
-    </br>
-        Seminar:
-        <select name="seminar_id">
-            @foreach($seminarList as $s)
-                <option  
-                @isset($myrequest)
-                    @if ($myrequest->seminar_id==$s->id)
-                        selected 
-                    @endif 
-                @endisset
-                
-                 value="{{$s->id}}">{{$s->year}}, {{$s->location}}</option>
-            @endforeach
-        </select>
-    </br>
-    Presentation:
-    <select name="presentation_id">
-        <option  value="-1">Ninguna</option>
-        @foreach($presentationList as $p)
-            <option  
-            @isset($myrequest)
-                @if ($myrequest->document->presentation_id==$p->id)
-                    selected 
-                @endif 
-            @endisset
+                            <option  
+                                @if($myrequest->type==1)
+                                        selected 
+                                @endif 
+                            value="1">PDF</option>
+                            <option  
+                                @if($myrequest->type==2)
+                                        selected 
+                                @endif 
+                            value="2">Presentación</option>
+                            <option  
+                                @if($myrequest->type==3)
+                                        selected 
+                                @endif 
+                            value="3">Fotografía</option>
+
+                        @else        
+                            <option value="1">PDF</option>
+                            <option value="2">Presentación</option>
+                            <option value="3">Fotografía</option>
+
+                        @endisset
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">Seminario:</th>
+                <td>
+                    <select class="form-select" aria-label="Default select example" name="seminar_id">
+                        @foreach($seminarList as $s)
+                            <option  
+                            @isset($myrequest)
+                                @if ($myrequest->document->seminar_id==$s->id)
+                                    selected 
+                                @endif 
+                            @endisset
+                            
+                            value="{{$s->id}}">{{$s->year}}, {{$s->location}}</option>
+                        @endforeach
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="col">Ponencia:</th>
+                <td>
+                    <select class="form-select" aria-label="Default select example" name="presentation_id">
+                        <option value="{{null}}">Ninguno</option>
+                        @foreach($presentationList as $s)
+                            <option  
+                            @isset($myrequest)
+                                @if ($myrequest->document->presentation_id==$s->id)
+                                    selected 
+                                @endif 
+                            @endisset
+                            
+                            value="{{$s->id}}">{{$s->subject}}</option>
+                        @endforeach
+                    </select>
+                </td>
+            </tr>
             
-             value="{{$p->id}}">{{$p->subject}}</option>
-        @endforeach
-    </select>
-</br>
-User:<select name="user_id">
-            @foreach($userList as $s)
-                <option  
-                @isset($myrequest)
-                    @if ($myrequest->user_id==$s->id)
-                        selected 
-                    @endif 
-                @endisset
-                
-                 value="{{$s->id}}">{{$s->username}}</option>
-            @endforeach
-        </select></br>
-        <input type="file" name="file" id="chooseFile">
-        <label for="chooseFile">Select file</label>
-    </br>
-        <input type="submit">
+            <tr>
+                <th scope="col">Usuario:</th>
+                <td>
+                    <select class="form-select" aria-label="Default select example" name="user_id">
+                        @foreach($userList as $s)
+                            <option  
+                                @isset($myrequest)
+                                    @if ($myrequest->user_id==$s->id)
+                                        selected 
+                                    @endif 
+                                @endisset
+                            
+                            value="{{$s->id}}">{{$s->username}}</option>
+                        @endforeach
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="col"><label for="chooseFile" class="form-label">Documento:</label></th>
+                <td>
+                    <input class="form-control" type="file" id="chooseFile" name="file">
+                </td>
+            </tr>
+            <tr>
+                <td scope="col" colspan="2">
+                    <input  class="btn btn-primary" type="submit">
+                </td>
+            </tr>
         </form>
+    </table>
+</div>
 @endsection

@@ -6,9 +6,8 @@
 @section("header", "Administración de userio")
 
 @section("content")
-<div class="mx-5">
+<div class="mx-4">
     
-    <a class="btn btn-primary"  href="{{ route('user.create') }}">Insertar usuario</a></br></br>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -62,6 +61,11 @@
                         $cont = $cont+1;
                 @endphp 
             @endforeach
+            <tr>
+                <th scope="col" colspan="9">
+                    <a class="btn btn-primary"  href="{{ route('user.create') }}">Insertar usuario</a>
+                </th>
+            </tr>
         </tbody>
     </table>
 <div>

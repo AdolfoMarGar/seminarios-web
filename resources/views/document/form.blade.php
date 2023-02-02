@@ -66,7 +66,6 @@
             </tr>
             <tr>
                 <th scope="col">Ponencia:</th>
-                
                 <td>
                     <select class="form-select" aria-label="Default select example" name="presentation_id">
                         <option value="{{null}}">Ninguno</option>
@@ -85,9 +84,6 @@
             </tr>
             <tr>
                 <th scope="col"><label for="chooseFile" class="form-label">Documento:</label></th>
-
-                    
-
                 <td>
                     <input class="form-control" type="file" id="chooseFile">
                 </td>

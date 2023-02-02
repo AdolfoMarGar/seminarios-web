@@ -18,20 +18,20 @@
             <tr>
                 <th scope="col">Año del seminario:</th>
                 <td>
-                    <input name="year" class="form-control" type="text" placeholder="2000" aria-label="default input example" value="{{$seminar->year ?? '' }}">
+                    <input name="year" class="form-control" type="text" placeholder="Ej. 2000" aria-label="default input example" value="{{$seminar->year ?? '' }}">
                 </td>
             </tr>
 
             <tr>
                 <th scope="col">Localización:</th>
                 <td>
-                    <input name="location" class="form-control" type="text" placeholder="Pulpi, Almeria" aria-label="default input example" value="{{$seminar->location ?? '' }}">
+                    <input name="location" class="form-control" type="text" placeholder="Ej. Pulpi, Almeria" aria-label="default input example" value="{{$seminar->location ?? '' }}">
                 </td>
             </tr>
             <tr>
                 <th scope="col">Hosts:</th>
                 <td>
-                    <input name="hosts" class="form-control" type="text" placeholder="Empresa S.L." aria-label="default input example" value="{{$seminar->hosts ?? '' }}">
+                    <input name="hosts" class="form-control" type="text" placeholder="Ej. Empresa S.L." aria-label="default input example" value="{{$seminar->hosts ?? '' }}">
                 </td>
             </tr>
             <tr>

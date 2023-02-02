@@ -4,8 +4,6 @@
 
 @section("content")
 <div class="mx-4">
-
-    <a class="btn btn-primary" href="{{ route('request.create') }}">Insertar petición</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -59,11 +57,15 @@
                             <input  class="btn btn-primary" type="submit" value="Borrar">
                         </form>
                     </td>
-                <br>
                 @php
                     $cont= $cont+1;
                 @endphp
             @endforeach
+            <tr>
+                <th scope="col" colspan="9">
+                    <a class="btn btn-primary" href="{{ route('request.create') }}">Insertar petición</a>
+                </th>
+            </tr>
         </tbody>
     </table>
 </div>

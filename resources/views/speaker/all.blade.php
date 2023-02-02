@@ -8,7 +8,6 @@
 @section("content")
 <div class="mx-4">
 
-    <a class="btn btn-primary"href="{{ route('speaker.create') }}">Insertar ponente</a></br></br>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -26,7 +25,6 @@
             @foreach ($speakerList as $speaker)
                 <tr>
                     <th scope="row">{{$cont}}</td>
-
                     <td>{{$speaker->name}}</td>
                     <td>{{$speaker->lastname}}</td>
                     <td>{{$speaker->region}}</td>
@@ -43,6 +41,11 @@
                     $cont = $cont+1;
                 @endphp
             @endforeach
+            <tr>
+                <th scope="col" colspan="9">
+                    <a class="btn btn-primary"href="{{ route('speaker.create') }}">Insertar ponente</a>
+                </th>
+            </tr>
         </tbody>
     </table>
 </div>

@@ -4,8 +4,6 @@
 
 @section("content")
 <div class="mx-4">
-    <a class="btn btn-primary" href="{{ route('documents.create') }}">Insertar documento</a>
-</br> </br>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -62,7 +60,14 @@
                 @php
                     $cont = $cont+1;
                 @endphp
+                </tr>
             @endforeach
+            <tr>
+                <th scope="col" colspan="7">
+                    <a class="btn btn-primary" href="{{ route('documents.create') }}">Insertar documento</a>
+                </th>
+            </tr>
+
         </tbody>
     </table>
 </div>

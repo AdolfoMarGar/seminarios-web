@@ -14,7 +14,6 @@
     @endisset
         @csrf
         Subject:<input type="text" name="subject" value="{{$presentation->subject ?? '' }}"><br>
-        Dir:<input type="text" name="dir" value="{{$presentation->dir ?? '' }}"><br>
         Seminar:
         <select name="seminar_id">
             @foreach($seminarList as $s)

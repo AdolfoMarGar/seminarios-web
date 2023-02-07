@@ -15,13 +15,13 @@ class DocumentsController extends Controller{
 
         $data["documentList"] = $documentList;
 
-        return view('document.all', $data);
+        return view('admin.document.all', $data);
     }
 
     public function show($id) {
         $s = Document::find($id);
 
-        return view('document.show', $data);
+        return view('admin.document.show', $data);
     }
 
     public function create() {
@@ -32,7 +32,7 @@ class DocumentsController extends Controller{
         $data["presentationList"] = $presentationList;
         $data["document"] = null;
 
-        return view('document.form', $data);
+        return view('admin.document.form', $data);
     }
 
     public function store(Request $r) {
@@ -58,7 +58,7 @@ class DocumentsController extends Controller{
         $data["presentationList"] = $presentationList;
         $data["document"] = $d;
 
-        return view('document.form', $data);
+        return view('admin.document.form', $data);
     }
 
     public function update($id, Request $r) {

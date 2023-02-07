@@ -13,28 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('welcome');
+Route::view('/', 'web.index')->name('welcome');
 
-Route::resource('seminar', 'SeminarController');
-Route::get('seminar/delete/{seminar}', 'SeminarController@destroy')->name('seminar.myDestroy');
+Route::resource('admin/seminar', 'SeminarController');
+Route::get('admin/seminar/delete/{seminar}', 'SeminarController@destroy')->name('seminar.myDestroy');
 // Añadimos una ruta NO ESTÁNDAR para borrar productos mediante GET
 
-Route::resource('documents', 'DocumentsController');
-Route::get('documents/delete/{documents}', 'DocumentsController@destroy')->name('documents.myDestroy');
+Route::resource('admin/documents', 'DocumentsController');
+Route::get('admin/documents/delete/{documents}', 'DocumentsController@destroy')->name('documents.myDestroy');
 
-Route::resource('speaker', 'SpeakerController');
-Route::get('speaker/delete/{speaker}', 'SpeakerController@destroy')->name('speaker.myDestroy');
+Route::resource('admin/speaker', 'SpeakerController');
+Route::get('admin/speaker/delete/{speaker}', 'SpeakerController@destroy')->name('speaker.myDestroy');
 
-Route::resource('presentation', 'PresentationController');
-Route::get('presentation/delete/{presentation}', 'PresentationController@destroy')->name('presentation.myDestroy');
+Route::resource('admin/presentation', 'PresentationController');
+Route::get('admin/presentation/delete/{presentation}', 'PresentationController@destroy')->name('presentation.myDestroy');
 
-Route::resource('request', 'MyrequestController');
-Route::get('request/delete/{request}', 'MyrequestController@destroy')->name('request.myDestroy');
-Route::get('request/acept/{request}', 'MyrequestController@acept')->name('request.acept');
+Route::resource('admin/request', 'MyrequestController');
+Route::get('admin/request/delete/{request}', 'MyrequestController@destroy')->name('request.myDestroy');
+Route::get('admin/request/acept/{request}', 'MyrequestController@acept')->name('request.acept');
 
-Route::resource('user', 'UserController');
-Route::get('user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');
-
-Route::get('file', 'DocumentsController@file')->name('document.file');
-Route::post('fileUpload', 'DocumentsController@fileUpload')->name('document.fileUpload');
+Route::resource('admin/user', 'UserController');
+Route::get('admin/user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');
 

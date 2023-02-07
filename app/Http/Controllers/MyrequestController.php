@@ -13,13 +13,13 @@ use App\Models\User;
 class MyrequestController extends Controller{
     public function index() {
         $myrequestList = Myrequest::all();
-        return view('request.all', ['myrequestList'=>$myrequestList]);
+        return view('admin.request.all', ['myrequestList'=>$myrequestList]);
     }
 
     public function show($id) {
         $s = Myrequest::find($id);
         $data['myrequest'] = $s;
-        return view('request.show', $data);
+        return view('admin.request.show', $data);
     }
 
     public function create() {
@@ -31,7 +31,7 @@ class MyrequestController extends Controller{
         $data["seminarList"]= $s;
         $data['myrequest']= null;
 
-        return view('request.form', $data);
+        return view('admin.request.form', $data);
     }
 
     public function store(Request $r) {
@@ -52,7 +52,7 @@ class MyrequestController extends Controller{
         $data["seminarList"]= $s;
         $data['myrequest']= $myrequest;
 
-        return view('request.form', $data);
+        return view('admin.request.form', $data);
     }
 
     public function update($id, Request $r) {

@@ -9,17 +9,17 @@ class SpeakerController extends Controller{
     public function index() {
         $speakerList = Speaker::all();
 
-        return view('speaker.all', ['speakerList'=>$speakerList]);
+        return view('admin.speaker.all', ['speakerList'=>$speakerList]);
     }
 
     public function show($id) {
         $s = Speaker::find($id);
         $data['speaker'] = $s;
-        return view('speaker.show', $data);
+        return view('admin.speaker.show', $data);
     }
 
     public function create() {
-        return view('speaker.form');
+        return view('admin.speaker.form');
     }
 
     public function store(Request $r) {
@@ -32,7 +32,7 @@ class SpeakerController extends Controller{
     public function edit($id) {
         $speaker = Speaker::find($id);
 
-        return view('speaker.form', array('speaker' => $speaker));
+        return view('admin.speaker.form', array('speaker' => $speaker));
     }
 
     public function update($id, Request $r) {

@@ -1,39 +1,47 @@
 
-@extends("layouts.mainlayout")
+@extends("layouts.adminLayout")
 
-@section("title", "Inserción de documento")
+@section("title", "Inserción de seminarios")
 
-@section("header", "Inserción de documento")
+@section("header", "Inserción de seminarios")
 
 @section("content")
 <div class="mx-4">
     <table class="table table-bordered table-striped">
-
-        @isset($document)
-            <form action="{{ route('documents.update', ['document' => $document->id]) }}" method="POST"enctype="multipart/form-data" >
+        @isset($myrequest)
+            <form action="{{ route('request.update', ['request' => $myrequest->id]) }}" method="POST" enctype="multipart/form-data">
             @method("PUT")
-        @else        
-            <form action="{{ route('documents.store') }}" method="POST" enctype="multipart/form-data">
+        @else
+            <form action="{{ route('request.store') }}" method="POST" enctype="multipart/form-data">
         @endisset
             @csrf
+            <tr>
+                <th scope="col">Información sobre la petición:</th>
+                <td>
+                    <div class="form-group">
+                        <textarea class="form-control" name="text" rows="3" >{{$myrequest->text ?? '' }}</textarea>
+                    </div>
+                </td>
+            </tr>
+
             <tr>
                 <th scope="col">Tipo de archivo:</th>
                 <td>
                     <select class="form-select" aria-label="Default select example" name="type">
-                        @isset($document)
+                        @isset($myrequest)
 
                             <option  
-                                @if($document->type==1)
+                                @if($myrequest->type==1)
                                         selected 
                                 @endif 
                             value="1">PDF</option>
                             <option  
-                                @if($document->type==2)
+                                @if($myrequest->type==2)
                                         selected 
                                 @endif 
                             value="2">Presentación</option>
                             <option  
-                                @if($document->type==3)
+                                @if($myrequest->type==3)
                                         selected 
                                 @endif 
                             value="3">Fotografía</option>
@@ -53,8 +61,8 @@
                     <select class="form-select" aria-label="Default select example" name="seminar_id">
                         @foreach($seminarList as $s)
                             <option  
-                            @isset($document)
-                                @if ($document->seminar_id==$s->id)
+                            @isset($myrequest)
+                                @if ($myrequest->document->seminar_id==$s->id)
                                     selected 
                                 @endif 
                             @endisset
@@ -64,6 +72,7 @@
                     </select>
                 </td>
             </tr>
+
             <tr>
                 <th scope="col">Ponencia:</th>
                 <td>
@@ -71,8 +80,8 @@
                         <option value="{{null}}">Ninguno</option>
                         @foreach($presentationList as $s)
                             <option  
-                            @isset($document)
-                                @if ($document->presentation_id==$s->id)
+                            @isset($myrequest)
+                                @if ($myrequest->document->presentation_id==$s->id)
                                     selected 
                                 @endif 
                             @endisset
@@ -82,10 +91,28 @@
                     </select>
                 </td>
             </tr>
+            
+            <tr>
+                <th scope="col">Usuario:</th>
+                <td>
+                    <select class="form-select" aria-label="Default select example" name="user_id">
+                        @foreach($userList as $s)
+                            <option  
+                                @isset($myrequest)
+                                    @if ($myrequest->user_id==$s->id)
+                                        selected 
+                                    @endif 
+                                @endisset
+                            
+                            value="{{$s->id}}">{{$s->username}}</option>
+                        @endforeach
+                    </select>
+                </td>
+            </tr>
             <tr>
                 <th scope="col"><label for="chooseFile" class="form-label">Documento:</label></th>
                 <td>
-                    <input class="form-control" type="file" id="chooseFile">
+                    <input class="form-control" type="file" id="chooseFile" name="file">
                 </td>
             </tr>
             <tr>
@@ -93,8 +120,7 @@
                     <input  class="btn btn-primary" type="submit">
                 </td>
             </tr>
-            
-    
         </form>
     </table>
+</div>
 @endsection

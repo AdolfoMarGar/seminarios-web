@@ -1,5 +1,5 @@
 
-@extends("layouts.mainlayout")
+@extends("layouts.adminLayout")
 
 @section("title", "Inserción de speaker")
 

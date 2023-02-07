@@ -13,13 +13,13 @@ class PresentationController extends Controller
     public function index() {
         $presentationList = Presentation::all();
 
-        return view('presentation.all', ['presentationList'=>$presentationList]);
+        return view('admin.presentation.all', ['presentationList'=>$presentationList]);
     }
 
     public function show($id) {
         $s = Presentation::find($id);
         
-        return view('presentation.show', $data);
+        return view('admin.presentation.show', $data);
     }
 
     public function create() {
@@ -29,7 +29,7 @@ class PresentationController extends Controller
         $data["speakerList"] = $speakerList;
         $data["presentation"] = null;
 
-        return view('presentation.form', $data);
+        return view('admin.presentation.form', $data);
     }
 
     public function store(Request $r) {
@@ -52,7 +52,7 @@ class PresentationController extends Controller
         $data["seminarList"] = $seminarList;
         $data["speakerList"] = $speakerList;
 
-        return view('presentation.form', $data);
+        return view('admin.presentation.form', $data);
     }
 
     public function update($id, Request $r) {

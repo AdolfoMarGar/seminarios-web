@@ -10,17 +10,17 @@ class SeminarController extends Controller{
     public function index() {
         $seminarList = Seminar::all();
 
-        return view('seminar.all', ['seminarList'=>$seminarList]);
+        return view('admin.seminar.all', ['seminarList'=>$seminarList]);
     }
 
     public function show($id) {
         $s = Seminar::find($id);
 
-        return view('seminar.show', $data);
+        return view('admin.seminar.show', $data);
     }
 
     public function create() {
-        return view('seminar.form');
+        return view('admin.seminar.form');
     }
 
     public function store(Request $r) {
@@ -32,7 +32,7 @@ class SeminarController extends Controller{
     public function edit($id) {
         $seminar = Seminar::find($id);
 
-        return view('seminar.form', array('seminar' => $seminar));
+        return view('admin.seminar.form', array('seminar' => $seminar));
     }
 
     public function update($id, Request $r) {

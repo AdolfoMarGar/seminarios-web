@@ -12,18 +12,18 @@ class UserController extends Controller{
     public function index() {
         $userList = User::all();
         
-        return view('user.all', ['userList'=>$userList]);
+        return view('admin.user.all', ['userList'=>$userList]);
     }
 
     public function show($id) {
         $s = User::find($id);
         $data['user'] = $s;
         
-        return view('user.show', $data);
+        return view('admin.user.show', $data);
     }
 
     public function create() {
-        return view('user.form');
+        return view('admin.user.form');
     }
 
     public function store(Request $r) {
@@ -41,7 +41,7 @@ class UserController extends Controller{
     public function edit($id) {
         $user = User::find($id);
 
-        return view('user.form', array('user' => $user));
+        return view('admin.user.form', array('user' => $user));
     }
 
     public function update($id, Request $r) {

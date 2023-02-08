@@ -35,3 +35,8 @@ Route::get('admin/request/acept/{request}', 'MyrequestController@acept')->name('
 Route::resource('admin/user', 'UserController');
 Route::get('admin/user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');
 
+Route::get('seminars', 'SeminarController@webSeminar')->name('web.seminar');
+
+Route::get('presentations', 'PresentationController@webPresentation')->name('web.presentation');
+
+Route::get('multimedia', 'DocumentsController@webMultimedia')->name('web.multimedia');

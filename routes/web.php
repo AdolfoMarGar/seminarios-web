@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'web.index')->name('welcome');
+Route::view('/history', 'web.nuestrahistoria')->name('history');
+
 
 Route::resource('admin/seminar', 'SeminarController');
 Route::get('admin/seminar/delete/{seminar}', 'SeminarController@destroy')->name('seminar.myDestroy');

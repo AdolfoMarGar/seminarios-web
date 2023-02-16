@@ -13,9 +13,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/nextSeminar">Proximo seminario</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutUs">Quienes somos</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="/history">Nuestra historia</a>
         </li>
@@ -32,6 +30,9 @@
               <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>
             </div>
           </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutUs">Contactanos</a>
         </li>
       </ul>
 

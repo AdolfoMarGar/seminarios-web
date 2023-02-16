@@ -4,3 +4,5 @@
 @section("content")
 <div class="mx-4">
 </div>
+
+@endsection

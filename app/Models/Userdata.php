@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Userdata extends Model{
 
-    protected $fillable = array('email','realname', 'lastname', 'region');
+    protected $fillable = array('email','realname', 'lastname', 'region','entity');
 
     public function user(){
         return $this->hasMany(User::class);

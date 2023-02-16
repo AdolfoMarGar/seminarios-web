@@ -18,13 +18,15 @@ class UserDataSeeder extends Seeder{
             'realname' => 'Juan',
             'lastname' => 'Gomiz',
             'region' => 'Badajoz',
+            'entity' => 'Centro investigacion de badajoz',
         ]);
         
         DB::table('userdatas')->insert([
             'email' => 'yguasdop@gmail.com',
             'realname' => 'Maria',
             'lastname' => 'Fuet',
-            'region' => 'Toledo',
+            'region' => 'Almeria',
+            'entity' => 'I.F.A.P.A',
         ]);
     }
 }

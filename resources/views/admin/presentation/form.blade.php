@@ -19,7 +19,13 @@
             <tr>
                 <th scope="col">Tema:</th>
                 <td>
-                    <input name="subject" class="form-control" type="text" placeholder="Ej. Fitosanitarios ecologicos para huerta." aria-label="default input example" value="{{$presentation->subject ?? '' }}">
+                    <input name="subject" class="form-control" type="text" placeholder="Ej. Fitosanitarios." aria-label="default input example" value="{{$presentation->subject ?? '' }}">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">Titulo:</th>
+                <td>
+                    <input name="title" class="form-control" type="text" placeholder="Ej. Fitosanitarios ecologicos para huerta." aria-label="default input example" value="{{$presentation->title ?? '' }}">
                 </td>
             </tr>
             <tr>
@@ -58,7 +64,7 @@
             </tr>
            
             <tr>
-                <td scope="col" colspan="2">
+                <td scope="col" colspan="3">
                     <input  class="btn btn-primary" type="submit">
                 </td>
             </tr>

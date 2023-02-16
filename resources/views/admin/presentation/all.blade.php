@@ -13,6 +13,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Tema</th>
+              <th scope="col">Titulo</th>
               <th scope="col">Seminario</th>
               <th scope="col">Ponentes</th>
               <th scope="col" colspan="2">Acciones</th>
@@ -25,8 +26,9 @@
             @foreach($presentationList as $p)
                 <tr>
                     <th scope="row">{{$cont}}</td>
-                    <td>{{$p->subject}}</td>
-                    <td>{{$p->seminar->year}}, {{$p->seminar->location}}</td>
+                        <td>{{$p->subject}}</td>
+                        <td>{{$p->title}}</td>
+                        <td>{{$p->seminar->year}}, {{$p->seminar->location}}</td>
                     <td>
                         @foreach ($p->speaker as $s)
                             {{$s->name}} {{$s->lastname}}.

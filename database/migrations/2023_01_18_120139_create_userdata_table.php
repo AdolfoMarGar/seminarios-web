@@ -17,6 +17,7 @@ return new class extends Migration{
             $table->string('realname');
             $table->string('lastname');
             $table->string('region');
+            $table->string('entity');
             $table->timestamps();
         });
     }

@@ -15,12 +15,14 @@ class PresentationSeeder extends Seeder{
      */
     public function run(){
         DB::table('presentations')->insert([
-            'subject' => 'Proximos fitosanitarios para invernadero',
+            'subject' => 'Fitosanitarios',
+            'title' => 'Proximos fitosanitarios para invernadero',
             'seminar_id' => '1',
         ]);
 
         DB::table('presentations')->insert([
-            'subject' => 'Tratamientos fertilizantes para suelos insalubres',
+            'subject' => 'Suelos',
+            'title' => 'Tratamientos fertilizantes para suelos insalubres',
             'seminar_id' => '2',
         ]);
 

@@ -79,6 +79,13 @@
             </tr>
 
             <tr>
+                <th scope="col">Entidad:</th>
+                <td>
+                    <input name="entity" class="form-control" type="text" placeholder="Ej. I.F.A.P.A" aria-label="default input example" value="{{$user->userdata->entity ?? '' }}">
+                </td>
+            </tr>
+
+            <tr>
                 <td scope="col" colspan="2">
                     <input  class="btn btn-primary" type="submit">
                 </td>

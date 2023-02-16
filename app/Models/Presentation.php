@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Presentation extends Model{
 
-    protected $fillable = array('id','subject', 'seminar_id');  
+    protected $fillable = array('id','subject','title', 'seminar_id');  
 
     public function documents(){
         return $this->hasMany(Document::class);

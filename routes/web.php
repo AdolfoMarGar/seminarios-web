@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'web.index')->name('welcome');
-Route::view('/history', 'web.nuestrahistoria')->name('history');
+Route::view('/history', 'web.static.nuestrahistoria')->name('history');
 
 
 Route::resource('admin/seminar', 'SeminarController');
@@ -39,6 +39,6 @@ Route::get('admin/user/delete/{user}', 'UserController@destroy')->name('user.myD
 
 Route::get('seminars', 'SeminarController@webSeminar')->name('web.seminar');
 
-Route::get('presentations', 'PresentationController@webPresentation')->name('web.presentation');
+Route::view('/presentations', 'web.presentation.presentation')->name('web.presentation');
 
 Route::get('multimedia', 'DocumentsController@webMultimedia')->name('web.multimedia');

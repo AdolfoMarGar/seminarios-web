@@ -38,7 +38,11 @@ Route::resource('admin/user', 'UserController');
 Route::get('admin/user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');
 
 Route::get('seminars', 'SeminarController@webSeminar')->name('web.seminar');
+Route::get('seminars/{id}', 'SeminarController@webPresentationId')->name('web.seminarId');
 
 Route::view('/presentations', 'web.presentation.presentation')->name('web.presentation');
+Route::get('presentation/{id}', 'PresentationController@webPresentationId')->name('web.presentationId');
+
 
 Route::get('multimedia', 'DocumentsController@webMultimedia')->name('web.multimedia');
+

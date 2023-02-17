@@ -13,3 +13,6 @@ Dentro de proximo seminario:
     - Circulares sobre reglas y fechas de entrega.
     - Normas de las publicaciones.
 
+
+
+To display the text of a PDF file in a Laravel Blade view, you can use a third-party library such as spatie/pdf-to-text to extract the text from the PDF file, and then pass the extracted text to the Blade view.

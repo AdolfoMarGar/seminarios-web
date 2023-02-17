@@ -11,20 +11,18 @@
     <div class="navbar-collapse collapse" id="" style="font-size:x-large">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/nextSeminar">Proximo seminario</a>
+          <a class="nav-link mx-4" href="/nextSeminar">Proximo seminario</a>
         </li>
         
-        <li class="nav-item">
-          <a class="nav-link" href="/history">Nuestra historia</a>
-        </li>
+        
 
         <li class="nav-item">
           <div class="dropdown show" id="archivoDropdownMenuLink" >
-            <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="font-size:x-large">
+            <a class="btn dropdown-toggle mx-4" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="font-size:x-large">
               Archivo del seminario
             </a>
           
-            <div class="dropdown-menu" id="archivoDivMenu" aria-labelledby="dropdownMenuLink"  style="font-size:x-large">
+            <div class="dropdown-menu bg-success" id="archivoDivMenu" aria-labelledby="dropdownMenuLink"  style="font-size:x-large">
               <a class="dropdown-item" href="/seminars">Historico de seminarios</a>
               <a class="dropdown-item" href="/presentations">Ponencias</a>
               <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>
@@ -32,7 +30,10 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/aboutUs">Contactanos</a>
+          <a class="nav-link mx-4" href="/history">Nuestra historia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-4" href="/aboutUs">Contactanos</a>
         </li>
       </ul>
 

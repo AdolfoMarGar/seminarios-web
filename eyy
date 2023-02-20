@@ -15,4 +15,7 @@ Dentro de proximo seminario:
 
 
 
-To display the text of a PDF file in a Laravel Blade view, you can use a third-party library such as spatie/pdf-to-text to extract the text from the PDF file, and then pass the extracted text to the Blade view.
+
+que se puedan ordenar las listas por año, ciudad o lo que sea
+
+los pdf enbed en vez de pillar el texto.

@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'web.index')->name('welcome');
-Route::view('/history', 'web.static.nuestrahistoria')->name('history');
+// Añadimos una ruta NO ESTÁNDAR para borrar productos mediante GET
 
-
+/* RUTAS DEL PANEL DE ADMINISTRADOR */
 Route::resource('admin/seminar', 'SeminarController');
 Route::get('admin/seminar/delete/{seminar}', 'SeminarController@destroy')->name('seminar.myDestroy');
-// Añadimos una ruta NO ESTÁNDAR para borrar productos mediante GET
 
 Route::resource('admin/documents', 'DocumentsController');
 Route::get('admin/documents/delete/{documents}', 'DocumentsController@destroy')->name('documents.myDestroy');
@@ -36,13 +34,16 @@ Route::get('admin/request/acept/{request}', 'MyrequestController@acept')->name('
 
 Route::resource('admin/user', 'UserController');
 Route::get('admin/user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');
+/*FIN RUTAS PANEL ADMINISTRADOR*/
 
-Route::get('seminars', 'SeminarController@webSeminar')->name('web.seminar');
-Route::get('seminars/{id}', 'SeminarController@webPresentationId')->name('web.seminarId');
+/* RUTAS PAGINA WEB  */
+Route::get('/', 'FrontendController@indexWeb')->name('web.index');
+Route::get('/history', 'FrontendController@historyWeb')->name('web.history');
 
-Route::view('/presentations', 'web.presentation.presentation')->name('web.presentation');
+Route::get('seminars', 'FrontendController@allSeminar')->name('web.allSeminar');
+Route::get('seminar/{id}', 'FrontendController@idSeminar')->name('web.idSeminar');
+
 Route::get('presentation/{id}', 'PresentationController@webPresentationId')->name('web.presentationId');
-
 
 Route::get('multimedia', 'DocumentsController@webMultimedia')->name('web.multimedia');
 

@@ -3,33 +3,26 @@
 
 @section("content")
 <style>
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+    body, html {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+      overflow: hiden;
 
-    .bg-image {
-        background-image: url('{{ asset('PERMANENT/indexImage.png') }}');
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        min-height: 80vh;
+		}
 
+
+    div.bg-image {
+      height: 100%;
+      background-size: 100%;
+      background-image: url('{{ asset('PERMANENT/indexImage.jpg') }}');
     }
-    .my-element {
-      background-image: url('{{ asset('PERMANENT/indexImage.png') }}');
-      background-size: cover;
-      background-position: center;
-      min-height: 150vh;
-      overflow-y: auto;
+    footer{
+      visibility: hidden;
     }
+   
   </style>
-  
-  <div class="bg-image">
-    <h1>My Element</h1>
-    <p>Some content goes here</p>
-  </div> 
+<div class="bg-image">
+</div>
+
 @endsection

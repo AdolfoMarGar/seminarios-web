@@ -22,13 +22,11 @@
                         <h5 class="card-title text-center">{{$seminar->location}}, {{$seminar->year}}</h5>
                         <p class="card-text mb-3">Este fue organizado por {{$seminar->hosts}}</p>
                         <div class="d-flex justify-content-between">
-                                <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.seminarId', $seminar->id)}}">Libro de actas</a>
+                                <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Libro de actas</a>
 
-                                <a class="btn btn-primary  mx-3 text-nowrap"  href="{{route('web.seminarId', $seminar->id)}}">Libro de resumenes</a>
+                                <a class="btn btn-primary  mx-3 text-nowrap"  href="{{route('web.idSeminar', $seminar->id)}}">Libro de resumenes</a>
 
-                                <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.seminarId', $seminar->id)}}">Contenido audiovisual</a>
-
-                                <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.seminarId', $seminar->id)}}">Mas información</a>                            
+                                <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Contenido audiovisual</a>
                         </div>
                     </div>
                 </div>

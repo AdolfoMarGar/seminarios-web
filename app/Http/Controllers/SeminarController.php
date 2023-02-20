@@ -50,9 +50,5 @@ class SeminarController extends Controller{
         return redirect()->route('seminar.index');
     }
 
-    public function webSeminar(){
-        $seminarList = Seminar::all();
-
-        return view('web.seminar.seminar', ['seminarList'=>$seminarList]);
-    }
+    
 }

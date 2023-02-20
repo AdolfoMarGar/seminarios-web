@@ -15,6 +15,7 @@ return new class extends Migration{
             $table->id();
             $table->integer('type');
             $table->string('dir');
+            $table->integer('mandatory')->nullable();
             $table->integer('seminar_id');
             $table->integer('presentation_id')->nullable();
 

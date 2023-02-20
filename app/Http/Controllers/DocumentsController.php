@@ -43,7 +43,6 @@ class DocumentsController extends Controller{
             $doc = new Document($r->all());
             $doc->dir = $dir;
             $doc->save();
-            
             return redirect()->route('documents.index');
         }
         

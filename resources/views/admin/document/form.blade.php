@@ -45,7 +45,7 @@
 
                         @endisset
                     </select>
-                </td>
+                        
             </tr>
             <tr>
                 <th scope="col">Seminario:</th>
@@ -85,7 +85,45 @@
             <tr>
                 <th scope="col"><label for="chooseFile" class="form-label">Documento:</label></th>
                 <td>
-                    <input class="form-control" type="file" id="chooseFile">
+                    <input class="form-control" type="file" id="chooseFile" name="file">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">Asignación:</th>
+
+                <td>
+                    <select class="form-select" aria-label="Default select example" name="mandatory">
+                        @isset($document)
+                            <option  
+                            @if($document->mandatory==0)
+                                    selected 
+                            @endif 
+                            value="0">Ninguno</option>
+                            <option  
+                                @if($document->mandatory==1)
+                                        selected 
+                                @endif 
+                            value="1">Libro de acta</option>
+                            <option  
+                                @if($document->mandatory==2)
+                                        selected 
+                                @endif 
+                            value="2">Libro de resumenes</option>
+                            <option  
+                                @if($document->mandatory==3)
+                                        selected 
+                                @endif 
+                            value="3">Programa</option>
+
+                        @else        
+                            <option value="0">Ninguno</option>
+                            <option value="1">Libro de acta</option>
+                            <option value="2">Libro de resumenes</option>
+                            <option value="3">Prgoramación</option>
+
+                        @endisset
+                    </select>
+            
                 </td>
             </tr>
             <tr>

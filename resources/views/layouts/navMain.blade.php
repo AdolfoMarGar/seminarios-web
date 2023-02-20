@@ -11,7 +11,7 @@
     <div class="navbar-collapse collapse" id="nav" style="font-size:x-large">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link mx-4" href="/nextSeminar">Proximo seminario</a>
+          <a class="nav-link mx-4" href="/nextSeminar">Próximo seminario</a>
         </li>
         
         
@@ -23,7 +23,7 @@
             </a>
           
             <div class="dropdown-menu bg-success" id="archivoDivMenu" aria-labelledby="dropdownMenuLink"  style="font-size:x-large">
-              <a class="dropdown-item" href="/seminars">Historico de seminarios</a>
+              <a class="dropdown-item" href="/seminars">Histórico de seminarios</a>
               <a class="dropdown-item" href="/presentations">Ponencias</a>
               <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>
             </div>
@@ -33,7 +33,7 @@
           <a class="nav-link mx-4" href="/history">Nuestra historia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-4" href="/aboutUs">Contactanos</a>
+          <a class="nav-link mx-4" href="/aboutUs">Contáctanos</a>
         </li>
       </ul>
 

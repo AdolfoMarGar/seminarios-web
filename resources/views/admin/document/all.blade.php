@@ -13,6 +13,7 @@
               <th scope="col">Seminario</th>
               <th scope="col">Presentacion</th>
               <th scope="col">Tipo</th>
+              <th scope="col">Asignación</th>
               <th scope="col" colspan="2">Acciones</th>
             </tr>
         </thead>
@@ -47,6 +48,23 @@
                             @default
                         @endswitch
                     </td>
+
+                    <td>
+                        @switch($d->mandatory)
+                            @case(0)
+                                Ninguno
+                                @break  
+                            @case(1)
+                                Libro de acta
+                                @break 
+                            @case(2)
+                                Libro de resumenes
+                                @break
+                            @case(3)
+                                Programa
+                                @break
+                        @endswitch
+                    </td>
                     
                     <td>
                         <a class="btn btn-primary" href="{{route('documents.edit', $d->id)}}">Modificar</a></td>
@@ -63,7 +81,7 @@
                 </tr>
             @endforeach
             <tr>
-                <th scope="col" colspan="7">
+                <th scope="col" colspan="8">
                     <a class="btn btn-primary" href="{{ route('documents.create') }}">Insertar documento</a>
                 </th>
             </tr>

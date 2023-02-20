@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\File;
 
 class Document extends Model{
     
-    protected $fillable = array('id','type', 'seminar_id','presentation_id');  
+    protected $fillable = array('id','type', 'mandatory', 'seminar_id','presentation_id');  
 
     public function seminar(){
         return $this->belongsTo(Seminar::class);
@@ -25,7 +25,7 @@ class Document extends Model{
     }
 
     public static function fileUpload(Request $r){
-        $r->validate(['file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048']);
+        $r->validate(['file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:20480']);
 
         if($r->file()) {
             $fileName = time().'_'.$r->file->getClientOriginalName();

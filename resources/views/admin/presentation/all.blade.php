@@ -14,6 +14,7 @@
               <th scope="col">#</th>
               <th scope="col">Tema</th>
               <th scope="col">Titulo</th>
+              <th scope="col">Palabras clave</th>
               <th scope="col">Seminario</th>
               <th scope="col">Ponentes</th>
               <th scope="col" colspan="2">Acciones</th>
@@ -28,6 +29,7 @@
                     <th scope="row">{{$cont}}</td>
                         <td>{{$p->subject}}</td>
                         <td>{{$p->title}}</td>
+                        <td>{{$p->keywords}}</td>
                         <td>{{$p->seminar->year}}, {{$p->seminar->location}}</td>
                     <td>
                         @foreach ($p->speaker as $s)
@@ -49,7 +51,7 @@
                 @endphp
             @endforeach
             <tr>
-                <th scope="col" colspan="6">
+                <th scope="col" colspan="8">
                     <a class="btn btn-primary" href="{{ route('presentation.create') }}">Insertar ponencia</a>
                 </th>
             </tr>

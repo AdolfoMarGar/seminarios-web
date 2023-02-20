@@ -6,7 +6,7 @@
     <table class="table border-0">
         <tr>
             <td>
-                <h2>Historico de seminarios</h2>
+                <h2>Histórico de seminarios</h2>
 
             </td>
             <td>

@@ -36,7 +36,7 @@
         <table class="table border-0">
             <tr>
                 <td>
-                    <h2>Historico de seminarios</h2>
+                    <h2>Seminario {{$seminar->location}}, {{$seminar->year}}</h2>
 
                 </td>
                 <td>
@@ -87,6 +87,8 @@
                                         }
                                         echo(".");
                                     @endphp
+                                     <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.idPresentation', $p->id)}}">Más información</a>
+
                                 </p>
                             </div>
                         </div>

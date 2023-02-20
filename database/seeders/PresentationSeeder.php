@@ -17,12 +17,14 @@ class PresentationSeeder extends Seeder{
         DB::table('presentations')->insert([
             'subject' => 'Fitosanitarios',
             'title' => 'Proximos fitosanitarios para invernadero',
+            'keywords' => 'Jadrin, Plumero',
             'seminar_id' => '1',
         ]);
 
         DB::table('presentations')->insert([
             'subject' => 'Suelos',
             'title' => 'Tratamientos fertilizantes para suelos insalubres',
+            'keywords' => 'Don juan, Pipi calzaslargas',
             'seminar_id' => '2',
         ]);
 

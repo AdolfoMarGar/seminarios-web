@@ -43,7 +43,7 @@ Route::get('/history', 'FrontendController@historyWeb')->name('web.history');
 Route::get('seminars', 'FrontendController@allSeminar')->name('web.allSeminar');
 Route::get('seminar/{id}', 'FrontendController@idSeminar')->name('web.idSeminar');
 
-Route::get('presentation/{id}', 'PresentationController@webPresentationId')->name('web.presentationId');
+Route::get('presentation/{id}', 'PresentationController@webPresentationId')->name('web.idPresentation');
 
 Route::get('multimedia', 'DocumentsController@webMultimedia')->name('web.multimedia');
 

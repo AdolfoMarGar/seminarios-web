@@ -29,6 +29,12 @@
                 </td>
             </tr>
             <tr>
+                <th scope="col">Palabras clave:</th>
+                <td>
+                    <input name="title" class="form-control" type="text" placeholder="Ej. Invernadero, subtropica, etc..." aria-label="default input example" value="{{$presentation->title ?? '' }}">
+                </td>
+            </tr>
+            <tr>
                 <th scope="col">Seminario:</th>
                 <td>
                     <select name="seminar_id" class="form-select" aria-label="multiple select example">

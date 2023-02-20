@@ -15,6 +15,7 @@ return new class extends Migration{
             $table->id();
             $table->string('subject');
             $table->string('title');
+            $table->string('keywords');
             $table->integer('seminar_id');
 
             $table->timestamps();

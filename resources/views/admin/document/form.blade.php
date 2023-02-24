@@ -77,7 +77,7 @@
                                 @endif 
                             @endisset
                             
-                            value="{{$s->id}}">{{$s->subject}}</option>
+                            value="{{$s->id}}">{{$s->subject}}, {{$s->title}}</option>
                         @endforeach
                     </select>
                 </td>

@@ -39,11 +39,14 @@ Route::get('admin/user/delete/{user}', 'UserController@destroy')->name('user.myD
 /* RUTAS PAGINA WEB  */
 Route::get('/', 'FrontendController@indexWeb')->name('web.index');
 Route::get('/history', 'FrontendController@historyWeb')->name('web.history');
+Route::get('/nextSeminar', 'FrontendController@nextSeminar')->name('web.nextSeminar');
+Route::get('/aboutUs', 'FrontendController@aboutUs')->name('web.aboutUs');
 
 Route::get('seminars', 'FrontendController@allSeminar')->name('web.allSeminar');
 Route::get('seminar/{id}', 'FrontendController@idSeminar')->name('web.idSeminar');
 
-Route::get('presentation/{id}', 'PresentationController@webPresentationId')->name('web.idPresentation');
+Route::get('presentations', 'FrontendController@allPresentation')->name('web.allPresentation');
+Route::get('presentation/{id}', 'FrontendController@idPresentation')->name('web.idPresentation');
 
 Route::get('multimedia', 'DocumentsController@webMultimedia')->name('web.multimedia');
 

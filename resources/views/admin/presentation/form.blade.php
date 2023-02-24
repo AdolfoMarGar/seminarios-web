@@ -31,7 +31,7 @@
             <tr>
                 <th scope="col">Palabras clave:</th>
                 <td>
-                    <input name="title" class="form-control" type="text" placeholder="Ej. Invernadero, subtropica, etc..." aria-label="default input example" value="{{$presentation->title ?? '' }}">
+                    <input name="keywords" class="form-control" type="text" placeholder="Ej. Invernadero, subtropica, etc..." aria-label="default input example" value="{{$presentation->title ?? '' }}">
                 </td>
             </tr>
             <tr>

@@ -12,6 +12,7 @@
             <td>
                 Buscador(prox.)
             </td>
+            
         </tr>
     </table>
     @foreach ($seminarList as $seminar)

@@ -87,9 +87,11 @@
                                         }
                                         echo(".");
                                     @endphp
-                                     <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.idPresentation', $p->id)}}">Más información</a>
-
                                 </p>
+                                <div>
+                                    <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.idPresentation', $p->id)}}">Más información</a>
+                                    <a class="btn btn-primary  mx-3 text-nowrap" href="{{ url()->previous() }}">Volver</a>
+                                </div>
                             </div>
                         </div>
                     </div>

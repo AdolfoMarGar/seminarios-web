@@ -12,6 +12,7 @@
             <td>
                 Buscador(prox.)
             </td>
+            
         </tr>
     </table>
     @for($i=0; $i<count($yearList); $i++)
@@ -27,9 +28,10 @@
                                         <h5 class="card-title text-center">{{$pre->subject}}</h5>
                                         <p class="card-text mb-3">Titulo: {{$pre->title}}</p>
                                         <div class="d-flex justify-content-between">
-                                                <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idPresentation', $pre->id)}}">Ver</a>
+                                            <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idPresentation', $pre->id)}}">Resumen</a>
+                                            <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idPresentation', $pre->id)}}">Presentación</a>
                 
-                                                <a class="btn btn-primary  mx-3 text-nowrap"  href="/">Descargar archivos</a>
+                                            <a class="btn btn-primary  mx-3 text-nowrap"  href="/">Archivos relacionados</a>
                                         </div>
                                     </div>
                                 </div>

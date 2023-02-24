@@ -495,6 +495,13 @@ class ComposerStaticInitf54bf688446075a55be9cc1cbb0e55c0
     );
 
     public static $prefixesPsr0 = array (
+        'O' => 
+        array (
+            'Orangehill\\Iseed' => 
+            array (
+                0 => __DIR__ . '/..' . '/orangehill/iseed/src',
+            ),
+        ),
         'M' => 
         array (
             'Mockery' => 
@@ -509,7 +516,7 @@ class ComposerStaticInitf54bf688446075a55be9cc1cbb0e55c0
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DocumentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/DocumentsController.php',
-        'App\\Http\\Controllers\\FileController' => __DIR__ . '/../..' . '/app/Http/Controllers/FileController.php',
+        'App\\Http\\Controllers\\FrontendController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontendController.php',
         'App\\Http\\Controllers\\MyrequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/MyrequestController.php',
         'App\\Http\\Controllers\\PresentationController' => __DIR__ . '/../..' . '/app/Http/Controllers/PresentationController.php',
         'App\\Http\\Controllers\\SeminarController' => __DIR__ . '/../..' . '/app/Http/Controllers/SeminarController.php',
@@ -531,6 +538,7 @@ class ComposerStaticInitf54bf688446075a55be9cc1cbb0e55c0
         'App\\Models\\Seminar' => __DIR__ . '/../..' . '/app/Models/Seminar.php',
         'App\\Models\\Speaker' => __DIR__ . '/../..' . '/app/Models/Speaker.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Userdata' => __DIR__ . '/../..' . '/app/Models/Userdata.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -651,6 +659,7 @@ class ComposerStaticInitf54bf688446075a55be9cc1cbb0e55c0
         'Database\\Seeders\\PresentationSeeder' => __DIR__ . '/../..' . '/database/seeders/PresentationSeeder.php',
         'Database\\Seeders\\PresentationSpeakerSeeder' => __DIR__ . '/../..' . '/database/seeders/PresentationSpeakerSeeder.php',
         'Database\\Seeders\\SeminarTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SeminarTableSeeder.php',
+        'Database\\Seeders\\SeminarsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SeminarsTableSeeder.php',
         'Database\\Seeders\\SpeakerSeeder' => __DIR__ . '/../..' . '/database/seeders/SpeakerSeeder.php',
         'Database\\Seeders\\UserSeeder' => __DIR__ . '/../..' . '/database/seeders/UserSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
@@ -3349,6 +3358,11 @@ class ComposerStaticInitf54bf688446075a55be9cc1cbb0e55c0
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
         'NunoMaduro\\Collision\\SolutionsRepositories\\NullSolutionsRepository' => __DIR__ . '/..' . '/nunomaduro/collision/src/SolutionsRepositories/NullSolutionsRepository.php',
         'NunoMaduro\\Collision\\Writer' => __DIR__ . '/..' . '/nunomaduro/collision/src/Writer.php',
+        'Orangehill\\Iseed\\Facades\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Facades/Iseed.php',
+        'Orangehill\\Iseed\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Iseed.php',
+        'Orangehill\\Iseed\\IseedCommand' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedCommand.php',
+        'Orangehill\\Iseed\\IseedServiceProvider' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedServiceProvider.php',
+        'Orangehill\\Iseed\\TableNotFoundException' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Exceptions.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',

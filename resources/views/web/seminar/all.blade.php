@@ -2,38 +2,78 @@
 @extends("layouts.mainLayout")
 
 @section("content")
-<div class="mx-4">
-    <table class="table border-0">
-        <tr>
-            <td>
-                <h2>Histórico de seminarios</h2>
 
-            </td>
-            <td>
-                Buscador(prox.)
-            </td>
-            
-        </tr>
-    </table>
-    @foreach ($seminarList as $seminar)
-        <div class="card mb-4 mx-auto" style="background-color:#99ca95; max-width: 850px;" >
-            <div class="row g-0">
-                <div class="col-md-12">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">{{$seminar->location}}, {{$seminar->year}}</h5>
-                        <p class="card-text mb-3">Este fue organizado por {{$seminar->hosts}}</p>
-                        <div class="d-flex justify-content-between">
-                                <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Libro de actas</a>
-
-                                <a class="btn btn-primary  mx-3 text-nowrap"  href="{{route('web.idSeminar', $seminar->id)}}">Libro de resumenes</a>
-
-                                <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Contenido audiovisual</a>
-                        </div>
-                    </div>
-                </div>
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-lg-10 mx-auto mb-4">
+            <div class="section-title text-center ">
+                <h2 class="top-c-sep">Histórico de seminarios</h2>
             </div>
         </div>
-    @endforeach
+    </div>
+
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <div class="career-search mb-60">
+
+                <form action="#" class="career-form mb-60 ">
+                    <div class="row">
+                        <div class="col-lg-5 my-3">
+                            <div class="input-group position-relative">
+                                <input type="text" class="form-control" placeholder="Ej: 2002" id="keywords">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 my-3">
+                            <div >
+                                <select class="custom-select">
+                                    <option value="1">Año</option>
+                                    <option value="2">Localización</option>
+                                    <option value="3">Organizador</option>
+                                </select>
+                            </div>
+                        </div>
+                       <div class="col-lg-1">
+                       </div>
+                        <div class="col-lg-1 my-3 " >
+                            <button type="button" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="filter-result">                
+                    @foreach ($seminarList as $seminar)
+                    <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
+                        <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
+                            <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
+                                {{$seminar->year}}
+                            </div>
+                            <div class="job-content">
+                                <h5 class="text-center text-md-left"><i class="zmdi zmdi-pin mr-2"></i> &nbsp &nbsp{{$seminar->location}}</h5>
+                                <ul class="d-md-flex flex-wrap  ff-open-sans">
+                                    <li class="mr-md-4">
+                                        Este seminario fue organizado por {{$seminar->hosts}}.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-right my-4 flex-shrink-0">
+                            <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Libro de actas</a>
+                            <a class="btn btn-primary  mx-3 text-nowrap"  href="{{route('web.idSeminar', $seminar->id)}}">Libro de resumenes</a>
+                            <a class="btn btn-primary  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Contenido audiovisual</a>
+
+                        </div>
+                    </div>
+                        
+                    @endforeach
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
 </div>
 
 @endsection

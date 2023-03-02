@@ -3,7 +3,7 @@
  <head>
    @include('layouts.head')
  </head>
- <body style="background-color:#3d939d;">
+ <body>
   @include('layouts.navAdmin')
 @yield('content')
 @include('layouts.footer')

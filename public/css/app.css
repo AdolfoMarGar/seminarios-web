@@ -1,6 +1,7 @@
 body{
 	background: #e1eacd; 
 }
+/* Paleta colores*/
 .first-color { 
 	background: #e1eacd; 
 }
@@ -17,7 +18,45 @@ body{
 	background: #015c4d; 
 }
 
-/* ===== Career ===== */
+
+
+
+/* pdf embed  */
+#Iframe-Master-CC-and-Rs {
+    max-width: 1024px;
+    max-height: 100%; 
+    overflow: hidden;
+}
+
+.responsive-wrapper {
+    position: relative;
+    height: 0;    /* gets height from padding-bottom */
+}
+
+.responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+.responsive-wrapper-wxh-572x612 {
+    padding-bottom: 80%;
+}
+
+
+
+
+
+
+
+/* ===== Lista seminarios y ponencias ===== */
 .career-form {
  border-radius: 15px;
  padding: 0 16px;
@@ -194,3 +233,5 @@ ul {
 .mb-30 {
    margin-bottom: 30px;
 }
+
+/* */

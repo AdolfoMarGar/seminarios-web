@@ -2,7 +2,12 @@
 @extends("layouts.mainLayout")
 
 @section("content")
-<div class="mx-4">
+<style>
+    p {
+        text-align: justify;
+    }
+    </style>
+<div class=" container-fluid">
     <h1 class="text-center">Seminario de Técnicos y Especialistas en horticultura</h1>
     <p class="text-justify mx-5" style="font-size: x-large;">
         En un principio, allá por el final de los años sesenta, que es cuando se creó nuestra actividad, los pocos que éramos estábamos aislados, sin información de cuales eran nuestros cometidos y con pocos medios para avanzar en nuestro conocimiento técnico, sobre todo en las técnicas de invernaderos, que con gran pujanza estaban irrumpiendo en la horticultura de esas zonas hortícolas privilegiadas y que los agricultores usuarios demandaban bastante información y experimentación.

@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg bg-success d-flex">
+<nav class="navbar navbar-expand-lg fourth-color d-flex">
   <div class="container-fluid">
     <a class="mx-3 navbar-brand" href="/" style="font-size:xx-large"> <img src="{{url('PERMANENT/logoindex.jpg')}}" style="height: 60px;"/> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
               Archivo del seminario
             </a>
           
-            <div class="dropdown-menu bg-success" id="archivoDivMenu" aria-labelledby="dropdownMenuLink"  style="font-size:x-large">
+            <div class="dropdown-menu fourth-color" id="archivoDivMenu" aria-labelledby="dropdownMenuLink"  style="font-size:x-large">
               <a class="dropdown-item" href="/seminars">Histórico de seminarios</a>
               <a class="dropdown-item" href="/presentations">Ponencias</a>
               <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>

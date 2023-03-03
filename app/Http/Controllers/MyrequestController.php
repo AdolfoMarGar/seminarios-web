@@ -13,6 +13,10 @@ use App\Models\User;
 class MyrequestController extends Controller{
     public function __construct(){
         $this->middleware("auth"); 
+         /*
+        $this->middleware("admin")->except('create'); 
+        $this->middleware("user")->only('create'); 
+        */
     }
     
     public function index() {

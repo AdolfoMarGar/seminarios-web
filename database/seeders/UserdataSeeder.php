@@ -14,7 +14,6 @@ class UserDataSeeder extends Seeder{
      */
     public function run(){
         DB::table('userdatas')->insert([
-            'email' => 'asdfol@gmail.com',
             'realname' => 'Juan',
             'lastname' => 'Gomiz',
             'region' => 'Badajoz',
@@ -22,7 +21,6 @@ class UserDataSeeder extends Seeder{
         ]);
         
         DB::table('userdatas')->insert([
-            'email' => 'yguasdop@gmail.com',
             'realname' => 'Maria',
             'lastname' => 'Fuet',
             'region' => 'Almeria',

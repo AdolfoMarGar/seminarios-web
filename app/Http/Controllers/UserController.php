@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Userdata;
-
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller{
     
@@ -33,6 +33,8 @@ class UserController extends Controller{
             $userdata->save();
             $user->userdata_id= $userdata->id;
         }
+        $user->password = Hash::make($r->password);
+
         $user->save();
 
         return redirect()->route('user.index');
@@ -52,6 +54,7 @@ class UserController extends Controller{
             $userdata->save(); 
         }
         $user->fill($r->all()); 
+        $user->password = Hash::make($r->password);
         $user->save(); 
 
         return redirect()->route('user.index');

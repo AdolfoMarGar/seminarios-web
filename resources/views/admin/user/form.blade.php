@@ -37,9 +37,9 @@
             </tr>
 
             <tr>
-                <th scope="col">Nombre del usuario:</th>
+                <th scope="col">Email:</th>
                 <td>
-                    <input name="username" class="form-control" type="text" placeholder="Ej. Piratilla_88" aria-label="default input example" value="{{$user->username ?? '' }}">
+                    <input name="email" class="form-control" type="text" placeholder="Ej. adolfo@gmail.com" aria-label="default input example" value="{{$user->email ?? '' }}">
                 </td>
             </tr>
 
@@ -50,12 +50,6 @@
                 </td>
             </tr>
 
-            <tr>
-                <th scope="col">Email:</th>
-                <td>
-                    <input name="email" class="form-control" type="text" placeholder="Ej. miContraseña_13" aria-label="default input example" value="{{$user->userdata->email ?? '' }}">
-                </td>
-            </tr>
 
             <tr>
                 <th scope="col">Nombre:</th>

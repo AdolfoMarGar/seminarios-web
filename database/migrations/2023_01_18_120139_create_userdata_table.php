@@ -13,7 +13,6 @@ return new class extends Migration{
     public function up(){
         Schema::create('userdatas', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
             $table->string('realname');
             $table->string('lastname');
             $table->string('region');

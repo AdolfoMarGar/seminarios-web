@@ -7,8 +7,10 @@ use App\Models\Presentation;
 use App\Models\Seminar;
 use App\Models\Speaker;
 
-class PresentationController extends Controller
-{
+class PresentationController extends Controller{
+    public function __construct(){
+        $this->middleware("auth"); 
+    }
     
     public function index() {
         $presentationList = Presentation::all();

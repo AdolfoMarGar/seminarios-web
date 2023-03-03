@@ -11,6 +11,10 @@ use App\Models\User;
 
 
 class MyrequestController extends Controller{
+    public function __construct(){
+        $this->middleware("auth"); 
+    }
+    
     public function index() {
         $myrequestList = Myrequest::all();
         return view('admin.request.all', ['myrequestList'=>$myrequestList]);

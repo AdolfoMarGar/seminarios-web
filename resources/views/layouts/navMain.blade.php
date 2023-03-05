@@ -1,71 +1,147 @@
-
-<nav class="navbar navbar-expand-lg fourth-color d-flex">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg  fourth-color" style="font-size:x-large">
+  <!-- Container wrapper -->
   <div class="container-fluid">
-    <a class="mx-3 navbar-brand" href="/" style="font-size:xx-large"> 
-      <img src="{{url('PERMANENT/logoindex.jpg')}}" style="height: 60px;"/> 
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+    toogle
     </button>
 
-    <div class="navbar-collapse collapse" id="nav" style="font-size:x-large">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link mx-4" href="/nextSeminar">Próximo seminario</a>
-        </li>
-        
-        
-
-        <li class="nav-item">
-          <div class="dropdown show" id="archivoDropdownMenuLink" >
-            <a class="btn dropdown-toggle mx-4" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="font-size:x-large">
-              Archivo del seminario
-            </a>
-          
-            <div class="dropdown-menu fourth-color" id="archivoDivMenu" aria-labelledby="dropdownMenuLink"  style="font-size:x-large">
-              <a class="dropdown-item" href="/seminars">Histórico de seminarios</a>
-              <a class="dropdown-item" href="/presentations">Ponencias</a>
-              <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-4" href="/history">Nuestra historia</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-4" href="/aboutUs">Contáctanos</a>
-        </li>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" >
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
+          <img
+          src="{{url('PERMANENT/logoindex.jpg')}}"
+          height="50"
+          alt="Logo web"
+          loading="lazy"
+          />
+      </a>
+      
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+              <a class="nav-link " href="/nextSeminar">Próximo seminario</a>
+          </li>
+          <li class="nav-item dropdown" id="seminarDropdown">
+              <a
+                  class="nav-link dropdown-toggle"  
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false"
+              >
+                  Archivo del seminario
+              </a>
+              <ul class="dropdown-menu fourth-color" id="seminarList" style="font-size:x-large">
+                  <li>
+                      <a class="dropdown-item" href="/seminars">Histórico de seminarios</a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/presentations">Ponencias</a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>
+                  </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link mx-4" href="/history">Nuestra historia</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link mx-4" href="/aboutUs">Contáctanos</a>
+          </li>
       </ul>
-
-      <a class="mx-3 navbar-brand" href="/admin/seminar">Admin</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Left links -->
     </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+     
+
+      <!-- Notifications -->
+      <div class="dropdown" id="login">
+          <a
+              class="text-reset me-5 dropdown-toggle hidden-arrow"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+          >
+              Acceso            
+          </a>
+          <ul
+              class="dropdown-menu dropdown-menu-end fourth-color"
+              aria-labelledby="navbarDropdownMenuLink"
+              id="loginList"
+              style="font-size:x-large"
+          >
+              @if (!auth()->check())
+                  <li>
+                      <a class="dropdown-item" href="/login">Login</a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/register">Registrarse</a>
+                  </li>
+              @else
+                  <li>
+                      <a class="dropdown-item" href="/request">Peticiones</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/profile">Perfil</a>
+                </li>
+                  <li>
+                      <a 
+                          class="dropdown-item"
+                          href="{{ route('logout') }}"
+                          onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                      >
+                          Logout
+                      </a>
+                  </li>
+
+              @endif
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+              
+              
+          </ul>
+      </div>
+      
+    </div>
+    <!-- Right elements -->
   </div>
+  <!-- Container wrapper -->
 </nav>
-
-</br>
-
+<!-- Navbar -->
 
 <script>
+  
   $(document).ready(function () {
-    $("div.dropdown#seminarDropdownMenuLink").click(function() {
-      $("#seminarDivMenu").toggleClass("show");
+    $("div#login").click(function() {
+      $("#loginList").toggleClass("show");
     });
-    $("div.dropdown#seminarDropdownMenuLink").mouseleave(function() {
-      $("#seminarDivMenu").removeClass("show");
+    $("div#login").mouseleave(function() {
+      $("#loginList").removeClass("show");
     });
   });
 
   $(document).ready(function () {
-    $("div.dropdown#archivoDropdownMenuLink").click(function() {
-      $("#archivoDivMenu").toggleClass("show");
+    $("li#seminarDropdown").click(function() {
+      $("#seminarList").toggleClass("show");
     });
-    $("div.dropdown#archivoDropdownMenuLink").mouseleave(function() {
-      $("#archivoDivMenu").removeClass("show");
+    $("li#seminarDropdown").mouseleave(function() {
+      $("#seminarList").removeClass("show");
     });
   });
 </script>

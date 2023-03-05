@@ -69,5 +69,5 @@ Route::get('seminar/{id}', 'FrontendController@idSeminar')->name('web.idSeminar'
 Route::get('presentations', 'FrontendController@allPresentation')->name('web.allPresentation');
 Route::get('presentation/{id}', 'FrontendController@idPresentation')->name('web.idPresentation');
 
-Route::get('multimedia', 'DocumentsController@webMultimedia')->name('web.multimedia');
+Route::get('multimedia', 'FrontendController@webMultimedia')->name('web.multimedia');
 

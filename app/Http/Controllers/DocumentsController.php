@@ -10,7 +10,7 @@ use App\Models\Seminar;
 
 class DocumentsController extends Controller{
     public function __construct(){
-        $this->middleware("auth"); 
+        $this->middleware("isAdmin"); 
     }
 
     public function index() {

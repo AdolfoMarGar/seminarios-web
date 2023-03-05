@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Speaker;
 class SpeakerController extends Controller{
     public function __construct(){
-        $this->middleware("auth"); 
+        $this->middleware("isAdmin"); 
     }
     
     public function index() {

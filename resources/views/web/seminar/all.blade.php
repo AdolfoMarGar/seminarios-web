@@ -7,6 +7,7 @@
     <div class="row">
             <div class="col-lg-10 mx-auto mb-4">
             <div class="section-title text-center ">
+                <br>
                 <h1 class="top-c-sep"><u>Histórico de seminarios</u></h1>
             </div>
         </div>

@@ -28,7 +28,7 @@
                     @if (isset($myrequest->document->presentation))
                         <td>{{$myrequest->document->presentation->subject}}</td> 
                     @else
-                        <td></td>
+                        <td>Ninguna</td>
                     @endif
                     <td>
                         @switch($myrequest->type)

@@ -37,6 +37,9 @@ require __DIR__.'/auth.php';
 // Añadimos una ruta NO ESTÁNDAR para borrar productos mediante GET
 
 /* RUTAS DEL PANEL DE ADMINISTRADOR */
+Route::get('/admin',function(){
+    return redirect('/admin/seminar');
+});
 Route::resource('admin/seminar', 'SeminarController');
 Route::get('admin/seminar/delete/{seminar}', 'SeminarController@destroy')->name('seminar.myDestroy');
 
@@ -70,4 +73,5 @@ Route::get('presentations', 'FrontendController@allPresentation')->name('web.all
 Route::get('presentation/{id}', 'FrontendController@idPresentation')->name('web.idPresentation');
 
 Route::get('multimedia', 'FrontendController@webMultimedia')->name('web.multimedia');
+Route::get('myrequest', 'FrontendController@allRequest')->name('web.allrequest');
 

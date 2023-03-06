@@ -104,7 +104,7 @@
                                     @endif 
                                 @endisset
                             
-                            value="{{$s->id}}">{{$s->username}}</option>
+                            value="{{$s->id}}">{{$s->email}}</option>
                         @endforeach
                     </select>
                 </td>

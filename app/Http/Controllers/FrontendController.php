@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Seminar;
 use App\Models\Presentation;
 use App\Models\Document;
+use App\Models\Myrequest;
 
 class FrontendController extends Controller{
 
@@ -62,7 +63,10 @@ class FrontendController extends Controller{
 
         return view('web.presentation.show', $data);
     }
-
-   
+    public function allRequest(){
+        $requestList = Myrequest::where("user_id",auth()->user()->id)->get()??null;
+        $data['requestList']=$requestList;
+        return view ('web.request.all', $data);
+    }
 
 }

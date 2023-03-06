@@ -3,15 +3,13 @@
 
 @section("content")
 <div class="container-fluid">
-    <table class="table border-0">
-        <tr>
-            <td>
-                <h2>Seminario {{$presentation->seminar->location}}, {{$presentation->seminar->year}}</h2>
-
-            </td>
-            
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-lg-10 mx-auto mb-4">
+        <div class="section-title text-center ">
+            <br>
+            <h1 class="top-c-sep"><u>Seminario {{$presentation->seminar->location}}, {{$presentation->seminar->year}}</u></h1>
+        </div>
+    </div>    
     <div class="card mb-4 mx-auto pb-4 third-color" style="max-width: 850px;" >
         <div class="row g-0">
             <div class="col-md-12">

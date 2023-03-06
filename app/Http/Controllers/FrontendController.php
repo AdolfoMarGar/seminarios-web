@@ -34,10 +34,8 @@ class FrontendController extends Controller{
     public function idSeminar($id){
         $s = Seminar::find($id);
         $acta = Document::where("seminar_id", $id)->where("mandatory","1")->get()[0]??null;
-        $p = Presentation::where("seminar_id", $id)->get();
 
         $data['seminar'] = $s;
-        $data['presentationList'] = $p;
         $data["acta"] = $acta->dir??0;
 
 

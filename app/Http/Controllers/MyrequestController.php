@@ -12,7 +12,7 @@ use App\Models\User;
 
 class MyrequestController extends Controller{
     public function __construct(){
-        $this->middleware("isAdmin");
+        $this->middleware("isAdmin")->except("store","update","destroy");
     }
     
     public function index() {

@@ -29,9 +29,6 @@
         
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link " href="/nextSeminar">Próximo seminario</a>
-                </li>
                 <li class="nav-item dropdown" id="seminarDropdown">
                     <a
                         class="nav-link dropdown-toggle"  
@@ -54,19 +51,23 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-4" href="/history">Nuestra historia</a>
+                    <a class="nav-link " href="/nextSeminar">Próximo seminario</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link mx-4" href="/aboutUs">Contáctanos</a>
+                    <a class="nav-link mx-4" href="/history">Nuestra historia</a>
                 </li>
                 @if (auth()->check())
                     <li class="nav-item">
                     <a class="nav-link mx-4" href="/myrequest">Peticiones</a>
                     </li>
                 @endif
+                <li class="nav-item">
+                    <a class="nav-link mx-4" href="/aboutUs">Contáctanos</a>
+                </li>
+                
             </ul>
             <!-- Left links -->
-                       <!-- Aqui iba un cierre div -->
 
             <!-- Collapsible wrapper -->
 
@@ -80,7 +81,11 @@
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
                     >
+                    @if (!auth()->check())
                         Acceso            
+                    @else
+                        Hola {{auth()->user()->userdata->realname??'Admin'}}
+                    @endif
                     </a>
                     <ul
                         class="dropdown-menu dropdown-menu-end fourth-color"
@@ -99,6 +104,11 @@
                             
                             <li>
                                 <a class="dropdown-item" href="/profile">Perfil</a>
+                            </li>
+                            <li>
+                                @if (auth()->user()->type==1)
+                                    <a class="dropdown-item" href="/admin">Admin panel</a>
+                                @endif
                             </li>
                             <li>
                                 <a 

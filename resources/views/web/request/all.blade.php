@@ -19,9 +19,9 @@
                 <div class="job-box  align-items-center justify-content-between mb-30 third-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
-                            <table class="table table-xl table-striped ">
+                            <table class="table table-striped ">
                                 <thead>
-                                    <tr>
+                                    <tr >
                                         <th scope="col">#</th>
                                         <th scope="col">Descripción</th>
                                         <th scope="col">Seminario</th>

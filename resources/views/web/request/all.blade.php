@@ -19,6 +19,11 @@
                 <div class="job-box  align-items-center justify-content-between mb-30 third-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
+                            
+                            <a class="btn first-color mx-3 text-nowrap" href="{{route('web.newRequest')}}">Nueva petición</a>
+                            <br>
+                            <br>
+                                        
                             <table class="table table-striped ">
                                 <thead>
                                     <tr >
@@ -27,7 +32,7 @@
                                         <th scope="col">Seminario</th>
                                         <th scope="col">Ponencia</th>
                                         <th scope="col">Ponentes</th>
-                                        <th scope="col">Acciones</th>
+                                        <th scope="col" colspan="2">&emsp;Acciones</th>
                                     </tr>
                                 </thead>
 
@@ -61,10 +66,13 @@
                                                     @endswitch
                                                 </td>
                                                 <td>
-                                                    <form action = "{{route('request.destroy', $myrequest->id)}}" method="POST">
+                                                    <a class="btn first-color mx-3 text-nowrap" href="{{route('web.editRequest')}}">Editar</a>
+                                                </td>
+                                                    <td>
+                                                    <form action = "{{route('web.destroyRequest', $myrequest->id)}}" method="POST">
                                                         @csrf
                                                         @method("DELETE")
-                                                        <input  class="btn btn-primary" type="submit" value="Borrar">
+                                                        <input  class="btn first-color" type="submit" value="Borrar">
                                                     </form>
                                                 </td>
                                         </tr> 

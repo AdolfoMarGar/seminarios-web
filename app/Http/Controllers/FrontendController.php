@@ -7,6 +7,7 @@ use App\Models\Seminar;
 use App\Models\Presentation;
 use App\Models\Document;
 use App\Models\Myrequest;
+use App\Models\User;
 
 class FrontendController extends Controller{
 
@@ -72,10 +73,8 @@ class FrontendController extends Controller{
     }
 
     public function newRequest(){
-        $u = User::all();
         $p = Presentation::all();
         $s = Seminar::all();
-        $data["userList"]= $u;
         $data["presentationList"]= $p;
         $data["seminarList"]= $s;
         $data['myrequest']= null;
@@ -83,7 +82,7 @@ class FrontendController extends Controller{
         return view('web.request.form', $data);
     }
 
-    public function editRequest(){
+    public function editRequest($id){
         $myrequest = Myrequest::find($id);
         $u = User::all();
         $p = Presentation::all();
@@ -96,8 +95,11 @@ class FrontendController extends Controller{
         return view('web.request.form', $data);
     }
 
-    public function deleteRequest(){
-        
+    public function destroyRequest(){
+        $s = Myrequest::find($id);
+        //$this->destroyDocument($s->document_id);
+        $s->delete();
+        return redirect()->route('web.request.all');
     }
 
     public function storeRequest(Request $r) {
@@ -105,7 +107,7 @@ class FrontendController extends Controller{
         $myrequest->document_id = $this->storeDocument($r);
         $myrequest->save();
  
-        return redirect()->route('request.index');
+        return redirect()->route('web.request.all');
     }
 
     public function updateRequest(Request $r) {
@@ -115,6 +117,49 @@ class FrontendController extends Controller{
         $a->save(); 
 
         return redirect()->route('web.request.all');
+    }
+
+
+    public function storeDocument(Request $r) {
+        $r->type=-1;
+
+        $dir = Document::fileUpload($r);
+        if(!$dir){
+            echo"error";
+            return null;
+        }else{
+            $doc = new Document($r->all());
+            $doc->dir = $dir;
+            $doc->type=-1;
+            $doc->save();
+            return $doc->id;
+        }
+    }
+
+    public function destroyDocument($id){
+        $s = Document::find($id);
+        $path = $s->dir;
+
+        if(Document::fileDelete($path)){
+            $s->delete();
+            return true;
+        }else{
+            echo("ERRORRRRRR");
+            return false;
+        }
+    }
+
+    public function updateDocument(Request $r, $id){
+        $a = Document::find($id);
+        $a->fill($r->all()); 
+        $r->type = -1;
+        if(isset($r->file)){
+            Document::fileDelete($a->dir);
+            $dir=Document::fileUpload($r);
+            $a->dir=$dir;
+        }
+        
+        $a->save();
     }
 
 }

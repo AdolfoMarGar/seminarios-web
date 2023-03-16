@@ -66,7 +66,8 @@
                                                     @endswitch
                                                 </td>
                                                 <td>
-                                                    <a class="btn first-color mx-3 text-nowrap" href="{{route('web.editRequest')}}">Editar</a>
+                                                    <a class="btn first-color mx-3 text-nowrap" href="{{route('web.editRequest', $myrequest->id)}}">Editar</a>
+
                                                 </td>
                                                     <td>
                                                     <form action = "{{route('web.destroyRequest', $myrequest->id)}}" method="POST">
@@ -75,7 +76,7 @@
                                                         <input  class="btn first-color" type="submit" value="Borrar">
                                                     </form>
                                                 </td>
-                                        </tr> 
+                                            </tr> 
                                         @php
                                             $cont = $cont+1;
                                         @endphp

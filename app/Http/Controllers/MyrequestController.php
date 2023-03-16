@@ -76,6 +76,7 @@ class MyrequestController extends Controller{
     }
 
     public function storeDocument(Request $r) {
+        $r->type=-1;
         $dir = Document::fileUpload($r);
         if(!$dir){
             echo"error";

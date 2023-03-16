@@ -19,9 +19,9 @@
 
     <div class="row">
         
-        <div class="col-lg-9 mx-auto">
+        <div class="col-lg-10 mx-auto">
             <div class="filter-result">    
-                <div class="job-box  align-items-center justify-content-between mb-30 third-color">
+                <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
                             <p class="text-justify mx-5" style="font-size: large;">
@@ -53,9 +53,9 @@
 
     <div class="row">
         
-        <div class="col-lg-9 mx-auto">
+        <div class="col-lg-10 mx-auto">
             <div class="filter-result">    
-                <div class="job-box  align-items-center justify-content-between mb-30 third-color">
+                <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
                             <p class="text-justify mx-5" style="font-size: large;">
@@ -95,9 +95,9 @@
 
     <div class="row">
         
-        <div class="col-lg-9 mx-auto">
+        <div class="col-lg-10 mx-auto">
             <div class="filter-result">    
-                <div class="job-box  align-items-center justify-content-between mb-30 third-color">
+                <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
                             <p class="text-justify mx-5" style="font-size: large;">
@@ -121,9 +121,9 @@
 
     <div class="row">
         
-        <div class="col-lg-9 mx-auto">
+        <div class="col-lg-10 mx-auto">
             <div class="filter-result">    
-                <div class="job-box  align-items-center justify-content-between mb-30 third-color">
+                <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
                             <p class="text-justify mx-5" style="font-size: large;">
@@ -159,9 +159,9 @@
 
     <div class="row">
         
-        <div class="col-lg-9 mx-auto">
+        <div class="col-lg-10 mx-auto">
             <div class="filter-result">    
-                <div class="job-box  align-items-center justify-content-between mb-30 third-color">
+                <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
                             <p class="text-justify mx-5" style="font-size: large;">

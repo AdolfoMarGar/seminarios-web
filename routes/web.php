@@ -58,6 +58,7 @@ Route::get('admin/request/acept/{request}', 'MyrequestController@acept')->name('
 
 Route::resource('admin/user', 'UserController');
 Route::get('admin/user/delete/{user}', 'UserController@destroy')->name('user.myDestroy');
+
 /*FIN RUTAS PANEL ADMINISTRADOR*/
 
 /* RUTAS PAGINA WEB  */
@@ -75,7 +76,7 @@ Route::get('presentation/{id}', 'FrontendController@idPresentation')->name('web.
 Route::get('myrequest', 'FrontendController@allRequest')->name('web.allrequest');
 Route::get('newRequest', 'FrontendController@newRequest')->name('web.newRequest');
 Route::get('editRequest/{request}', 'FrontendController@editRequest')->name('web.editRequest');
-Route::get('destroyRequest/{request}', 'FrontendController@destroyRequest')->name('web.destroyRequest');
+Route::delete('destroyRequest/{request}', 'FrontendController@destroyRequest')->name('web.destroyRequest');
 
 Route::get('multimedia', 'FrontendController@webMultimedia')->name('web.multimedia');
 

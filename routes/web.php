@@ -67,7 +67,6 @@ Route::get('/selectAjax', 'AjaxController@selectAjax')->name('web.selectAjax');
 Route::get('myrequest', 'FrontendController@allRequest')->name('web.allrequest');
 Route::get('newRequest', 'FrontendController@newRequest')->name('web.newRequest');
 Route::get('editRequest/{request}', 'FrontendController@editRequest')->name('web.editRequest');
-Route::delete('destroyRequest/{request}', 'FrontendController@destroyRequest')->name('web.destroyRequest');
 
 Route::get('multimedia', 'FrontendController@webMultimedia')->name('web.multimedia');
 

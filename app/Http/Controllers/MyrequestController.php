@@ -28,8 +28,8 @@ class MyrequestController extends Controller{
 
     public function create() {
         $u = User::all();
-        $p = Presentation::all();
         $s = Seminar::all();
+        $p = Presentation::where("seminar_id", $s[0]->id)->get()??null;
         $data["userList"]= $u;
         $data["presentationList"]= $p;
         $data["seminarList"]= $s;
@@ -39,18 +39,25 @@ class MyrequestController extends Controller{
     }
 
     public function store(Request $r) {
+        if(auth()->check()){
         $myrequest = new Myrequest($r->all());
         $myrequest->document_id = $this->storeDocument($r);
         $myrequest->save();
  
-        return redirect()->route('request.index');
+            if(auth()->user()->type==0){
+                return redirect()->route('request.index');
+            }else{
+                return redirect()->route('web.allrequest');
+            }
+        }
     }
 
     public function edit($id) {
         $myrequest = Myrequest::find($id);
         $u = User::all();
-        $p = Presentation::all();
         $s = Seminar::all();
+        $p = Presentation::where("seminar_id", $s[0]->id)->get()??null;
+
         $data["userList"]= $u;
         $data["presentationList"]= $p;
         $data["seminarList"]= $s;
@@ -60,19 +67,32 @@ class MyrequestController extends Controller{
     }
 
     public function update($id, Request $r) {
-        $a = Myrequest::find($id);
-        $this->updateDocument($r, $a->document_id);
-        $a->fill($r->all()); 
-        $a->save(); 
+            if(auth()->check()){
 
-        return redirect()->route('request.index');
+            $a = Myrequest::find($id);
+            $this->updateDocument($r, $a->document_id);
+            $a->fill($r->all()); 
+            $a->save(); 
+
+            if(auth()->user()->type==0){
+                return redirect()->route('request.index');
+            }else{
+                return redirect()->route('web.allrequest');
+            }    
+        }
     }
 
     public function destroy($id) {
-        $s = Myrequest::find($id);
-        $this->destroyDocument($s->document_id);
-        $s->delete();
-        return redirect()->route('request.index');
+        if(auth()->check()){
+            $s = Myrequest::find($id);
+            $this->destroyDocument($s->document_id);
+            $s->delete();
+            if(auth()->user()->type==0){
+                return redirect()->route('request.index');
+            }else{
+                return redirect()->route('web.allrequest');
+            }    
+        }
     }
 
     public function storeDocument(Request $r) {

@@ -6,6 +6,9 @@
 @section("header", "Inserción de seminarios")
 
 @section("content")
+<script src ="{{url('js/selectAjax.js')}}">
+</script>
+
 <div class="mx-4">
     <table class="table table-bordered table-striped">
         @isset($myrequest)
@@ -58,7 +61,7 @@
             <tr>
                 <th scope="col">Seminario:</th>
                 <td>
-                    <select class="form-select" aria-label="Default select example" name="seminar_id">
+                    <select class="form-select" urlAjax = "{{route('web.selectAjax')}}" id="selectAjax" aria-label="Default select example" name="seminar_id">
                         @foreach($seminarList as $s)
                             <option  
                             @isset($myrequest)
@@ -76,7 +79,7 @@
             <tr>
                 <th scope="col">Ponencia:</th>
                 <td>
-                    <select class="form-select" aria-label="Default select example" name="presentation_id">
+                    <select class="form-select"  id="selectRecargar" aria-label="Default select example" name="presentation_id">
                         <option value="{{null}}">Ninguno</option>
                         @foreach($presentationList as $s)
                             <option  

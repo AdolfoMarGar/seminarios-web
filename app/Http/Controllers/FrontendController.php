@@ -87,8 +87,9 @@ class FrontendController extends Controller{
     public function editRequest($id){
         $myrequest = Myrequest::find($id);
         $u = User::all();
-        $p = Presentation::all();
         $s = Seminar::all();
+        $p = Presentation::where("seminar_id", $s[0]->id)->get()??null;
+
         $data["userList"]= $u;
         $data["presentationList"]= $p;
         $data["seminarList"]= $s;
@@ -97,71 +98,6 @@ class FrontendController extends Controller{
         return view('web.request.form', $data);
     }
 
-    public function destroyRequest(){
-        $s = Myrequest::find($id);
-        //$this->destroyDocument($s->document_id);
-        $s->delete();
-        return redirect()->route('web.request.all');
-    }
-
-    public function storeRequest(Request $r) {
-        $myrequest = new Myrequest($r->all());
-        $myrequest->document_id = $this->storeDocument($r);
-        $myrequest->save();
- 
-        return redirect()->route('web.request.all');
-    }
-
-    public function updateRequest(Request $r) {
-        $a = Myrequest::find($id);
-        $this->updateDocument($r, $a->document_id);
-        $a->fill($r->all()); 
-        $a->save(); 
-
-        return redirect()->route('web.request.all');
-    }
-
-
-    public function storeDocument(Request $r) {
-        $r->type=-1;
-
-        $dir = Document::fileUpload($r);
-        if(!$dir){
-            echo"error";
-            return null;
-        }else{
-            $doc = new Document($r->all());
-            $doc->dir = $dir;
-            $doc->type=-1;
-            $doc->save();
-            return $doc->id;
-        }
-    }
-
-    public function destroyDocument($id){
-        $s = Document::find($id);
-        $path = $s->dir;
-
-        if(Document::fileDelete($path)){
-            $s->delete();
-            return true;
-        }else{
-            echo("ERRORRRRRR");
-            return false;
-        }
-    }
-
-    public function updateDocument(Request $r, $id){
-        $a = Document::find($id);
-        $a->fill($r->all()); 
-        $r->type = -1;
-        if(isset($r->file)){
-            Document::fileDelete($a->dir);
-            $dir=Document::fileUpload($r);
-            $a->dir=$dir;
-        }
-        
-        $a->save();
-    }
+   
 
 }

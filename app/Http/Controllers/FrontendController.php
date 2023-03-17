@@ -73,10 +73,12 @@ class FrontendController extends Controller{
     }
 
     public function newRequest(){
-        $p = Presentation::all();
         $s = Seminar::all();
-        $data["presentationList"]= $p;
         $data["seminarList"]= $s;
+
+        $p = Presentation::where("seminar_id", $s[0]->id)->get()??null;
+        $data["presentationList"]= $p;
+
         $data['myrequest']= null;
 
         return view('web.request.form', $data);

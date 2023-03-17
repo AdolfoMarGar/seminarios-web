@@ -74,7 +74,7 @@
                                     <tr>
                                         <th scope="col">Seminario:</th>
                                         <td>
-                                            <select class="form-select first-color" aria-label="Default select example" name="seminar_id">
+                                            <select class="form-select first-color" id="selectAjax" aria-label="Default select example" name="seminar_id">
                                                 @foreach($seminarList as $s)
                                                     <option  
                                                     @isset($myrequest)
@@ -92,7 +92,7 @@
                                     <tr>
                                         <th scope="col">Ponencia:</th>
                                         <td>
-                                            <select class="form-select first-color" aria-label="Default select example" name="presentation_id">
+                                            <select class="form-select first-color"  aria-label="Default select example" name="presentation_id">
                                                 <option value="{{null}}">Ninguno</option>
                                                 @foreach($presentationList as $s)
                                                     <option  
@@ -140,4 +140,28 @@
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#selectAjax').on('change', function() {
+        var valorSelect = $(this).val();
+        
+        $.ajax({
+            url: '/selectAjax',
+            type: 'GET',
+            data: {
+            valor: valorSelect
+            },
+            dataType: 'json',
+            success: function(respuesta) {
+                console.log(respuesta);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        });
+    });
+});
+</script>
 @endsection

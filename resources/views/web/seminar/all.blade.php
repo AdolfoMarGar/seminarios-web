@@ -2,7 +2,8 @@
 @extends("layouts.mainLayout")
 
 @section("content")
-
+<script src ="{{url('js/buscadorSeminar.js')}}">
+</script>
 <div class="container-fluid">
     <div class="row">
             <div class="col-lg-10 mx-auto mb-4">
@@ -21,12 +22,12 @@
                     <div class="row">
                         <div class="col-lg-5 my-3">
                             <div class="input-group position-relative">
-                                <input type="text" class="form-control" placeholder="Ej: 2002" id="keywords">
+                                <input type="text"id="busquedatxt" class="form-control" placeholder="Ej: 2002" id="keywords">
                             </div>
                         </div>
                         <div class="col-lg-5 my-3">
                             <div >
-                                <select class="custom-select">
+                                <select class="custom-select" id="type">
                                     <option value="1">Año</option>
                                     <option value="2">Localización</option>
                                     <option value="3">Organizador</option>
@@ -36,7 +37,7 @@
                        <div class="col-lg-1">
                        </div>
                         <div class="col-lg-1 my-3 " >
-                            <button type="button" class="btn btn-lg btn-block btn-light btn-custom second-color" id="contact-submit">
+                            <button type="button"  urlAjax = "{{route('web.buscadorSeminar')}}" id="botonBusqueda" class="btn btn-lg btn-block btn-light btn-custom second-color">
                                 Buscar
                             </button>
                         </div>
@@ -55,7 +56,7 @@
                                 <h5 class=" ">&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<i class="zmdi zmdi-pin mr-2"></i> &nbsp &nbsp{{$seminar->location}}</h5>
                                 <ul class="d-md-flex flex-wrap  ff-open-sans">
                                     <li class="mr-md-4">
-                                        Este seminario fue organizado por {{$seminar->hosts}}.
+                                        Organizado por {{$seminar->hosts}}.
                                     </li>
                                 </ul>
                             </div>

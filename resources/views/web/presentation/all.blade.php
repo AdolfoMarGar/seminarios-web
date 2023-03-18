@@ -2,6 +2,8 @@
 @extends("layouts.mainLayout")
 
 @section("content")
+<script src ="{{url('js/buscadorPresentation.js')}}">
+</script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10 mx-auto mb-4">
@@ -24,7 +26,7 @@
                         </div>
                         <div class="col-lg-5 my-3">
                             <div >
-                                <select class="custom-select">
+                                <select class="custom-select" id="type">
                                     <option value="1">Tema</option>
                                     <option value="2">Titulo</option>
                                     <option value="3">Palabra clave</option>

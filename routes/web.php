@@ -59,6 +59,8 @@ Route::get('/aboutUs', 'FrontendController@aboutUs')->name('web.aboutUs');
 
 Route::get('seminars', 'FrontendController@allSeminar')->name('web.allSeminar');
 Route::get('seminar/{id}', 'FrontendController@idSeminar')->name('web.idSeminar');
+Route::get('/buscadorSeminar', 'AjaxController@buscadorSeminar')->name('web.buscadorSeminar');
+
 
 Route::get('presentations', 'FrontendController@allPresentation')->name('web.allPresentation');
 Route::get('presentation/{id}', 'FrontendController@idPresentation')->name('web.idPresentation');

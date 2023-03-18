@@ -55,7 +55,7 @@
         <tr>
             <td colspan="2">
                 <a href="{{route('request.acept', $myrequest->id)}}" class="btn btn-primary">Aceptar</a>
-                <a href="{{route('request.myDestroy', $myrequest->id)}}" class="btn btn-primary">Rechazar</a>
+                <a href="{{route('request.destroy', $myrequest->id)}}" class="btn btn-primary">Rechazar</a>
                 <a href="{{route('request.edit', $myrequest->id)}}" class="btn btn-primary">Modificar</a>
             </td>
         </tr>

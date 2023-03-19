@@ -45,14 +45,14 @@
                 </form>
             </br>
 
-                <div class="filter-result">                
+                <div class="filter-result" id="divLista"  >                
                     @foreach ($seminarList as $seminar)
                     <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
                         <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
                             <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
                                 {{$seminar->year}}
                             </div>
-                            <div class="job-content">
+                            <div class="job-content" >
                                 <h5 class=" ">&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<i class="zmdi zmdi-pin mr-2"></i> &nbsp &nbsp{{$seminar->location}}</h5>
                                 <ul class="d-md-flex flex-wrap  ff-open-sans">
                                     <li class="mr-md-4">
@@ -61,7 +61,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="job-right my-4 flex-shrink-0">
+                        <div class="job-right my-4 flex-shrink-0" id="rutas" rutaActa="{{route('web.idSeminar', -1)}}">>
                             <a class="btn second-color mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Libro de actas</a>
                             <a class="btn second-color  mx-3 text-nowrap"  href="{{route('web.idSeminar', $seminar->id)}}">Libro de resumenes</a>
                             <a class="btn second-color  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Contenido audiovisual</a>

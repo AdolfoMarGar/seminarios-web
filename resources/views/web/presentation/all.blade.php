@@ -37,7 +37,7 @@
                        <div class="col-lg-1">
                        </div>
                         <div class="col-lg-1 my-3 " >
-                            <button type="button" class="btn btn-lg btn-block btn-light btn-custom second-color" id="botonBusqueda" urlAjax = "{{route('web.buscadorPresentation')}}">
+                            <button type="button" rutaActa="{{route('web.idSeminar', -1)}}"  urlAjax = "{{route('web.buscadorPresentation')}}" id="botonBusqueda" class="btn btn-lg btn-block btn-light btn-custom second-color" >
                                 Buscar
                             </button>
                         </div>
@@ -45,15 +45,13 @@
                 </form>
             </br>
 
-                <div class="filter-result">    
+                <div class="filter-result" id="divLista">    
                     @for($i=0; $i<count($yearList); $i++)
+                        <h2 class="text-left mx-auto" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$yearList[$i]->location}}, {{$yearList[$i]->year}}</h2>
                         @foreach ($presentationList as $pre)
                             @if ($pre->seminar->year==$yearList[$i]->year)
-                                <h2 class="text-left mx-auto" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$yearList[$i]->location}}, {{$yearList[$i]->year}}</h2>
-
-                                <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
+                            <div class="job-box d-md-flex align-items-center justify-content-between mb-30">     
                                     <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                        
                                         <div class="job-content">
                                             <h5 class=" ">&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<i class="zmdi zmdi-flower-alt"></i></i> &nbsp &nbsp{{$pre->subject}}</h5>
                                             <p>
@@ -62,15 +60,12 @@
                                             <p>
                                                 &nbsp &nbsp&nbsp &nbsp &nbsp&nbspPalbras clave: {{$pre->keywords}}
                                             </p>
-                                                
-                                            
                                         </div>
                                     </div>
                                     <div class="job-right my-4 flex-shrink-0">
-                                        <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idPresentation', $pre->id)}}">Resumen</a>
-                                        <a class="btn btn-primary mx-3 text-nowrap" href="{{route('web.idPresentation', $pre->id)}}">Presentación</a>
-            
-                                        <a class="btn btn-primary  mx-3 text-nowrap"  href="/">Archivos relacionados</a>
+                                        <a class="btn  mx-3 text-nowrap third-color" href="{{route('web.idPresentation', $pre->id)}}">Resumen</a>
+                                        <a class="btn  mx-3 text-nowrap third-color" href="{{route('web.idPresentation', $pre->id)}}">Presentación</a>
+                                        <a class="btn  mx-3 text-nowrap third-color"  href="/">Archivos relacionados</a>
     
                                     </div>
                                 </div>

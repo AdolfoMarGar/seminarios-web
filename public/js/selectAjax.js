@@ -33,7 +33,7 @@ function crearSelect(respuesta) {
 
     );
     respuesta.forEach(ponencia => {
-        $('#valueNull').after('<option value="'+ponencia.id+'">'+ponencia.subject+'</option>');
+        $('#valueNull').after('<option value="'+ponencia.id+'">'+ponencia.subject+', '+ponencia.title+'</option>');
 
                
     });

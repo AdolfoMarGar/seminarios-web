@@ -28,41 +28,28 @@ class AjaxController extends Controller{
             case '3':
                 $response = Seminar::where('hosts', 'like', '%'.$busqueda.'%')->get(); 
                 break;
-            
-            
         } 
 
-      
         return response()->json($response);
     }
 
     public function buscadorPresentation(Request $request){
         $type = $request->input('type');
-        $busqueda = $request->input('data');
+        $busqueda = $request->input('busqueda');
         switch ($type) {
             case '1':
-                $response = DB::table('subject')
-                ->where('year', 'like', '%'.$busqueda.'%')
-                ->get();                
+                $response = Presentation::where('subject', 'like', '%'.$busqueda.'%')->get();                
                 break;
             case '2':
-                $response = DB::table('keyword')
-                ->where('location', 'like', '%'.$busqueda.'%')
-                ->get(); 
+                $response = Presentation::where('title', 'like', '%'.$busqueda.'%')->get();                
                 break;
             case '3':
-                $response = DB::table('location')
-                ->where('host', 'like', '%'.$busqueda.'%')
-                ->get(); 
+                $response = Presentation::where('keywords', 'like', '%'.$busqueda.'%')->get();                
                 break;
             case '4':
                 #falta hacer query busqueda de la tabla relacionada por modelo speaker
-                $response = DB::table('location')
-                ->where('host', 'like', '%'.$busqueda.'%')
-                ->get(); 
+                $response = Presentation::where('keywords', 'like', '%'.$busqueda.'%')->get();                
                 break;
-            
-            
         }
 
         return response()->json($response);

@@ -16,11 +16,11 @@
         
         <div class="col-lg-9 mx-auto">
             <div class="filter-result">    
-                <div class="job-box  align-items-center justify-content-between mb-30 third-color">
+                <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
                             
-                            <a class="btn first-color mx-3 text-nowrap" href="{{route('web.newRequest')}}">Nueva petición</a>
+                            <a class="btn third-color mx-3 text-nowrap" href="{{route('web.newRequest')}}">Nueva petición</a>
                             <br>
                             <br>
                                         
@@ -66,14 +66,14 @@
                                                     @endswitch
                                                 </td>
                                                 <td>
-                                                    <a class="btn first-color mx-3 text-nowrap" href="{{route('web.editRequest', $myrequest->id)}}">Editar</a>
+                                                    <a class="btn third-color mx-3 text-nowrap" href="{{route('web.editRequest', $myrequest->id)}}">Editar</a>
 
                                                 </td>
                                                     <td>
                                                     <form action = "{{route('request.destroy', $myrequest->id)}}" method="POST">
                                                         @csrf
                                                         @method("DELETE")
-                                                        <input  class="btn first-color" type="submit" value="Borrar">
+                                                        <input  class="btn third-color" type="submit" value="Borrar">
                                                     </form>
                                                 </td>
                                             </tr> 

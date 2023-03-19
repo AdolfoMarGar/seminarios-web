@@ -31,7 +31,7 @@ function peticionAjax(type, urlAjax, busqueda) {
     });
 }
 function crearLista(respuesta) {
-    var rutaActa = $('#rutas').attr("rutaActa");
+    var rutaActa = $('#botonBusqueda').attr("rutaActa")??null;
 
     $('#divLista').empty();
     respuesta.forEach(seminar => {
@@ -60,10 +60,7 @@ function crearLista(respuesta) {
             </div>\
         ');
         rutaActa = rutaActa.replace(seminar.id, "-1" );
-
-        
-                
-                        
+            
     });
     
 }

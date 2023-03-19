@@ -37,7 +37,7 @@
                        <div class="col-lg-1">
                        </div>
                         <div class="col-lg-1 my-3 " >
-                            <button type="button" class="btn btn-lg btn-block btn-light btn-custom second-color" id="contact-submit">
+                            <button type="button" class="btn btn-lg btn-block btn-light btn-custom second-color" id="botonBusqueda" urlAjax = "{{route('web.buscadorPresentation')}}">
                                 Buscar
                             </button>
                         </div>

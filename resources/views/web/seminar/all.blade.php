@@ -37,9 +37,10 @@
                        <div class="col-lg-1">
                        </div>
                         <div class="col-lg-1 my-3 " >
-                            <button type="button"  urlAjax = "{{route('web.buscadorSeminar')}}" id="botonBusqueda" class="btn btn-lg btn-block btn-light btn-custom second-color">
+                            <button type="button" rutaActa="{{route('web.idSeminar', -1)}}"  urlAjax = "{{route('web.buscadorSeminar')}}" id="botonBusqueda" class="btn btn-lg btn-block btn-light btn-custom second-color">
                                 Buscar
                             </button>
+                            
                         </div>
                     </div>
                 </form>
@@ -61,7 +62,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="job-right my-4 flex-shrink-0" id="rutas" rutaActa="{{route('web.idSeminar', -1)}}">>
+                        <div class="job-right my-4 flex-shrink-0" >
                             <a class="btn second-color mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Libro de actas</a>
                             <a class="btn second-color  mx-3 text-nowrap"  href="{{route('web.idSeminar', $seminar->id)}}">Libro de resumenes</a>
                             <a class="btn second-color  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Contenido audiovisual</a>

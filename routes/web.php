@@ -64,11 +64,12 @@ Route::get('/buscadorSeminar', 'AjaxController@buscadorSeminar')->name('web.busc
 
 Route::get('presentations', 'FrontendController@allPresentation')->name('web.allPresentation');
 Route::get('presentation/{id}', 'FrontendController@idPresentation')->name('web.idPresentation');
-Route::get('/selectAjax', 'AjaxController@selectAjax')->name('web.selectAjax');
+Route::get('/buscadorPresentation', 'AjaxController@buscadorSeminar')->name('web.buscadorPresentation');
 
 Route::get('myrequest', 'FrontendController@allRequest')->name('web.allrequest');
 Route::get('newRequest', 'FrontendController@newRequest')->name('web.newRequest');
 Route::get('editRequest/{request}', 'FrontendController@editRequest')->name('web.editRequest');
+Route::get('/selectAjax', 'AjaxController@selectAjax')->name('web.selectAjax');
 
 Route::get('multimedia', 'FrontendController@webMultimedia')->name('web.multimedia');
 

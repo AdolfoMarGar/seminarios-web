@@ -19,7 +19,8 @@ function peticionAjax(type, urlAjax, busqueda) {
         },
         dataType: 'json',
         success: function (respuesta) {
-            console.log(respuesta);
+            console.log(respuesta.response);
+            console.log(respuesta.yearList);
 
     
         },
@@ -34,8 +35,8 @@ function crearLista(respuesta) {
     var rutaActa = $('#botonBusqueda').attr("rutaActa")??null;
 
     $('#divLista').empty();
-    respuesta.forEach(seminar => {
-        rutaActa = rutaActa.replace("-1", seminar.id );
+    respuesta.response.forEach(presentation => {
+        rutaActa = rutaActa.replace("-1", presentation.id );
 
         $('#divLista').append('\
             <div class="job-box d-md-flex align-items-center justify-content-between mb-30">\

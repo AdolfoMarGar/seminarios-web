@@ -2,6 +2,8 @@
 @extends("layouts.mainLayout")
 
 @section("content")
+<script src ="{{url('js/modal.js')}}">
+</script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10 mx-auto mb-4">
@@ -70,7 +72,7 @@
 
                                                 </td>
                                                     <td>
-                                                    <form action = "{{route('request.destroy', $myrequest->id)}}" method="POST">
+                                                    <form action = "{{route('request.destroy', $myrequest->id)}}" method="POST" class="botonBorrar">
                                                         @csrf
                                                         @method("DELETE")
                                                         <input  class="btn third-color" type="submit" value="Borrar">
@@ -93,5 +95,10 @@
 
 
     
-
+<div id="modal" style="display: none;" class="first-color">
+    <p>¿Estás seguro de que quieres borrar este elemento?</p>
+    <button id="confirmar" class="second-color">Sí, borrar</button>
+    <button id="cancelar" class="second-color">Cancelar</button>
+  </div>
+  
 @endsection

@@ -23,6 +23,31 @@ body{
 
 }
 
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+  
+  #modal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  #modal button {
+    border: none;
+    border-radius: 3px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
 
 
 

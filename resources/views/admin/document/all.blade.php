@@ -3,6 +3,8 @@
 
 
 @section("content")
+<script src ="{{url('js/modal.js')}}">
+</script>
 <div class="mx-4">
 
     <table class="table table-bordered table-striped">
@@ -69,7 +71,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('documents.edit', $d->id)}}">Modificar</a></td>
                     <td>
-                        <form action = "{{route('documents.destroy', $d->id)}}" method="POST">
+                        <form action = "{{route('documents.destroy', $d->id)}}" method="POST" class="botonBorrar">
                             @csrf
                             @method("DELETE")
                             <input class="btn btn-primary" type="submit" value="Borrar">

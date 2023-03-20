@@ -7,5 +7,6 @@
   @include('layouts.navAdmin')
 @yield('content')
 @include('layouts.footer')
+@include('layouts.modal')
  </body>
 </html>

@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-lg-5 my-3">
                             <div class="input-group position-relative">
-                                <input type="text" class="form-control" placeholder="Ej: Suelo" id="keywords">
+                                <input type="text" id="busquedatxt" class="form-control" placeholder="Ej: Suelo" id="keywords">
                             </div>
                         </div>
                         <div class="col-lg-5 my-3">
@@ -30,7 +30,7 @@
                                     <option value="1">Tema</option>
                                     <option value="2">Titulo</option>
                                     <option value="3">Palabra clave</option>
-                                    <option value="3">Ponente</option>
+                                    <option value="4">Ponente</option>
                                 </select>
                             </div>
                         </div>

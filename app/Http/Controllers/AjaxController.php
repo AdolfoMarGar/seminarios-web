@@ -34,6 +34,7 @@ class AjaxController extends Controller{
     }
 
     public function buscadorPresentation(Request $request){
+        $yearList = Seminar::orderBy('year','desc')->select('year', 'location')->get();
         $type = $request->input('type');
         $busqueda = $request->input('busqueda');
         switch ($type) {
@@ -51,7 +52,9 @@ class AjaxController extends Controller{
                 $response = Presentation::where('keywords', 'like', '%'.$busqueda.'%')->get();                
                 break;
         }
+        $data['yearList']= $yearList;
+        $data['response']=$response;
 
-        return response()->json($response);
+        return response()->json($data);
     }
 }

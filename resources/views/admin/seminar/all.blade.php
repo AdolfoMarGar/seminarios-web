@@ -2,6 +2,8 @@
 @extends("layouts.adminLayout")
 
 @section("content")
+<script src ="{{url('js/modal.js')}}">
+</script>
 <div class="mx-4">
     <table class="table table-bordered table-striped">
         <thead>
@@ -26,10 +28,10 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('seminar.edit', $seminar->id)}}">Modificar</a></td>
                     <td>
-                        <form action = "{{route('seminar.destroy', $seminar->id)}}" method="POST">
+                        <form action = "{{route('seminar.destroy', $seminar->id)}}" method="POST"class="botonBorrar">
                             @csrf
                             @method("DELETE")
-                            <input class="btn btn-primary" type="submit" value="Borrar">
+                            <input class="btn btn-primary " type="submit" value="Borrar">
                         </form>
                     </td>
                 @php
@@ -39,7 +41,7 @@
             @endforeach
             <tr>
                 <th scope="col" colspan="9">
-                    <a class="btn btn-primary" href="{{ route('seminar.create') }}">Insertar seminario</a>
+                    <a class="btn btn-primary " href="{{ route('seminar.create') }}">Insertar seminario</a>
                 </th>
             </tr>
         </tbody>

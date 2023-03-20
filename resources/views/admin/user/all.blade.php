@@ -6,6 +6,8 @@
 @section("header", "Administración de userio")
 
 @section("content")
+<script src ="{{url('js/modal.js')}}">
+</script>
 <div class="mx-4">
     
     <table class="table table-bordered table-striped">
@@ -50,7 +52,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('user.edit', $user->id)}}">Modificar</a></td>
                     <td>
-                        <form action = "{{route('user.destroy', $user->id)}}" method="POST">
+                        <form action = "{{route('user.destroy', $user->id)}}" method="POST" class="botonBorrar">
                             @csrf
                             @method("DELETE")
                             <input class="btn btn-primary" type="submit" value="Borrar">

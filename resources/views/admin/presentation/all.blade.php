@@ -6,6 +6,8 @@
 @section("header", "Administración de presentation")
 
 @section("content")
+<script src ="{{url('js/modal.js')}}">
+</script>
 <div class="mx-4">
 
     <table class="table table-bordered table-striped">
@@ -40,7 +42,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('presentation.edit', $p->id)}}">Modificar</a></td>
                     <td>
-                        <form action = "{{route('presentation.destroy', $p->id)}}" method="POST">
+                        <form action = "{{route('presentation.destroy', $p->id)}}" method="POST" class="botonBorrar">
                             @csrf
                             @method("DELETE")
                             <input class="btn btn-primary" type="submit" value="Borrar">

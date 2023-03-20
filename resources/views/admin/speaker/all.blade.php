@@ -6,6 +6,8 @@
 @section("header", "Administración de speaker")
 
 @section("content")
+<script src ="{{url('js/modal.js')}}">
+</script>
 <div class="mx-4">
 
     <table class="table table-bordered table-striped">
@@ -31,7 +33,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('speaker.edit', $speaker->id)}}">Modificar</a></td>
                     <td>
-                        <form action = "{{route('speaker.destroy', $speaker->id)}}" method="POST">
+                        <form action = "{{route('speaker.destroy', $speaker->id)}}" method="POST" class="botonBorrar">
                             @csrf
                             @method("DELETE")
                             <input class="btn btn-primary" type="submit" value="Borrar">

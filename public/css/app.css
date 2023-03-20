@@ -5,6 +5,9 @@ body{
 .first-color { 
 	background: #e1eacd; 
 }
+.textNavColor{
+  color: #e1eacd;
+}
 	
 .second-color { 
 	background: #bad8b6; 

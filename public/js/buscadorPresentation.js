@@ -19,10 +19,8 @@ function peticionAjax(type, urlAjax, busqueda) {
         },
         dataType: 'json',
         success: function (respuesta) {
-            console.log(respuesta.response);
-            console.log(respuesta.yearList);
-
-    
+            console.log(respuesta);
+            crearLista(respuesta.response, respuesta.yearList);
         },
         error: function(jqXHR, textStatus, errorThrown){
             console.log(jqXHR);
@@ -31,37 +29,60 @@ function peticionAjax(type, urlAjax, busqueda) {
         }
     });
 }
-function crearLista(respuesta) {
-    var rutaActa = $('#botonBusqueda').attr("rutaActa")??null;
-
+function crearLista(response, yearList) {
     $('#divLista').empty();
-    respuesta.response.forEach(presentation => {
-        rutaActa = rutaActa.replace("-1", presentation.id );
 
-        $('#divLista').append('\
-            <div class="job-box d-md-flex align-items-center justify-content-between mb-30">\
-                <div class="job-left my-4 d-md-flex align-items-center flex-wrap">\
-                    <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">\
-                    '+seminar.year+'\
+    var rutaActa = $('#botonBusqueda').attr("rutaActa")??null;
+    response.forEach(pre => {
+        console.log();
+        for (let i = 0; i < yearList.length; i++) {
+            divId= '#seminar_id'+yearList[i].id
+            console.log(divId);
+            if ($(divId).length==0&&pre.seminar_id==yearList[i].id) {
+                $('#divLista').append('\
+                    <h2 class="text-left mx-auto" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+yearList[i].location+
+                    ', '+yearList[i].year+'</h2><div id="seminar_id'+yearList[i].id+'"></div>\
+                ');
+            }
+            if (pre.seminar_id==yearList[i].id) {
+                rutaActa = rutaActa.replace("-1", pre.id );
+                $('#divLista').append('\
+                    <div class="job-box d-md-flex align-items-center justify-content-between mb-30">\
+                        <div class="job-left my-4 d-md-flex align-items-center flex-wrap">\
+                            <div class="job-content">\
+                                <h5 class=" ">&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<i class="zmdi zmdi-flower-alt"></i></i> &nbsp &nbsp'+pre.subject+'</h5>\
+                                <p>\
+                                    &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp'+pre.title+
+                                '</p>\
+                                <p>\
+                                    &nbsp &nbsp&nbsp &nbsp &nbsp&nbspPalbras clave: '+pre.keywords+
+                                '</p>\
+                            </div>\
+                        </div>\
+                        <div class="job-right my-4 flex-shrink-0">\
+                            <a class="btn  mx-3 text-nowrap third-color" href="'+rutaActa+'">Resumen</a>\
+                            <a class="btn  mx-3 text-nowrap third-color" href="'+rutaActa+'">Presentación</a>\
+                            <a class="btn  mx-3 text-nowrap third-color"  href="'+rutaActa+'">Archivos relacionados</a>\
+                        </div>\
                     </div>\
-                    <div class="job-content">\
-                        <h5 class=" ">&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<i class="zmdi zmdi-pin mr-2"></i> &nbsp &nbsp'+seminar.location+'</h5>\
-                        <ul class="d-md-flex flex-wrap  ff-open-sans">\
-                            <li class="mr-md-4">\
-                                Organizado por '+seminar.hosts+'\
-                            </li>\
-                        </ul>\
-                    </div>\
-                </div>\
-                <div class="job-right my-4 flex-shrink-0">\
-                    <a class="btn second-color mx-3 text-nowrap" href="'+rutaActa+'">Libro de actas</a>\
-                    <a class="btn second-color  mx-3 text-nowrap"  href="'+rutaActa+'">Libro de resumenes</a>\
-                    <a class="btn second-color  mx-3 text-nowrap" href="'+rutaActa+'">Contenido audiovisual</a>\
-                </div>\
-            </div>\
-        ');
-        rutaActa = rutaActa.replace(seminar.id, "-1" );
+                ');
+                rutaActa = rutaActa.replace(pre.id, "-1" );
+
+            }
+        }
+
+    });
+
+/*
+    
+    response.forEach(pre => {
+        console.log(pre);
+        rutaActa = rutaActa.replace("-1", pre.id );
+        console.log('#seminar_id'+pre.seminar_id+'');
+
+        $('#seminar_id'+pre.seminar_id+'').append('<h1>prueba</h1>');
+        rutaActa = rutaActa.replace(pre.id, "-1" );
             
     });
-    
+    */
 }

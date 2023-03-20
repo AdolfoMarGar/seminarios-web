@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <!-- Toggle button -->
         <button
-            class="navbar-toggler"
+            class="navbar-toggler textNavColor"
             type="button"
             data-mdb-toggle="collapse"
             data-mdb-target="#navbarSupportedContent"
@@ -31,7 +31,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown" id="seminarDropdown">
                     <a
-                        class="nav-link dropdown-toggle"  
+                        class="nav-link dropdown-toggle textNavColor"  
                         role="button"
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
@@ -40,30 +40,30 @@
                     </a>
                     <ul class="dropdown-menu fourth-color" id="seminarList" style="font-size:x-large">
                         <li>
-                            <a class="dropdown-item" href="/seminars">Histórico de seminarios</a>
+                            <a class="dropdown-item textNavColor" href="/seminars">Histórico de seminarios</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/presentations">Ponencias</a>
+                            <a class="dropdown-item textNavColor" href="/presentations">Ponencias</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>
+                            <a class="dropdown-item textNavColor" href="/multimedia">Contenido multimedia</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/nextSeminar">Próximo seminario</a>
+                    <a class="nav-link mx-4 textNavColor" href="/nextSeminar">Próximo seminario</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link mx-4" href="/history">Nuestra historia</a>
+                    <a class="nav-link mx-4 textNavColor" href="/history">Nuestra historia</a>
                 </li>
                 @if (auth()->check())
                     <li class="nav-item">
-                    <a class="nav-link mx-4" href="/myrequest">Peticiones</a>
+                    <a class="nav-link mx-4 textNavColor" href="/myrequest">Peticiones</a>
                     </li>
                 @endif
                 <li class="nav-item">
-                    <a class="nav-link mx-4" href="/aboutUs">Contáctanos</a>
+                    <a class="nav-link mx-4 textNavColor" href="/aboutUs">Contáctanos</a>
                 </li>
                 
             </ul>
@@ -74,9 +74,9 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Login -->
-                <div class="dropdown" id="login">
+                <div class="dropdown textNavColor" id="login">
                     <a
-                        class="text-reset me-5 dropdown-toggle hidden-arrow"
+                        class="text-reset me-5 dropdown-toggle hidden-arrow "
                         role="button"
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
@@ -88,31 +88,31 @@
                     @endif
                     </a>
                     <ul
-                        class="dropdown-menu dropdown-menu-end fourth-color"
+                        class="dropdown-menu dropdown-menu-end fourth-color "
                         aria-labelledby="navbarDropdownMenuLink"
                         id="loginList"
                         style="font-size:x-large"
                     >
                         @if (!auth()->check())
                             <li>
-                                <a class="dropdown-item" href="/login">Login</a>
+                                <a class="dropdown-item textNavColor" href="/login">Login</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="/register">Registrarse</a>
+                                <a class="dropdown-item textNavColor" href="/register">Registrarse</a>
                             </li>
                         @else
                             
                             <li>
-                                <a class="dropdown-item" href="/profile">Perfil</a>
+                                <a class="dropdown-item textNavColor" href="/profile">Perfil</a>
                             </li>
                             <li>
                                 @if (auth()->user()->type==1)
-                                    <a class="dropdown-item" href="/admin">Admin panel</a>
+                                    <a class="dropdown-item textNavColor" href="/admin">Admin panel</a>
                                 @endif
                             </li>
                             <li>
                                 <a 
-                                    class="dropdown-item"
+                                    class="dropdown-item textNavColor"
                                     href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                 >

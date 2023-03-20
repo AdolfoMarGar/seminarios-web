@@ -20,6 +20,18 @@ class PresentationSeeder extends Seeder{
             'keywords' => 'Jadrin, Plumero',
             'seminar_id' => '1',
         ]);
+        DB::table('presentations')->insert([
+            'subject' => 'asdf',
+            'title' => 'Proximos asdf para invernadero',
+            'keywords' => 'Jadrin, Plumero',
+            'seminar_id' => '1',
+        ]);
+        DB::table('presentations')->insert([
+            'subject' => 'gfdas',
+            'title' => 'gfdas á,dñakdgsn ',
+            'keywords' => 'zxcv, tqwe',
+            'seminar_id' => '3',
+        ]);
 
         DB::table('presentations')->insert([
             'subject' => 'Suelos',

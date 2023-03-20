@@ -28,7 +28,7 @@ function peticionAjax(id, urlAjax) {
 function crearSelect(respuesta) {
     $('#selectRecargar').html(
         '<select class="form-select first-color" id="selectRecargar" aria-label="Default select example" name="presentation_id">\
-            <option id="valueNull"value="{{null}}">Ninguno</option>'+
+            <option id="valueNull"value="'+null+'">Ninguno</option>'+
         "</select>"
 
     );

@@ -103,6 +103,9 @@ class MyrequestController extends Controller{
             return null;
         }else{
             $doc = new Document($r->all());
+            if ($r->presentation_id=="null") {
+                $doc->presentation_id= null;
+            }
             $doc->dir = $dir;
             $doc->type=-1;
             $doc->save();

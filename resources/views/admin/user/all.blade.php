@@ -16,7 +16,6 @@
               <th scope="col">#</th>
               <th scope="col">Tipo</th>
               <th scope="col">Correo</th>
-              <th scope="col">Contraseña</th>
               <th scope="col">Nombre</th>
               <th scope="col">Provincia</th>
               <th scope="col">Entidad</th>
@@ -38,7 +37,6 @@
                         @endif
                     </td>
                     <td>{{$user->email}}</td>
-                    <td>{{$user->password}}</td>
                     @if ($user->type==2)
                         <td>{{$user->userdata->lastname}}, {{$user->userdata->realname}}</td>
                         <td>{{$user->userdata->region}}</td>
@@ -64,7 +62,7 @@
                 @endphp 
             @endforeach
             <tr>
-                <th scope="col" colspan="9">
+                <th scope="col" colspan="8">
                     <a class="btn btn-primary"  href="{{ route('user.create') }}">Insertar usuario</a>
                 </th>
             </tr>

@@ -33,7 +33,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('speaker.edit', $speaker->id)}}">Modificar</a></td>
                     <td>
-                        <form action = "{{route('speaker.destroy', $speaker->id)}}" method="POST" class="botonBorrar">
+                        <form action = "{{route('speaker.destroy', $speaker->id)}}" method="POST" class="botonBorrar" id='botonBorrar{{$speaker->id}}'>
                             @csrf
                             @method("DELETE")
                             <input class="btn btn-primary" type="submit" value="Borrar">

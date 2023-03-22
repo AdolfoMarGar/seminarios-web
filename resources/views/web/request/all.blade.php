@@ -72,7 +72,7 @@
 
                                                 </td>
                                                     <td>
-                                                    <form action = "{{route('request.destroy', $myrequest->id)}}" method="POST" class="botonBorrar">
+                                                    <form action = "{{route('request.destroy', $myrequest->id)}}" method="POST" class="botonBorrar"id='botonBorrar{{$myrequest->id}}'>
                                                         @csrf
                                                         @method("DELETE")
                                                         <input  class="btn third-color" type="submit" value="Borrar">

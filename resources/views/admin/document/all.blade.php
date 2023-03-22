@@ -71,7 +71,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('documents.edit', $d->id)}}">Modificar</a></td>
                     <td>
-                        <form action = "{{route('documents.destroy', $d->id)}}" method="POST" class="botonBorrar">
+                        <form action = "{{route('documents.destroy', $d->id)}}" method="POST" class="botonBorrar" id='botonBorrar{{$d->id}}'>
                             @csrf
                             @method("DELETE")
                             <input class="btn btn-primary" type="submit" value="Borrar">

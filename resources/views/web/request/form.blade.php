@@ -22,7 +22,7 @@
         
         <div class="col-lg-9 mx-auto">
             <div class="filter-result">    
-                <div class="job-box  align-items-center justify-content-between mb-30 third-color">
+                <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>     
                              <table class="table table-bordered table-striped myBorderColor">
@@ -125,15 +125,15 @@
                                     </tr>
                                     <tr>
                                         <td scope="col" colspan="2">
-                                            <input  class="btn second-color" type="submit">
+                                            <input  class="btn third-color text-nowrap" type="submit">
+                                            <a class="btn third-color mx-3 text-nowrap" href="{{ url()->previous() }}">Volver</a>
 
                                         </td>
                                     </tr>
-                                    <input type="hidden" name ="user_id" value="{{auth()->user()->id}}">
+                                    <input type="hidden"  name ="user_id" value="{{auth()->user()->id}}">
 
                                 </form>
                             </table>
-                            <a class="btn second-color mx-3 text-nowrap" href="{{ url()->previous() }}">Volver</a>
 
                         </div>
                     </div>   

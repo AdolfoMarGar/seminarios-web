@@ -21,11 +21,6 @@ class DocumentsController extends Controller{
         return view('admin.document.all', $data);
     }
 
-    public function show($id) {
-        $s = Document::find($id);
-
-        return view('admin.document.show', $data);
-    }
 
     public function create() {
         $seminarList = Seminar::all();

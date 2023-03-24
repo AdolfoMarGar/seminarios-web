@@ -18,11 +18,6 @@ class PresentationController extends Controller{
         return view('admin.presentation.all', ['presentationList'=>$presentationList]);
     }
 
-    public function show($id) {
-        $s = Presentation::find($id);
-        
-        return view('admin.presentation.show', $data);
-    }
 
     public function create() {
         $seminarList = Seminar::all();

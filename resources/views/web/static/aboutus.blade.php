@@ -2,20 +2,40 @@
 @extends("layouts.mainLayout")
 
 @section("content")
+<style>
+  p {
+      text-align: justify;
+  }
+</style>
 <div class="container-fluid">
-    <h1 class="text-center mb-5">About Us</h1>
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque arcu a libero feugiat, vel tempor tellus tristique. Nullam gravida nibh quis ligula ullamcorper, in eleifend lacus tristique. Sed convallis nisi enim, eget posuere ipsum bibendum vitae. Nulla commodo metus ut elit imperdiet, eu vestibulum purus tristique.</p>
-        <p>Proin vulputate ex sit amet urna congue, id luctus sapien accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tristique feugiat diam in consequat. Ut sit amet eleifend sapien, sit amet congue nunc. Vestibulum nec augue velit. Morbi bibendum euismod nulla, et tincidunt lacus consequat vel. </p>
-        <p>For any inquiries, please contact us at:</p>
-        <ul>
-          <li>info@company.com</li>
-          <li>support@company.com</li>
-          <li>sales@company.com</li>
-        </ul>
+  
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-lg-10 mx-auto mb-4">
+      <div class="section-title text-center ">
+        <h1 class="top-c-sep"><u>¡Contactanos! </u></h1>
       </div>
     </div>
   </div>
+  <br>
+  <br>
+  
+  <div class="row">
+    <div class="col-lg-9 mx-auto">
+      <div class="filter-result">    
+        <div class="job-box  align-items-center justify-content-between mb-30 second-color">
+          <div class="job-left my-4  align-items-center flex-wrap">
+            <div>  
+              <h2 class="top-c-sep"> 
+                <p>Para cualquier duda o consulta sobre la página web o sobre el seminario, por favor póngase en contacto con nosotros en: <a href="mailto:seminariohorticola@gmail.com">seminariohorticola@gmail.com</a>.</p>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   
 @endsection

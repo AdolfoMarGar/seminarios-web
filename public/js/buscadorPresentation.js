@@ -7,6 +7,17 @@ $(document).ready(function() {
         peticionAjax(type, urlAjax, busqueda);
         
     });
+    $('#busquedatxt').keydown(function(event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            var type = $('#type').val();
+            var urlAjax = $('#botonBusqueda').attr("urlAjax");
+            var busqueda = $('#busquedatxt').val();
+    
+            peticionAjax(type, urlAjax, busqueda);
+        }
+    });
+      
 });
 
 function peticionAjax(type, urlAjax, busqueda) {

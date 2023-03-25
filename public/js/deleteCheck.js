@@ -13,7 +13,7 @@ $(document).ready(function() {
             url: urlAjax,
             type: 'GET',
             data: {
-                seminar_id: id_ajax
+                id: id_ajax
             },
             dataType: 'json',
             success: function (respuesta) {

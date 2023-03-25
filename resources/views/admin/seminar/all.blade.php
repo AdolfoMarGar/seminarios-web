@@ -2,7 +2,7 @@
 @extends("layouts.adminLayout")
 
 @section("content")
-<script src ="{{url('js/delCheckSeminar.js')}}">
+<script src ="{{url('js/deleteCheck.js')}}">
 </script>
 
 <div class="container-fluid">

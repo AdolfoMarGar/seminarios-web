@@ -44,8 +44,12 @@ Route::resource('admin/seminar', 'SeminarController');
 Route::get('/seminarCheck', 'AjaxController@seminarCheck')->name('seminar.check');
 
 Route::resource('admin/documents', 'DocumentsController');
+Route::get('/documentsCheck', 'AjaxController@documentsCheck')->name('documents.check');
+
 Route::resource('admin/speaker', 'SpeakerController');
 Route::resource('admin/presentation', 'PresentationController');
+Route::get('/presentationCheck', 'AjaxController@presentationCheck')->name('presentation.check');
+
 Route::resource('admin/request', 'MyrequestController');
 Route::get('admin/request/acept/{request}', 'MyrequestController@acept')->name('request.acept');
 

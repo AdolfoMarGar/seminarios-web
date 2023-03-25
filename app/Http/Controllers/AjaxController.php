@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Presentation;
+use App\Models\Myrequest;
 use App\Models\Document;
 use App\Models\Seminar;
 
@@ -62,12 +63,12 @@ class AjaxController extends Controller{
     public function seminarCheck(Request $request){
         $borrar = true;
 
-        $query = Presentation::where('seminar_id', $request->seminar_id)->get();
+        $query = Presentation::where('seminar_id', $request->id)->get();
         if(count($query)!=null){
             $borrar=false;
         }
 
-        $query = Document::where('seminar_id', $request->seminar_id)->get();
+        $query = Document::where('seminar_id', $request->id)->get();
         if(count($query)!=null){
             $borrar=false;
         }
@@ -85,4 +86,51 @@ class AjaxController extends Controller{
         
         return response()->json($response);
     }
+
+    public function documentsCheck(Request $request){
+        $borrar = true;
+
+        $query = Myrequest::where('document_id', $request->id)->get();
+        if(count($query)!=null){
+            $borrar=false;
+        }
+
+
+       
+        if(!$borrar){
+            $response = array(
+                "borrar" => false,  
+            );
+        }else{
+            $response = array(
+                "borrar" => true,  
+            );
+        }
+        
+        return response()->json($response);
+    }
+
+    public function presentationCheck(Request $request){
+        $borrar = true;
+
+        $query = Document::where('presentation_id', $request->id)->get();
+        if(count($query)!=null){
+            $borrar=false;
+        }
+       
+        if(!$borrar){
+            $response = array(
+                "borrar" => false,  
+            );
+        }else{
+            $response = array(
+                "borrar" => true,  
+            );
+        }
+        
+        return response()->json($response);
+    }
 }
+
+
+

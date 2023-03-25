@@ -3,7 +3,7 @@
 
 
 @section("content")
-<script src ="{{url('js/modal.js')}}">
+<script src ="{{url('js/deleteCheck.js')}}">
 </script>
 <div class="container-fluid">
     <div class="row">
@@ -27,7 +27,7 @@
                             <br>
                             <br>
                                         
-                            <table class="table table-striped ">
+                            <table class="table table-striped " urlAjax="{{route('documents.check')}}">
                                 <thead>
                                     <tr >
                                         <th scope="col">#</th>

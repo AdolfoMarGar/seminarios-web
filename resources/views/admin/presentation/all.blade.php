@@ -6,7 +6,7 @@
 @section("header", "Administración de presentation")
 
 @section("content")
-<script src ="{{url('js/modal.js')}}">
+<script src ="{{url('js/deleteCheck.js')}}">
 </script>
 
 <div class="container-fluid">
@@ -31,7 +31,7 @@
                             <br>
                             <br>
                                         
-                            <table class="table table-striped ">
+                            <table class="table table-striped " urlAjax="{{route('presentation.check')}}">
                                 <thead>
                                     <tr >
                                         <th scope="col">#</th>

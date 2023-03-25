@@ -44,7 +44,7 @@ class MyrequestController extends Controller{
         $myrequest->document_id = $this->storeDocument($r);
         $myrequest->save();
  
-            if(auth()->user()->type==0){
+            if(auth()->user()->type==1){
                 return redirect()->route('request.index');
             }else{
                 return redirect()->route('web.allrequest');
@@ -74,7 +74,7 @@ class MyrequestController extends Controller{
             $a->fill($r->all()); 
             $a->save(); 
 
-            if(auth()->user()->type==0){
+            if(auth()->user()->type==1){
                 return redirect()->route('request.index');
             }else{
                 return redirect()->route('web.allrequest');
@@ -87,7 +87,7 @@ class MyrequestController extends Controller{
             $s = Myrequest::find($id);
             $this->destroyDocument($s->document_id);
             $s->delete();
-            if(auth()->user()->type==0){
+            if(auth()->user()->type==1){
                 return redirect()->route('request.index');
             }else{
                 return redirect()->route('web.allrequest');

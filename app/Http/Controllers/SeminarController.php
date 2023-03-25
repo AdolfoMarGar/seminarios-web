@@ -16,11 +16,6 @@ class SeminarController extends Controller{
         return view('admin.seminar.all', ['seminarList'=>$seminarList]);
     }
 
-    public function show($id) {
-        $s = Seminar::find($id);
-
-        return view('admin.seminar.show', $data);
-    }
 
     public function create() {
         return view('admin.seminar.form');

@@ -15,12 +15,6 @@ class SpeakerController extends Controller{
         return view('admin.speaker.all', ['speakerList'=>$speakerList]);
     }
 
-    public function show($id) {
-        $s = Speaker::find($id);
-        $data['speaker'] = $s;
-        return view('admin.speaker.show', $data);
-    }
-
     public function create() {
         return view('admin.speaker.form');
     }

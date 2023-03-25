@@ -18,12 +18,6 @@ class UserController extends Controller{
         return view('admin.user.all', ['userList'=>$userList]);
     }
 
-    public function show($id) {
-        $s = User::find($id);
-        $data['user'] = $s;
-        
-        return view('admin.user.show', $data);
-    }
 
     public function create() {
         return view('admin.user.form');

@@ -41,6 +41,8 @@ Route::get('/admin',function(){
     return redirect('/admin/seminar');
 });
 Route::resource('admin/seminar', 'SeminarController');
+Route::get('/seminarCheck', 'AjaxController@seminarCheck')->name('seminar.check');
+
 Route::resource('admin/documents', 'DocumentsController');
 Route::resource('admin/speaker', 'SpeakerController');
 Route::resource('admin/presentation', 'PresentationController');

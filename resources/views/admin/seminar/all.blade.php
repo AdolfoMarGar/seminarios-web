@@ -2,10 +2,10 @@
 @extends("layouts.adminLayout")
 
 @section("content")
-<script src ="{{url('js/modal.js')}}">
+<script src ="{{url('js/delCheckSeminar.js')}}">
 </script>
 <div class="mx-4">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" urlAjax="{{route('seminar.check')}}">
         <thead>
             <tr>
               <th scope="col">#</th>
@@ -47,5 +47,7 @@
         </tbody>
     </table>
 </div>
+
+  
 
 @endsection

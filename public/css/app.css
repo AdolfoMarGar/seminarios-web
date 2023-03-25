@@ -26,7 +26,7 @@ body{
 
 }
 
-#modal {
+#modal, #aviso {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -37,12 +37,12 @@ body{
     z-index: 999;
   }
   
-  #modal p {
+  #modal p , #aviso p{
     font-size: 16px;
     margin-bottom: 20px;
   }
   
-  #modal button {
+  #modal button , #aviso button{
     border: none;
     border-radius: 3px;
     padding: 8px 15px;

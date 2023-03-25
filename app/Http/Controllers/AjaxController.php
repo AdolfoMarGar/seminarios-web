@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Presentation;
+use App\Models\Document;
 use App\Models\Seminar;
 
 class AjaxController extends Controller{
@@ -56,5 +57,32 @@ class AjaxController extends Controller{
         $data['response']=$response;
 
         return response()->json($data);
+    }
+
+    public function seminarCheck(Request $request){
+        $borrar = true;
+
+        $query = Presentation::where('seminar_id', $request->seminar_id)->get();
+        if(count($query)!=null){
+            $borrar=false;
+        }
+
+        $query = Document::where('seminar_id', $request->seminar_id)->get();
+        if(count($query)!=null){
+            $borrar=false;
+        }
+
+       
+        if(!$borrar){
+            $response = array(
+                "borrar" => false,  
+            );
+        }else{
+            $response = array(
+                "borrar" => true,  
+            );
+        }
+        
+        return response()->json($response);
     }
 }

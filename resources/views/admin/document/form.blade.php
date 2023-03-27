@@ -75,7 +75,7 @@
                                                         @endif 
                                                     @endisset
                                                     
-                                                    value="{{$s->id}}">{{$s->year}}, {{$s->location}}</option>
+                                                    value="{{$s->id}}">{{$s->year}}. {{$s->location}}</option>
                                                 @endforeach
                                             </select>
                                         </td>

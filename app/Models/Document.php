@@ -25,7 +25,7 @@ class Document extends Model{
     }
 
     public static function fileUpload(Request $r){
-        $r->validate(['file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:20480']);
+        $r->validate(['file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:204800']);
 
         if($r->file()) {
             $fileName = time().'_'.$r->file->getClientOriginalName();

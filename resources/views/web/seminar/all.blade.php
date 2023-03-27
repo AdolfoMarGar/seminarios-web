@@ -65,7 +65,7 @@
                         <div class="job-right my-4 flex-shrink-0" >
                             <a class="btn second-color mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Libro de actas</a>
                             <a class="btn second-color  mx-3 text-nowrap"  href="{{route('web.idSeminar', $seminar->id)}}">Libro de resumenes</a>
-                            <a class="btn second-color  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Contenido audiovisual</a>
+                            <a class="btn second-color  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Programación</a>
 
                         </div>
                     </div>

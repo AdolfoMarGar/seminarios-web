@@ -48,7 +48,7 @@
                                         <tr>
                                             <th scope="row">{{$cont}}</td>
                                             <td>{{$d->dir}}</td>
-                                            <td>{{$d->seminar->year}}, {{$d->seminar->location}}</td>
+                                            <td>{{$d->seminar->year}}. {{$d->seminar->location}}</td>
                                             @if (isset($d->presentation))
                                                 <td>{{$d->presentation->title}}</td>
                                             @else

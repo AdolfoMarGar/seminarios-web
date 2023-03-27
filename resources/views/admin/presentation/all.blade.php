@@ -54,7 +54,7 @@
                                                 <td>{{$p->subject}}</td>
                                                 <td>{{$p->title}}</td>
                                                 <td>{{$p->keywords}}</td>
-                                                <td>{{$p->seminar->year}}, {{$p->seminar->location}}</td>
+                                                <td>{{$p->seminar->year}}. {{$p->seminar->location}}</td>
                                             <td>
                                                 @foreach ($p->speaker as $s)
                                                     {{$s->name}} {{$s->lastname}}.

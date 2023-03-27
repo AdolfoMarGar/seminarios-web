@@ -72,7 +72,7 @@
             <!-- Collapsible wrapper -->
 
             <!-- Right elements -->
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-left">
                 <!-- Login -->
                 <div class="dropdown textNavColor" id="login">
                     <a

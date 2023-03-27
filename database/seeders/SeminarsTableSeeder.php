@@ -73,42 +73,6 @@ class SeminarsTableSeeder extends Seeder
                 'updated_at' => '2023-03-26 11:51:41',
                 'year' => 2016,
             ),
-            6 => 
-            array (
-                'created_at' => '2023-03-26 11:54:09',
-                'hosts' => 'CITA, Agricapse',
-                'id' => 7,
-                'location' => 'Zaragoza, Aragón',
-                'updated_at' => '2023-03-26 11:54:09',
-                'year' => 2015,
-            ),
-            7 => 
-            array (
-                'created_at' => '2023-03-26 12:22:39',
-                'hosts' => 'IFAPA',
-                'id' => 8,
-                'location' => 'Alcala del Rio, Sevilla, Andalucia',
-                'updated_at' => '2023-03-26 12:22:39',
-                'year' => 2014,
-            ),
-            8 => 
-            array (
-                'created_at' => '2023-03-26 12:23:53',
-                'hosts' => 'Syngenta, Agroseguro',
-                'id' => 9,
-                'location' => 'Elche, Alicante, Comunidad Valenciana',
-                'updated_at' => '2023-03-26 12:23:53',
-                'year' => 2013,
-            ),
-            9 => 
-            array (
-                'created_at' => '2023-03-26 12:25:40',
-                'hosts' => 'Unicaja, AgroNavarra',
-                'id' => 10,
-                'location' => 'Tudela, Navarra',
-                'updated_at' => '2023-03-26 12:25:40',
-                'year' => 2012,
-            ),
         ));
         
         

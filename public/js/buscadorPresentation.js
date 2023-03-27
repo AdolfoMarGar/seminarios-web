@@ -61,12 +61,12 @@ function crearLista(response, yearList) {
                     <div class="job-box d-md-flex align-items-center justify-content-between mb-30">\
                         <div class="job-left my-4 d-md-flex align-items-center flex-wrap">\
                             <div class="job-content">\
-                                <h5 class=" ">&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<i class="zmdi zmdi-flower-alt"></i></i> &nbsp &nbsp'+pre.subject+'</h5>\
+                                <h5 class=" "><i class="zmdi zmdi-flower-alt"></i></i> &nbsp &nbsp'+pre.subject+'</h5>\
                                 <p>\
-                                    &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp'+pre.title+
+                                    '+pre.title+
                                 '</p>\
                                 <p>\
-                                    &nbsp &nbsp&nbsp &nbsp &nbsp&nbspPalbras clave: '+pre.keywords+
+                                    Palbras clave: '+pre.keywords+
                                 '</p>\
                             </div>\
                         </div>\

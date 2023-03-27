@@ -38,7 +38,7 @@ class FrontendController extends Controller{
         $acta = Document::where("seminar_id", $id)->where("mandatory",$mandatory)->get()[0]??null;
 
         $data['seminar'] = $s;
-        $data["acta"] = $acta->dir??0;
+        $data["acta"] = $acta??null;
 
 
         return view('web.seminar.show', $data);

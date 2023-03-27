@@ -23,7 +23,7 @@
             <a  class="nav-link" href="{{route('documents.index')}}">Documentos</a>
         </li>
         <li class="nav-item">
-            <a  class="nav-link" href="{{route('request.index')}}">Peticiones</a>
+            <a  class="nav-link" href="{{route('request.index')}}">Aportes</a>
         </li>
         <li class="nav-item">
             <a  class="nav-link" href="{{route('user.index')}}">Usuarios</a>

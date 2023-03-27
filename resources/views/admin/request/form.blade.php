@@ -14,7 +14,7 @@
         <div class="col-lg-10 mx-auto mb-4">
             <div class="section-title text-center ">
                 <br>
-                <h1 class="top-c-sep"><u>Nueva Petición</u></h1>
+                <h1 class="top-c-sep"><u>Nuevo Aporte</u></h1>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
                                 @endisset
                                     @csrf
                                     <tr>
-                                        <th scope="col">Información sobre la petición:</th>
+                                        <th scope="col">Información sobre el aporte:</th>
                                         <td>
                                             <div class="form-group">
                                                 <textarea class="form-control first-color" name="text" rows="3" >{{$myrequest->text ?? '' }}</textarea>

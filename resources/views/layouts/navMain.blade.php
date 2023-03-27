@@ -59,7 +59,7 @@
                 </li>
                 @if (auth()->check())
                     <li class="nav-item">
-                    <a class="nav-link mx-4 textNavColor" href="/myrequest">Peticiones</a>
+                    <a class="nav-link mx-4 textNavColor" href="/myrequest">Aportes</a>
                     </li>
                 @endif
                 <li class="nav-item">

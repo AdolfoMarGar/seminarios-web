@@ -13,7 +13,7 @@
         <div class="col-lg-10 mx-auto mb-4">
             <div class="section-title text-center ">
                 <br>
-                <h1 class="top-c-sep"><u>Gestión de peticiones</u></h1>
+                <h1 class="top-c-sep"><u>Gestión de aportes</u></h1>
             </div>
         </div>
     </div>

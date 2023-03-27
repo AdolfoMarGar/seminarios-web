@@ -9,7 +9,7 @@
         <div class="col-lg-10 mx-auto mb-4">
             <div class="section-title text-center ">
                 <br>
-                <h1 class="top-c-sep"><u>Mis peticiones</u></h1>
+                <h1 class="top-c-sep"><u>Mis aportes</u></h1>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>  
                             
-                            <a class="btn third-color mx-3 text-nowrap" href="{{route('web.newRequest')}}">Nueva petición</a>
+                            <a class="btn third-color mx-3 text-nowrap" href="{{route('web.newRequest')}}">Nuevo aporte</a>
                             <br>
                             <br>
                                         

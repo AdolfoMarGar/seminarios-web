@@ -62,8 +62,8 @@
                                     </div>
                                 </div>
                                 <div class="job-right my-4 flex-shrink-0">
-                                    <a class="btn  mx-3 text-nowrap third-color" href="{{route('web.idPresentation', ['id' => $pre->id, "type" => 1])}}">Resumen</a>
-                                    <a class="btn  mx-3 text-nowrap third-color" href="{{route('web.idPresentation', ['id' => $pre->id, "type" => 2])}}">Presentación</a>
+                                    <a class="btn  mx-3 text-nowrap second-color" href="{{route('web.idPresentation', ['id' => $pre->id, "type" => 1])}}">Resumen</a>
+                                    <a class="btn  mx-3 text-nowrap second-color" href="{{route('web.idPresentation', ['id' => $pre->id, "type" => 2])}}">Presentación</a>
                                 </div>
                             </div>
                             @endif

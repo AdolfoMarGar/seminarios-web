@@ -29,6 +29,8 @@
             <div>  
               <h2 class="top-c-sep"> 
                 <p>Para cualquier duda o consulta sobre la página web o sobre el seminario, por favor póngase en contacto con nosotros en: <a href="mailto:seminariohorticola@gmail.com">seminariohorticola@gmail.com</a>.</p>
+                <br><p>Siempre puedes ayudarnos a complementar el archivo del seminario creandote un usuario y aportando documentos de los que no dispongamos.</p>
+
               </h2>
             </div>
           </div>

@@ -37,7 +37,7 @@
                                         <th scope="col">Información sobre el aporte:</th>
                                         <td>
                                             <div class="form-group">
-                                                <textarea class="form-control first-color" name="text" rows="3" >{{$myrequest->text ?? '' }}</textarea>
+                                                <textarea class="form-control first-color" name="text" rows="3" required>{{$myrequest->text ?? '' }}</textarea>
                                             </div>
                                         </td>
                                     </tr>

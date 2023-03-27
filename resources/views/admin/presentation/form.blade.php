@@ -35,19 +35,19 @@
                                     <tr>
                                         <th scope="col">Tema:</th>
                                         <td>
-                                            <input name="subject" class="form-control first-color" type="text" placeholder="Ej. Fitosanitarios." aria-label="default input example" value="{{$presentation->subject ?? '' }}">
+                                            <input required  name="subject" class="form-control first-color" type="text" placeholder="Ej. Fitosanitarios." aria-label="default input example" value="{{$presentation->subject ?? '' }}">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="col">Titulo:</th>
                                         <td>
-                                            <input name="title" class="form-control first-color" type="text" placeholder="Ej. Fitosanitarios ecologicos para huerta." aria-label="default input example" value="{{$presentation->title ?? '' }}">
+                                            <input required  name="title" class="form-control first-color" type="text" placeholder="Ej. Fitosanitarios ecologicos para huerta." aria-label="default input example" value="{{$presentation->title ?? '' }}">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="col">Palabras clave:</th>
                                         <td>
-                                            <input name="keywords" class="form-control first-color" type="text" placeholder="Ej. Invernadero, subtropica, etc..." aria-label="default input example" value="{{$presentation->keywords ?? '' }}">
+                                            <input required  name="keywords" class="form-control first-color" type="text" placeholder="Ej. Invernadero, subtropica, etc..." aria-label="default input example" value="{{$presentation->keywords ?? '' }}">
                                         </td>
                                     </tr>
                                     <tr>
@@ -71,23 +71,24 @@
                                     <tr>
                                         <th scope="col">Ponentes:</th>
                                         <td>
-                                            <select class="form-select first-color" multiple aria-label="multiple select example" name="speaker_id[]">
+                                            <select class="form-select first-color" multiple aria-label="multiple select example" name="speaker_id[]" required>
                                                 @foreach($speakerList as $s)
-                                                <option  
-                                                    @isset($presentation)
-                                                        @if ($presentation->speaker_id==$s->id)
+                                                    <option  
+                                                        @isset($presentation)
+                                                            @if ($presentation->speaker_id==$s->id)
                                                                 selected 
-                                                        @endif 
-                                                    @endisset
-                                                    value="{{$s->id}}">{{$s->lastname}}, {{$s->name}}</option>
+                                                            @endif 
+                                                        @endisset
+                                                        value="{{$s->id}}">{{$s->lastname}}, {{$s->name}}
+                                                    </option>
                                                 @endforeach
-                                            </select> 
+                                            </select>                                            
                                         </td>         
                                     </tr>
                                    
                                     <tr>
                                         <td scope="col" colspan="3">
-                                            <input  class="btn third-color  text-nowrap" type="submit">
+                                            <input required   class="btn third-color  text-nowrap" type="submit">
                                             <a class="btn third-color mx-2 text-nowrap" href="{{ url()->previous() }}">Volver</a>
                                         </td>
                                     </tr>

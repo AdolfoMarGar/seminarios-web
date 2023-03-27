@@ -24,7 +24,7 @@
                 <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
                         <div>     
-                            <table class="table table-bordered  table-striped myBorderColor myBorderColor">
+                            <table class="table table-bordered table-striped myBorderColor myBorderColor">
                                 @isset($seminar)
                                     <form action="{{ route('seminar.update', ['seminar' => $seminar->id]) }}" method="POST">
                                     @method("PUT")
@@ -35,25 +35,24 @@
                                     <tr>
                                         <th scope="col">Año del seminario:</th>
                                         <td>
-                                            <input name="year" class="form-control first-color" type="text" placeholder="Ej. 2000" aria-label="default input example" value="{{$seminar->year ?? '' }}">
+                                            <input name="year" class="form-control first-color" type="number" placeholder="Ej. 2000" aria-label="default input example" value="{{$seminar->year ?? '' }}" required>
                                         </td>
                                     </tr>
-                        
                                     <tr>
                                         <th scope="col">Localización:</th>
                                         <td>
-                                            <input name="location" class="form-control first-color " type="text" placeholder="Ej. Pulpi, Almeria" aria-label="default input example" value="{{$seminar->location ?? '' }}">
+                                            <input name="location" class="form-control first-color" type="text" placeholder="Ej. Pulpi, Almeria" aria-label="default input example" value="{{$seminar->location ?? '' }}" required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="col">Hosts:</th>
                                         <td>
-                                            <input name="hosts" class="form-control first-color" type="text" placeholder="Ej. Empresa S.L." aria-label="default input example" value="{{$seminar->hosts ?? '' }}">
+                                            <input name="hosts" class="form-control first-color" type="text" placeholder="Ej. Empresa S.L." aria-label="default input example" value="{{$seminar->hosts ?? '' }}" required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td scope="col" colspan="2">
-                                            <input  class="btn third-color  text-nowrap" type="submit">
+                                            <input class="btn third-color text-nowrap" type="submit">
                                             <a class="btn third-color mx-2 text-nowrap" href="{{ url()->previous() }}">Volver</a>
                                         </td>
                                     </tr>

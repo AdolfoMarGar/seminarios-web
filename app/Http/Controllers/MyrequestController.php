@@ -27,7 +27,7 @@ class MyrequestController extends Controller{
     }
 
     public function create() {
-        $u = User::all();
+        $u = User::whereNotNull('userdata_id')->get();
         $s = Seminar::all();
         $p = Presentation::where("seminar_id", $s[0]->id)->get()??null;
         $data["userList"]= $u;
@@ -54,7 +54,7 @@ class MyrequestController extends Controller{
 
     public function edit($id) {
         $myrequest = Myrequest::find($id);
-        $u = User::all();
+        $u = User::whereNotNull('userdata_id')->get();
         $s = Seminar::all();
         $p = Presentation::where("seminar_id", $s[0]->id)->get()??null;
 

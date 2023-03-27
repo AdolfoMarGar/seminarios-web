@@ -56,14 +56,14 @@
                                     <tr>
                                         <th scope="col">Email:</th>
                                         <td>
-                                            <input name="email" class="form-control first-color" type="text" placeholder="Ej. adolfo@gmail.com" aria-label="default input example" value="{{$user->email ?? '' }}">
+                                            <input name="email" type="email" class="form-control first-color" type="text" placeholder="Ej. adolfo@gmail.com" aria-label="default input example" value="{{$user->email ?? '' }}" required>
                                         </td>
                                     </tr>
                         
                                     <tr>
                                         <th scope="col">Contraseña:</th>
                                         <td>
-                                            <input name="password" class="form-control first-color" type="text" placeholder="Ej. miContraseña_13" aria-label="default input example" value="{{$user->password ?? '' }}">
+                                            <input name="password" class="form-control first-color" type="text" placeholder="Ej. miContraseña_13" aria-label="default input example" value="{{$user->password ?? '' }}" required>
                                         </td>
                                     </tr>
                         
@@ -71,28 +71,28 @@
                                     <tr>
                                         <th scope="col">Nombre:</th>
                                         <td>
-                                            <input name="realname" class="form-control first-color" type="text" placeholder="Ej. Juan" aria-label="default input example" value="{{$user->userdata->realname ?? '' }}">
+                                            <input name="realname" class="inputdisabled form-control first-color" type="text" placeholder="Ej. Juan" aria-label="default input example" value="{{$user->userdata->realname ?? '' }}" required disabled>
                                         </td>
                                     </tr>
                         
                                     <tr>
                                         <th scope="col">Apellidos:</th>
                                         <td>
-                                            <input name="lastname" class="form-control first-color" type="text" placeholder="Ej. Gómiz" aria-label="default input example" value="{{$user->userdata->lastname ?? '' }}">
+                                            <input name="lastname" class="inputdisabled form-control first-color" type="text" placeholder="Ej. Gómiz" aria-label="default input example" value="{{$user->userdata->lastname ?? '' }}" required disabled>
                                         </td>
                                     </tr>
                         
                                     <tr>
                                         <th scope="col">Provincia:</th>
                                         <td>
-                                            <input name="region" class="form-control first-color" type="text" placeholder="Ej. A Coruña" aria-label="default input example" value="{{$user->userdata->region ?? '' }}">
+                                            <input name="region" class="inputdisabled form-control first-color" type="text" placeholder="Ej. A Coruña" aria-label="default input example" value="{{$user->userdata->region ?? '' }}" required disabled>
                                         </td>
                                     </tr>
                         
                                     <tr>
                                         <th scope="col">Entidad:</th>
                                         <td>
-                                            <input name="entity" class="form-control first-color" type="text" placeholder="Ej. I.F.A.P.A" aria-label="default input example" value="{{$user->userdata->entity ?? '' }}">
+                                            <input name="entity" class="inputdisabled form-control first-color" type="text" placeholder="Ej. I.F.A.P.A" aria-label="default input example" value="{{$user->userdata->entity ?? '' }}" required disabled> 
                                         </td>
                                     </tr>
                         
@@ -113,5 +113,23 @@
     </div>
 </div>
 
+<script>
+    $(document).ready(function(){
+        $('select').change(function(){
+            if($(this).val() == 1){
+                disableInputs();
+            }else{
+                enableInputs();
+            }
+        });
+        function disableInputs() {
+            $(".inputdisabled").prop("disabled", true);
+        }
+        function enableInputs() {
+            $(".inputdisabled").prop("disabled", false);
+
+        }
+    });
+</script>
 
 @endsection

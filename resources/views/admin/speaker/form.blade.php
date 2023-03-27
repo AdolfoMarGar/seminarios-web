@@ -34,25 +34,26 @@
                                     <tr>
                                         <th scope="col">Nombre:</th>
                                         <td>
-                                            <input name="name" class="form-control first-color" type="text" placeholder="Ej. Juani" aria-label="default input example" value="{{$speaker->name ?? '' }}">
+                                            <input name="name" class="form-control first-color" type="text" placeholder="Ej. Juani" aria-label="default input example" value="{{$speaker->name ?? '' }}" required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="col">Apellidos:</th>
                                         <td>
-                                            <input name="lastname" class="form-control first-color" type="text" placeholder="Ej. Ramírez" aria-label="default input example" value="{{$speaker->lastname ?? '' }}">
+                                            <input name="lastname" class="form-control first-color" type="text" placeholder="Ej. Ramírez" aria-label="default input example" value="{{$speaker->lastname ?? '' }}" required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="col">Provincia:</th>
                                         <td>
-                                            <input name="region" class="form-control first-color" type="text" placeholder="Ej. Badajoz" aria-label="default input example" value="{{$speaker->region ?? '' }}">
+                                            <input name="region" class="form-control first-color" type="text" placeholder="Ej. Badajoz" aria-label="default input example" value="{{$speaker->region ?? '' }}" required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td scope="col" colspan="2">
                                             <input  class="btn third-color  text-nowrap" type="submit">
-                                            <a class="btn third-color mx-2 text-nowrap" href="{{ url()->previous() }}">Volver</a>                                        </td>
+                                            <a class="btn third-color mx-2 text-nowrap" href="{{ url()->previous() }}">Volver</a>  
+                                        </td>
                                     </tr>
                                     </form>
                             </table>

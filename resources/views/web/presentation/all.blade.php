@@ -68,7 +68,8 @@
                             </div>
                             @endif
                         @endforeach
-                    @endfor        
+                    @endfor
+                            
                 </div>
         </div>
     </div>

@@ -14,8 +14,8 @@ class UserDataSeeder extends Seeder{
      */
     public function run(){
         DB::table('userdatas')->insert([
-            'realname' => 'Juan',
-            'lastname' => 'Gomiz',
+            'realname' => 'Adolfo',
+            'lastname' => 'Martinez',
             'region' => 'Badajoz',
             'entity' => 'Centro investigacion de badajoz',
         ]);

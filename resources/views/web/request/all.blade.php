@@ -20,7 +20,7 @@
             <div class="filter-result">    
                 <div class="job-box  align-items-center justify-content-between mb-30 second-color">
                     <div class="job-left my-4  align-items-center flex-wrap">
-                        <div>  
+                        <div> 
                             
                             <a class="btn third-color mx-3 text-nowrap" href="{{route('web.newRequest')}}">Nuevo aporte</a>
                             <br>
@@ -85,6 +85,14 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            <br>
+                            <br>
+
+                            <p  class="h5">Ayudanos a completar el archivo del seminario. Si tienes algún documento que nos falte, crea una petición para poder añadirla a la página web. Nos harías un gran favor y ayudarías a todos. 
+                            </p> 
+                            <p>
+                                La petición aparecerá aquí hasta que el administrador de la página web la gestione.
+                            </p>
                         </div>
                     </div>   
                 </div>

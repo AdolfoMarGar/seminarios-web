@@ -20,11 +20,6 @@ class UserDataSeeder extends Seeder{
             'entity' => 'Centro investigacion de badajoz',
         ]);
         
-        DB::table('userdatas')->insert([
-            'realname' => 'Maria',
-            'lastname' => 'Fuet',
-            'region' => 'Almeria',
-            'entity' => 'I.F.A.P.A',
-        ]);
+    
     }
 }

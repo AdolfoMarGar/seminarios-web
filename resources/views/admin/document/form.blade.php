@@ -129,13 +129,13 @@
                                                         @if($document->mandatory==3)
                                                                 selected 
                                                         @endif 
-                                                    value="3">Programa</option>
+                                                    value="3">Programación</option>
                         
                                                 @else        
                                                     <option value="0">Ninguno</option>
                                                     <option value="1">Libro de acta</option>
                                                     <option value="2">Libro de resumenes</option>
-                                                    <option value="3">Prgoramación</option>
+                                                    <option value="3">Programación</option>
                         
                                                 @endisset
                                             </select>

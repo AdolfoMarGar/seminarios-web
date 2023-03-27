@@ -30,7 +30,6 @@
                                     <option value="1">Tema</option>
                                     <option value="2">Titulo</option>
                                     <option value="3">Palabra clave</option>
-                                    <option value="4">Ponente</option>
                                 </select>
                             </div>
                         </div>
@@ -65,8 +64,6 @@
                                 <div class="job-right my-4 flex-shrink-0">
                                     <a class="btn  mx-3 text-nowrap third-color" href="{{route('web.idPresentation', $pre->id)}}">Resumen</a>
                                     <a class="btn  mx-3 text-nowrap third-color" href="{{route('web.idPresentation', $pre->id)}}">Presentación</a>
-                                    <a class="btn  mx-3 text-nowrap third-color"  href="/">Archivos relacionados</a>
-
                                 </div>
                             </div>
                             @endif

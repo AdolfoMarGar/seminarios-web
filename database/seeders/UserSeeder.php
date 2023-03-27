@@ -21,12 +21,6 @@ class UserSeeder extends Seeder{
             'userdata_id' => '1',
         ]);
 
-        DB::table('users')->insert([
-            'type' => '2',
-            'email' => 'asfd@zxcv.com',
-            'password' =>  Hash::make('87654321'),
-            'userdata_id' => '2',
-        ]);
         
         DB::table('users')->insert([
             'type' => '1',

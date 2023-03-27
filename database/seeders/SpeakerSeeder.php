@@ -17,19 +17,20 @@ class SpeakerSeeder extends Seeder{
         DB::table('speakers')->insert([
             'name' => 'Juani',
             'lastname' => 'Lopez',
-            'region' => 'Madrid'
+            'region' => 'Nijar, Almeria'
         ]);
-
         DB::table('speakers')->insert([
-            'name' => 'Alfonso',
-            'lastname' => 'Gimenez',
-            'region' => 'Cataluña'
-        ]);
-        
-        DB::table('speakers')->insert([
-            'name' => 'Roberto',
-            'lastname' => 'Caracoche',
-            'region' => 'Galicia'
+            ['name' => 'María', 'lastname' => 'García', 'region' => 'Madrid'],
+            ['name' => 'Juan', 'lastname' => 'Pérez', 'region' => 'Barcelona'],
+            ['name' => 'Lucía', 'lastname' => 'Fernández', 'region' => 'Valencia'],
+            ['name' => 'Javier', 'lastname' => 'Martínez', 'region' => 'Sevilla'],
+            ['name' => 'Marta', 'lastname' => 'Sánchez', 'region' => 'Alicante'],
+            ['name' => 'Pablo', 'lastname' => 'Rodríguez', 'region' => 'Málaga'],
+            ['name' => 'Sofía', 'lastname' => 'Gómez', 'region' => 'Murcia'],
+            ['name' => 'Antonio', 'lastname' => 'González', 'region' => 'Cádiz'],
+            ['name' => 'Isabel', 'lastname' => 'Torres', 'region' => 'Zaragoza'],
+            ['name' => 'José', 'lastname' => 'Gutiérrez', 'region' => 'Vizcaya'],
+            ['name' => 'Laura', 'lastname' => 'Ortega', 'region' => 'Granada']
         ]);
     }
 }

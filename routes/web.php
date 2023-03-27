@@ -77,5 +77,8 @@ Route::get('newRequest', 'FrontendController@newRequest')->name('web.newRequest'
 Route::get('editRequest/{request}', 'FrontendController@editRequest')->name('web.editRequest');
 Route::get('/selectAjax', 'AjaxController@selectAjax')->name('web.selectAjax');
 
-Route::get('multimedia', 'FrontendController@webMultimedia')->name('web.multimedia');
+
+Route::get('/multimedia', function () {
+    return view('web.static.proximamente');
+});
 

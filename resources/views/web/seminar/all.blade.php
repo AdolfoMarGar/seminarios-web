@@ -37,7 +37,7 @@
                        <div class="col-lg-1">
                        </div>
                         <div class="col-lg-1 my-3 " >
-                            <button type="button" rutaActa="{{route('web.idSeminar', -1)}}"  urlAjax = "{{route('web.buscadorSeminar')}}" id="botonBusqueda" class="btn btn-lg btn-block btn-light btn-custom second-color">
+                            <button type="button" rutaActa="{{route('web.idSeminar', ['id' => -1, 'mandatory' => 'x'] )}}"  urlAjax = "{{route('web.buscadorSeminar')}}" id="botonBusqueda" class="btn btn-lg btn-block btn-light btn-custom second-color">
                                 Buscar
                             </button>
                             
@@ -63,9 +63,9 @@
                             </div>
                         </div>
                         <div class="job-right my-4 flex-shrink-0" >
-                            <a class="btn second-color mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Libro de actas</a>
-                            <a class="btn second-color  mx-3 text-nowrap"  href="{{route('web.idSeminar', $seminar->id)}}">Libro de resumenes</a>
-                            <a class="btn second-color  mx-3 text-nowrap" href="{{route('web.idSeminar', $seminar->id)}}">Programación</a>
+                            <a class="btn second-color mx-3 text-nowrap" href="{{route('web.idSeminar', ['id' => $seminar->id, 'mandatory' => 1])}}">Libro de actas</a>
+                            <a class="btn second-color  mx-3 text-nowrap"  href="{{route('web.idSeminar', ['id' => $seminar->id, 'mandatory' => 2])}}">Libro de resumenes</a>
+                            <a class="btn second-color  mx-3 text-nowrap" href="{{route('web.idSeminar', ['id' => $seminar->id, 'mandatory' => 3])}}">Programación</a>
 
                         </div>
                     </div>

@@ -24,7 +24,7 @@ class DocumentsController extends Controller{
 
     public function create() {
         $seminarList = Seminar::all();
-        $presentationList = Presentation::all();
+        $presentationList = Presentation::where("seminar_id", $seminarList[0]->id)->get()??null;
 
         $data["seminarList"] = $seminarList;
         $data["presentationList"] = $presentationList;
@@ -48,7 +48,7 @@ class DocumentsController extends Controller{
 
     public function edit($id) {
         $seminarList = Seminar::all();
-        $presentationList = Presentation::all();
+        $presentationList = Presentation::where("seminar_id", $seminarList[0]->id)->get()??null;
         $d = Document::find($id);
 
         $data["seminarList"] = $seminarList;

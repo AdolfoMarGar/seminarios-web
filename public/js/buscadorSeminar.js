@@ -46,6 +46,10 @@ function crearLista(respuesta) {
     $('#divLista').empty();
     respuesta.forEach(seminar => {
         rutaActa = rutaActa.replace("-1", seminar.id );
+        let ruta1 = rutaActa.replace("x", "1");
+        let ruta2 = rutaActa.replace("x", "2");
+        let ruta3 = rutaActa.replace("x", "3");
+        
 
         $('#divLista').append('\
             <div class="job-box d-md-flex align-items-center justify-content-between mb-30">\
@@ -63,9 +67,9 @@ function crearLista(respuesta) {
                     </div>\
                 </div>\
                 <div class="job-right my-4 flex-shrink-0">\
-                    <a class="btn second-color mx-3 text-nowrap" href="'+rutaActa+'">Libro de actas</a>\
-                    <a class="btn second-color  mx-3 text-nowrap"  href="'+rutaActa+'">Libro de resumenes</a>\
-                    <a class="btn second-color  mx-3 text-nowrap" href="'+rutaActa+'">Contenido audiovisual</a>\
+                    <a class="btn second-color mx-3 text-nowrap" href="'+ruta1+'">Libro de actas</a>\
+                    <a class="btn second-color  mx-3 text-nowrap"  href="'+ruta2+'">Libro de resumenes</a>\
+                    <a class="btn second-color  mx-3 text-nowrap" href="'+ruta3+'">Contenido audiovisual</a>\
                 </div>\
             </div>\
         ');

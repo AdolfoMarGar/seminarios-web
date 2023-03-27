@@ -33,9 +33,9 @@ class FrontendController extends Controller{
         return view('web.seminar.all', ['seminarList'=>$seminarList]);
     }
 
-    public function idSeminar($id){
+    public function idSeminar($id, $mandatory){
         $s = Seminar::find($id);
-        $acta = Document::where("seminar_id", $id)->where("mandatory","1")->get()[0]??null;
+        $acta = Document::where("seminar_id", $id)->where("mandatory",$mandatory)->get()[0]??null;
 
         $data['seminar'] = $s;
         $data["acta"] = $acta->dir??0;
@@ -55,9 +55,9 @@ class FrontendController extends Controller{
         return view('web.presentation.all', $data);
     }
 
-    public function idPresentation($id){
+    public function idPresentation($id, $type){
         $presentation = Presentation::find($id);
-        $doc = Document::where("presentation_id", $id)->get()[0]??null;
+        $doc = Document::where("presentation_id", $id)->where("type",$type)->get()[0]??null;
         
         $data['doc'] = $doc;
         $data['presentation'] = $presentation;

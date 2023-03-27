@@ -57,6 +57,11 @@ function crearLista(response, yearList) {
             }
             if (pre.seminar_id==yearList[i].id) {
                 rutaActa = rutaActa.replace("-1", pre.id );
+                let ruta1 = rutaActa.replace("x", "1");
+                let ruta2 = rutaActa.replace("x", "2");
+
+
+
                 $('#divLista').append('\
                     <div class="job-box d-md-flex align-items-center justify-content-between mb-30">\
                         <div class="job-left my-4 d-md-flex align-items-center flex-wrap">\
@@ -71,9 +76,8 @@ function crearLista(response, yearList) {
                             </div>\
                         </div>\
                         <div class="job-right my-4 flex-shrink-0">\
-                            <a class="btn  mx-3 text-nowrap third-color" href="'+rutaActa+'">Resumen</a>\
-                            <a class="btn  mx-3 text-nowrap third-color" href="'+rutaActa+'">Presentación</a>\
-                            <a class="btn  mx-3 text-nowrap third-color"  href="'+rutaActa+'">Archivos relacionados</a>\
+                            <a class="btn  mx-3 text-nowrap third-color" href="'+ruta1+'">Resumen</a>\
+                            <a class="btn  mx-3 text-nowrap third-color" href="'+ruta2+'">Presentación</a>\
                         </div>\
                     </div>\
                 ');
@@ -84,16 +88,4 @@ function crearLista(response, yearList) {
 
     });
 
-/*
-    
-    response.forEach(pre => {
-        console.log(pre);
-        rutaActa = rutaActa.replace("-1", pre.id );
-        console.log('#seminar_id'+pre.seminar_id+'');
-
-        $('#seminar_id'+pre.seminar_id+'').append('<h1>prueba</h1>');
-        rutaActa = rutaActa.replace(pre.id, "-1" );
-            
-    });
-    */
 }

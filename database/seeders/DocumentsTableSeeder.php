@@ -217,6 +217,138 @@ class DocumentsTableSeeder extends Seeder
                 'type' => 1,
                 'updated_at' => '2023-03-27 11:02:39',
             ),
+            18 => 
+            array (
+                'created_at' => '2023-03-28 06:42:47',
+                'dir' => 'PPTS/1679985767_PRESENTACION Pitahaya. Seminario de Técnicos 2021.pdf',
+                'id' => 20,
+                'mandatory' => 0,
+                'presentation_id' => 13,
+                'seminar_id' => 2,
+                'type' => 2,
+                'updated_at' => '2023-03-28 06:42:47',
+            ),
+            19 => 
+            array (
+                'created_at' => '2023-03-28 06:43:00',
+                'dir' => 'PPTS/1679985780_VIRUS QUE INFECTAN HORTALIZAS A TRAVÉS DEL SUELO.pdf',
+                'id' => 21,
+                'mandatory' => 0,
+                'presentation_id' => 12,
+                'seminar_id' => 2,
+                'type' => 2,
+                'updated_at' => '2023-03-28 06:43:00',
+            ),
+            20 => 
+            array (
+                'created_at' => '2023-03-28 06:43:14',
+                'dir' => 'PDFS/1679985794_PRESENTACION Ausencia de fertirriego tomate ecológico.v2 Seminario de Técnicos 2021.pdf',
+                'id' => 22,
+                'mandatory' => 0,
+                'presentation_id' => 11,
+                'seminar_id' => 2,
+                'type' => 1,
+                'updated_at' => '2023-03-28 06:43:14',
+            ),
+            21 => 
+            array (
+                'created_at' => '2023-03-28 06:43:29',
+                'dir' => 'PPTS/1679985809_Presentación Best4Soil.pdf',
+                'id' => 23,
+                'mandatory' => 0,
+                'presentation_id' => 10,
+                'seminar_id' => 2,
+                'type' => 2,
+                'updated_at' => '2023-03-28 06:43:29',
+            ),
+            22 => 
+            array (
+                'created_at' => '2023-03-28 06:43:43',
+                'dir' => 'PPTS/1679985823_Schulumbergera Virus.pdf',
+                'id' => 24,
+                'mandatory' => 0,
+                'presentation_id' => 9,
+                'seminar_id' => 2,
+                'type' => 2,
+                'updated_at' => '2023-03-28 06:43:43',
+            ),
+            23 => 
+            array (
+                'created_at' => '2023-03-28 06:43:58',
+                'dir' => 'PPTS/1679985838_Presentacion REINWASTE Samir Sayadi_Tenerife.pdf',
+                'id' => 25,
+                'mandatory' => 0,
+                'presentation_id' => 8,
+                'seminar_id' => 2,
+                'type' => 2,
+                'updated_at' => '2023-03-28 06:43:58',
+            ),
+            24 => 
+            array (
+                'created_at' => '2023-03-28 06:44:18',
+                'dir' => 'PDFS/1679985858_Resumen L Seminario Técnicos_ FERTIRRIGACIÓN.pdf',
+                'id' => 26,
+                'mandatory' => 0,
+                'presentation_id' => 13,
+                'seminar_id' => 2,
+                'type' => 1,
+                'updated_at' => '2023-03-28 06:44:18',
+            ),
+            25 => 
+            array (
+                'created_at' => '2023-03-28 06:44:35',
+                'dir' => 'PDFS/1679985875_Resumen L Seminario Técnicos_ BEST4SOIL.pdf',
+                'id' => 27,
+                'mandatory' => 0,
+                'presentation_id' => 12,
+                'seminar_id' => 2,
+                'type' => 1,
+                'updated_at' => '2023-03-28 06:44:35',
+            ),
+            26 => 
+            array (
+                'created_at' => '2023-03-28 06:44:52',
+                'dir' => 'PDFS/1679985892_Resumen L Seminario Técnicos_ CADENA DE VALOR.pdf',
+                'id' => 28,
+                'mandatory' => 0,
+                'presentation_id' => 11,
+                'seminar_id' => 2,
+                'type' => 1,
+                'updated_at' => '2023-03-28 06:44:52',
+            ),
+            27 => 
+            array (
+                'created_at' => '2023-03-28 06:45:10',
+                'dir' => 'PDFS/1679985910_Resumen L Seminario Técnicos_ CADENA DE VALOR.pdf',
+                'id' => 29,
+                'mandatory' => 0,
+                'presentation_id' => 10,
+                'seminar_id' => 2,
+                'type' => 1,
+                'updated_at' => '2023-03-28 06:45:10',
+            ),
+            28 => 
+            array (
+                'created_at' => '2023-03-28 06:45:26',
+                'dir' => 'PDFS/1679985926_Resumen L Seminario Técnicos_ RECICLAND.pdf',
+                'id' => 30,
+                'mandatory' => 0,
+                'presentation_id' => 9,
+                'seminar_id' => 2,
+                'type' => 1,
+                'updated_at' => '2023-03-28 06:45:26',
+            ),
+            29 => 
+            array (
+                'created_at' => '2023-03-28 06:45:42',
+                'dir' => 'PDFS/1679985942_Resumen L Seminario Técnicos_ JUDÍAS DE COLORES.pdf',
+                'id' => 31,
+                'mandatory' => 0,
+                'presentation_id' => 8,
+                'seminar_id' => 2,
+                'type' => 1,
+                'updated_at' => '2023-03-28 06:45:42',
+            ),
         ));
         
         

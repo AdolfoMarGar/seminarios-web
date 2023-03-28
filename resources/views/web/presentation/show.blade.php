@@ -32,7 +32,16 @@
                     </h5>
 
                 </div>
-                <div id="Iframe-Master-CC-and-Rs" class="set-margin set-padding ">
+                @isset($record)
+                    
+                @endisset
+                @if($doc==null)
+                    <div class="card-body">
+                        <h4>Este archivo no esta disponible</h4>
+                        <h5>Si dispones de este archivo, puedes crearte una cuenta y realizar una aportacion a la página web.</h5>
+                    </div>
+                @else
+                    <div id="Iframe-Master-CC-and-Rs" class="set-margin set-padding ">
                     <div 
                     class="responsive-wrapper mx-4 responsive-wrapper-wxh-572x612" 
                     style="-webkit-overflow-scrolling: touch; overflow: auto;"
@@ -42,6 +51,9 @@
                     </iframe>
                     </div>
                 </div>
+                
+                @endif
+                
                 <div class="card-body">
                    
 
